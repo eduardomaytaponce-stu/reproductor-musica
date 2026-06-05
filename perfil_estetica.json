@@ -1,0 +1,38 @@
+{
+  "nombre_estetica": "Ambient Ethereal / Cloud-Fi Focus",
+  "descripcion": "Estética Atmosférica Ghibli-Moderna que evoca paz, inmersión y minimalismo analógico. Inspirada en un atardecer arequipeño transicionando a la noche.",
+  "colores": {
+    "fondo_aurora_gradient": [
+      "rgba(253, 230, 138, 0.15)",
+      "rgba(244, 63, 94, 0.15)",
+      "rgba(99, 102, 241, 0.15)",
+      "rgba(30, 41, 59, 0.95)"
+    ],
+    "frosted_glass_fondo": "rgba(248, 250, 252, 0.05)",
+    "frosted_glass_borde": "rgba(255, 255, 255, 0.08)",
+    "acento_crema": "#fef08a",
+    "acento_lavanda": "#c084fc",
+    "texto_titulos": "#f8fafc",
+    "texto_tecnico": "#cbd5e1"
+  },
+  "efectos": {
+    "backdrop_blur": "24px",
+    "caratula_shadow_glow": "0 20px 50px var(--caratula-color-shadow, rgba(0,0,0,0.3))",
+    "botones_estilo": {
+      "borde": "ninguno",
+      "sombra": "ninguna",
+      "animacion_hover": "floating-leaf-sway 0.4s ease-out"
+    }
+  },
+  "tipografia": {
+    "fuente_titulos": "'Playfair Display', serif",
+    "fuente_tecnica": "'JetBrains Mono', 'Inter', monospace"
+  },
+  "visualizador": {
+    "estilo": "ondas_fluidas_suaves",
+    "colores_espectro": [
+      "rgba(192, 132, 252, 0.6)",
+      "rgba(253, 230, 138, 0.6)"
+    ]
+  }
+}

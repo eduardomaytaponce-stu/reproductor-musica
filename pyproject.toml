@@ -1,0 +1,18 @@
+[project]
+name = "reproductor-de-musica"
+version = "0.1.0"
+description = "Reproductor inteligente de música FLAC: transiciones DSP, Hi-Fi bit-perfect y exportación móvil"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi>=0.136.3",
+    "uvicorn>=0.48.0",
+    "librosa>=0.11.0",
+    "soundfile>=0.13.1",
+    "numpy>=2.4.6",
+    "sentence-transformers>=5.5.1",
+    "torch>=2.12.0",
+    "pydantic>=2.13.4",
+]
+
+[tool.uv]
+package = false

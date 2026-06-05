@@ -1,0 +1,6746 @@
+{
+  "version": 1,
+  "generated_at": "2026-06-05T13:53:46",
+  "count": 143,
+  "moods": [
+    "accion",
+    "energia",
+    "enfoque",
+    "relax"
+  ],
+  "songs": [
+    {
+      "id": 3,
+      "file": "David Guetta & Zara Larsson - This One's for You (feat. Zara Larsson) [Official Song UEFA EURO 2016].flac",
+      "title": "This One's for You (feat. Zara Larsson) [Official Song UEFA EURO 2016]",
+      "artist": "David Guetta & Zara Larsson",
+      "bpm": 143.6,
+      "duration": 207.3,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.02,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 34.0,
+          "energia": 0.64,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 65.0,
+          "energia": 0.34,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 121.0,
+          "energia": 0.97,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 159.0,
+          "energia": 0.61,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 192.3,
+          "energia": 0.75,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "file": "Disclosure & Eliza Doolittle - You & Me (Flume Remix).flac",
+      "title": "You & Me (Flume Remix)",
+      "artist": "Disclosure & Eliza Doolittle",
+      "bpm": 152.0,
+      "duration": 282.8,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.13,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 34.0,
+          "energia": 0.2,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 89.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 127.0,
+          "energia": 0.23,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 165.0,
+          "energia": 0.3,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 217.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 267.8,
+          "energia": 0.45,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "file": "Rupert Gregson-Williams - Duck Shoot.flac",
+      "title": "Duck Shoot",
+      "artist": "Rupert Gregson-Williams",
+      "bpm": 123.0,
+      "duration": 247.2,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.06,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 32.0,
+          "energia": 0.06,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 84.0,
+          "energia": 0.53,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 117.0,
+          "energia": 0.92,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 181.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 232.2,
+          "energia": 0.31,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "file": "Adele - Skyfall.flac",
+      "title": "Skyfall",
+      "artist": "Adele",
+      "bpm": 152.0,
+      "duration": 286.5,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.19,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 36.0,
+          "energia": 0.06,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 75.0,
+          "energia": 0.18,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 109.0,
+          "energia": 0.73,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 149.0,
+          "energia": 0.93,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 180.0,
+          "energia": 0.49,
+          "clase": "suave",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 223.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 271.5,
+          "energia": 0.61,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "file": "Michael Jackson - Don't Stop 'Til You Get Enough.flac",
+      "title": "Don't Stop 'Til You Get Enough",
+      "artist": "Michael Jackson",
+      "bpm": 117.5,
+      "duration": 364.4,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.29,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 43.0,
+          "energia": 0.6,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 75.0,
+          "energia": 0.61,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 108.0,
+          "energia": 0.6,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 206.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 249.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 318.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 349.4,
+          "energia": 0.75,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "file": "America - Horse With No Name.flac",
+      "title": "Horse With No Name",
+      "artist": "America",
+      "bpm": 123.0,
+      "duration": 217.9,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.28,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 68.0,
+          "energia": 0.38,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 102.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 165.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 202.9,
+          "energia": 0.67,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "file": "Irokz - FUNK UNIVERSO.flac",
+      "title": "FUNK UNIVERSO",
+      "artist": "Irokz",
+      "bpm": 129.2,
+      "duration": 127.5,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.17,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 48.0,
+          "energia": 0.24,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 112.5,
+          "energia": 0.68,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "file": "Coldplay - Speed of Sound.flac",
+      "title": "Speed of Sound",
+      "artist": "Coldplay",
+      "bpm": 123.0,
+      "duration": 287.9,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.02,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 34.0,
+          "energia": 0.7,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 66.0,
+          "energia": 0.97,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 101.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 146.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 189.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 232.0,
+          "energia": 0.86,
+          "clase": "energico",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 272.9,
+          "energia": 0.81,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "file": "girl in red - we fell in love in october.flac",
+      "title": "we fell in love in october",
+      "artist": "girl in red",
+      "bpm": 258.4,
+      "duration": 2.8,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.5,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 0.0,
+          "energia": 0.5,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 0.0,
+          "energia": 0.5,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 0.0,
+          "energia": 0.5,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 0.0,
+          "energia": 0.5,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 0.0,
+          "energia": 0.5,
+          "clase": "suave",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 0.0,
+          "energia": 0.5,
+          "clase": "suave",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 0.0,
+          "energia": 0.5,
+          "clase": "suave",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "file": "Mr.Kitty - After Dark.flac",
+      "title": "After Dark",
+      "artist": "Mr.Kitty",
+      "bpm": 143.6,
+      "duration": 259.1,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.13,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 46.0,
+          "energia": 0.67,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 78.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 114.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 145.0,
+          "energia": 0.21,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 194.0,
+          "energia": 0.5,
+          "clase": "suave",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 244.1,
+          "energia": 0.8,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "file": "The Marías - No One Noticed (Extended Spanish).flac",
+      "title": "No One Noticed (Extended Spanish)",
+      "artist": "The Marías",
+      "bpm": 198.8,
+      "duration": 284.5,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.46,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 59.0,
+          "energia": 0.85,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 112.0,
+          "energia": 0.19,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 158.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 225.0,
+          "energia": 0.14,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 269.5,
+          "energia": 0.73,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "file": "1.07. Black Catcher.flac",
+      "title": "1.07. Black Catcher",
+      "artist": "",
+      "bpm": 99.4,
+      "duration": 196.9,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.12,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 43.0,
+          "energia": 0.72,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 84.0,
+          "energia": 0.97,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 135.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 181.9,
+          "energia": 0.88,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "file": "Coldplay - Birds.flac",
+      "title": "Birds",
+      "artist": "Coldplay",
+      "bpm": 103.4,
+      "duration": 229.1,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.03,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 38.0,
+          "energia": 0.29,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 79.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 152.0,
+          "energia": 0.93,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 214.1,
+          "energia": 0.57,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "file": "C418 - Moog City.flac",
+      "title": "Moog City",
+      "artist": "C418",
+      "bpm": 129.2,
+      "duration": 160.0,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.0,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 77.0,
+          "energia": 0.76,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 108.0,
+          "energia": 0.37,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 145.0,
+          "energia": 0.3,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "file": "Jesper Kyd - Earth.flac",
+      "title": "Earth",
+      "artist": "Jesper Kyd",
+      "bpm": 112.3,
+      "duration": 238.8,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.23,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 33.0,
+          "energia": 0.38,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 70.0,
+          "energia": 0.45,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 115.0,
+          "energia": 0.77,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 147.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 192.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 223.8,
+          "energia": 0.69,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "file": "bbno$ - gigolo.flac",
+      "title": "gigolo",
+      "artist": "bbno$",
+      "bpm": 99.4,
+      "duration": 118.5,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.37,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 43.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 103.5,
+          "energia": 0.78,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "file": "Cannons - Bad Dream.flac",
+      "title": "Bad Dream",
+      "artist": "Cannons",
+      "bpm": 117.5,
+      "duration": 202.5,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.31,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 34.0,
+          "energia": 0.84,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 95.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 152.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 187.5,
+          "energia": 0.91,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "file": "Baiao, luchomuchogusto - Pollo a la Brasa.flac",
+      "title": "Pollo a la Brasa",
+      "artist": "Baiao, luchomuchogusto",
+      "bpm": 103.4,
+      "duration": 251.5,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.78,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 52.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 115.0,
+          "energia": 0.74,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 151.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 193.0,
+          "energia": 0.79,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 236.5,
+          "energia": 0.85,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "file": "Cigarettes After Sex - Sweet.flac",
+      "title": "Sweet",
+      "artist": "Cigarettes After Sex",
+      "bpm": 99.4,
+      "duration": 291.6,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.44,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 42.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 74.0,
+          "energia": 0.65,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 106.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 144.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 204.0,
+          "energia": 0.97,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 243.0,
+          "energia": 0.7,
+          "clase": "suave",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 276.6,
+          "energia": 0.82,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "file": "TV Girl - Lovers Rock.flac",
+      "title": "Lovers Rock",
+      "artist": "TV Girl",
+      "bpm": 103.4,
+      "duration": 213.9,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.76,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 32.0,
+          "energia": 0.68,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 80.0,
+          "energia": 0.45,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 120.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 158.0,
+          "energia": 0.5,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 198.9,
+          "energia": 0.85,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "file": "Café Tacvba - Eres (Album Version).flac",
+      "title": "Eres (Album Version)",
+      "artist": "Café Tacvba",
+      "bpm": 152.0,
+      "duration": 267.6,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.57,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 36.0,
+          "energia": 0.51,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 96.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 148.0,
+          "energia": 0.11,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 202.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 252.6,
+          "energia": 0.77,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "file": "TheFatRat - Rise Up.flac",
+      "title": "Rise Up",
+      "artist": "TheFatRat",
+      "bpm": 161.5,
+      "duration": 169.8,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.06,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 34.0,
+          "energia": 0.37,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 70.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 108.0,
+          "energia": 0.37,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 154.8,
+          "energia": 0.51,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "file": "Kings Of Leon - Sex on Fire.flac",
+      "title": "Sex on Fire",
+      "artist": "Kings Of Leon",
+      "bpm": 76.0,
+      "duration": 203.3,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.02,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 34.0,
+          "energia": 0.5,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 65.0,
+          "energia": 0.52,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 101.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 139.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 188.3,
+          "energia": 0.76,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "file": "Still Corners - I Can't Sleep - 2023 Remaster.flac",
+      "title": "I Can't Sleep - 2023 Remaster",
+      "artist": "Still Corners",
+      "bpm": 123.0,
+      "duration": 210.0,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.6,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 46.0,
+          "energia": 0.86,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 85.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 130.0,
+          "energia": 0.97,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 195.0,
+          "energia": 0.68,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "file": "Maroon 5 - Animals.flac",
+      "title": "Animals",
+      "artist": "Maroon 5",
+      "bpm": 95.7,
+      "duration": 229.1,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.23,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 32.0,
+          "energia": 0.69,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 86.0,
+          "energia": 0.59,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 121.0,
+          "energia": 0.55,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 156.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 214.1,
+          "energia": 0.8,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "file": "Coldplay - Talk.flac",
+      "title": "Talk",
+      "artist": "Coldplay",
+      "bpm": 123.0,
+      "duration": 311.1,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.04,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 41.0,
+          "energia": 0.41,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 89.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 126.0,
+          "energia": 0.43,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 173.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 216.0,
+          "energia": 0.51,
+          "clase": "suave",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 266.0,
+          "energia": 0.92,
+          "clase": "energico",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 296.1,
+          "energia": 0.75,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "file": "Los Bunkers - Bailando Solo.flac",
+      "title": "Bailando Solo",
+      "artist": "Los Bunkers",
+      "bpm": 117.5,
+      "duration": 267.8,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.31,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 48.0,
+          "energia": 0.48,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 86.0,
+          "energia": 0.93,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 131.0,
+          "energia": 0.0,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 172.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 216.0,
+          "energia": 0.83,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 252.8,
+          "energia": 0.75,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "file": "Gustavo Cerati - Cosas Imposibles.flac",
+      "title": "Cosas Imposibles",
+      "artist": "Gustavo Cerati",
+      "bpm": 80.7,
+      "duration": 305.6,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.21,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 31.0,
+          "energia": 0.56,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 64.0,
+          "energia": 0.66,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 120.0,
+          "energia": 0.65,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 155.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 186.0,
+          "energia": 0.54,
+          "clase": "suave",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 228.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 290.6,
+          "energia": 0.77,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "file": "Cigarettes After Sex - Crush - 01-01 Crush.flac",
+      "title": "Crush - 01-01 Crush",
+      "artist": "Cigarettes After Sex",
+      "bpm": 99.4,
+      "duration": 266.7,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.15,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 61.0,
+          "energia": 0.97,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 106.0,
+          "energia": 0.59,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 139.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 190.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 251.7,
+          "energia": 0.77,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "file": "Of Monsters and Men - Dirty Paws.flac",
+      "title": "Dirty Paws",
+      "artist": "Of Monsters and Men",
+      "bpm": 112.3,
+      "duration": 268.4,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.08,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 53.0,
+          "energia": 0.02,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 102.0,
+          "energia": 0.88,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 135.0,
+          "energia": 0.92,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 175.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 221.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 253.4,
+          "energia": 0.78,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "file": "Motorama - Heavy Wave.flac",
+      "title": "Heavy Wave",
+      "artist": "Motorama",
+      "bpm": 152.0,
+      "duration": 209.0,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.51,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 35.0,
+          "energia": 0.69,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 72.0,
+          "energia": 0.63,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 116.0,
+          "energia": 0.97,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 154.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 194.0,
+          "energia": 0.81,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "file": "Lynyrd Skynyrd - Free Bird.flac",
+      "title": "Free Bird",
+      "artist": "Lynyrd Skynyrd",
+      "bpm": 129.2,
+      "duration": 550.3,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.31,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 58.0,
+          "energia": 0.6,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 91.0,
+          "energia": 0.63,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 132.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 252.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 341.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 424.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 535.3,
+          "energia": 0.86,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "file": "Fazerdaze - Lucky Girl.flac",
+      "title": "Lucky Girl",
+      "artist": "Fazerdaze",
+      "bpm": 172.3,
+      "duration": 171.0,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.48,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 62.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 120.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 156.0,
+          "energia": 0.85,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "file": "Enjambre - Visita.flac",
+      "title": "Visita",
+      "artist": "Enjambre",
+      "bpm": 152.0,
+      "duration": 224.1,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.22,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 63.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 129.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 176.0,
+          "energia": 0.78,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 209.1,
+          "energia": 0.78,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "file": "Harmless - Swing Lynn.flac",
+      "title": "Swing Lynn",
+      "artist": "Harmless",
+      "bpm": 161.5,
+      "duration": 321.4,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.0,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 61.0,
+          "energia": 0.68,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 102.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 150.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 188.0,
+          "energia": 0.71,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 235.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 276.0,
+          "energia": 0.79,
+          "clase": "suave",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 306.4,
+          "energia": 0.81,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "file": "Cat Dealers, LOthief & Santti - Sunshine.flac",
+      "title": "Sunshine",
+      "artist": "Cat Dealers, LOthief & Santti",
+      "bpm": 123.0,
+      "duration": 183.9,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.12,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 48.0,
+          "energia": 0.29,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 82.0,
+          "energia": 0.02,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 130.0,
+          "energia": 0.39,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 168.9,
+          "energia": 0.62,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "file": "Disclosure & Sam Smith - Latch.flac",
+      "title": "Latch",
+      "artist": "Disclosure & Sam Smith",
+      "bpm": 123.0,
+      "duration": 256.9,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.49,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 52.0,
+          "energia": 0.4,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 103.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 134.0,
+          "energia": 0.97,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 181.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 241.9,
+          "energia": 0.84,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "file": "Sir Simon Rattle & Berliner Philharmoniker - The Nutcracker, Op. 71, Act II_ No. 14, Pas de deux_ a. Andante maestoso.flac",
+      "title": "The Nutcracker, Op. 71, Act II_ No. 14, Pas de deux_ a. Andante maestoso",
+      "artist": "Sir Simon Rattle & Berliner Philharmoniker",
+      "bpm": 123.0,
+      "duration": 306.5,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.09,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 44.0,
+          "energia": 0.04,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 96.0,
+          "energia": 0.41,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 129.0,
+          "energia": 0.06,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 171.0,
+          "energia": 0.83,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 227.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 291.5,
+          "energia": 0.2,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "file": "iilliaa - gone for life.flac",
+      "title": "gone for life",
+      "artist": "iilliaa",
+      "bpm": 83.4,
+      "duration": 177.1,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.0,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 44.0,
+          "energia": 0.02,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 83.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 128.0,
+          "energia": 0.06,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 162.1,
+          "energia": 0.84,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "file": "The Marías - Hush.flac",
+      "title": "Hush",
+      "artist": "The Marías",
+      "bpm": 92.3,
+      "duration": 181.9,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.03,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 38.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 72.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 134.0,
+          "energia": 0.24,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 166.9,
+          "energia": 0.93,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "file": "The Neighbourhood - Sweater Weather.flac",
+      "title": "Sweater Weather",
+      "artist": "The Neighbourhood",
+      "bpm": 61.5,
+      "duration": 240.4,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.48,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 55.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 109.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 157.0,
+          "energia": 0.13,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 191.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 225.4,
+          "energia": 0.85,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "file": "Cigarettes After Sex - Crush.flac",
+      "title": "Crush",
+      "artist": "Cigarettes After Sex",
+      "bpm": 99.4,
+      "duration": 266.7,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.15,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 61.0,
+          "energia": 0.97,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 106.0,
+          "energia": 0.59,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 139.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 190.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 251.7,
+          "energia": 0.77,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "file": "RÜFÜS DU SOL - Innerbloom.flac",
+      "title": "Innerbloom",
+      "artist": "RÜFÜS DU SOL",
+      "bpm": 123.0,
+      "duration": 578.0,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.4,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 46.0,
+          "energia": 0.31,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 145.0,
+          "energia": 0.97,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 201.0,
+          "energia": 0.12,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 253.0,
+          "energia": 0.97,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 307.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 497.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 563.0,
+          "energia": 0.65,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "file": "Cults - Always Forever.flac",
+      "title": "Always Forever",
+      "artist": "Cults",
+      "bpm": 161.5,
+      "duration": 223.8,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.72,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 40.0,
+          "energia": 0.87,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 75.0,
+          "energia": 0.66,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 121.0,
+          "energia": 0.72,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 153.0,
+          "energia": 0.42,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 208.8,
+          "energia": 0.77,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "file": "BUNT. - Clouds.flac",
+      "title": "Clouds",
+      "artist": "BUNT.",
+      "bpm": 64.6,
+      "duration": 158.8,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.5,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 35.0,
+          "energia": 0.14,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 68.0,
+          "energia": 0.54,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 103.0,
+          "energia": 0.26,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 143.8,
+          "energia": 0.64,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "file": "Rootkit - Against the Sun (feat. Anna Yvette).flac",
+      "title": "Against the Sun (feat. Anna Yvette)",
+      "artist": "Rootkit",
+      "bpm": 86.1,
+      "duration": 212.3,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.01,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 34.0,
+          "energia": 0.78,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 68.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 103.0,
+          "energia": 0.28,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 139.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 197.3,
+          "energia": 0.75,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "file": "Kygo - It Ain't Me.flac",
+      "title": "It Ain't Me",
+      "artist": "Kygo",
+      "bpm": 99.4,
+      "duration": 220.8,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.12,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 47.0,
+          "energia": 0.42,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 98.0,
+          "energia": 0.2,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 144.0,
+          "energia": 0.87,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 205.8,
+          "energia": 0.57,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "file": "B.J. Thomas - Raindrops Keep Falling on My Head.flac",
+      "title": "Raindrops Keep Falling on My Head",
+      "artist": "B.J. Thomas",
+      "bpm": 107.7,
+      "duration": 180.9,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.3,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 32.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 84.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 122.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 165.9,
+          "energia": 0.72,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "file": "Galantis - No Money.flac",
+      "title": "No Money",
+      "artist": "Galantis",
+      "bpm": 123.0,
+      "duration": 191.3,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.41,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 61.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 125.0,
+          "energia": 0.36,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 176.3,
+          "energia": 0.59,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "file": "Of Monsters and Men - Mountain Sound.flac",
+      "title": "Mountain Sound",
+      "artist": "Of Monsters and Men",
+      "bpm": 103.4,
+      "duration": 212.0,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.81,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 32.0,
+          "energia": 0.42,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 70.0,
+          "energia": 0.59,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 127.0,
+          "energia": 0.41,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 163.0,
+          "energia": 0.92,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 197.0,
+          "energia": 0.85,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "file": "The Flight, Assassin's Creed & Mike Georgiades - Legend of the Eagle Bearer (Main Theme).flac",
+      "title": "Legend of the Eagle Bearer (Main Theme)",
+      "artist": "The Flight, Assassin's Creed & Mike Georgiades",
+      "bpm": 117.5,
+      "duration": 233.5,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.01,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 32.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 65.0,
+          "energia": 0.48,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 101.0,
+          "energia": 0.83,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 150.0,
+          "energia": 0.02,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 187.0,
+          "energia": 0.86,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 218.5,
+          "energia": 0.61,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "file": "Kygo & Kodaline - Raging (feat. Kodaline).flac",
+      "title": "Raging (feat. Kodaline)",
+      "artist": "Kygo & Kodaline",
+      "bpm": 99.4,
+      "duration": 224.5,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.11,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 37.0,
+          "energia": 0.2,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 82.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 128.0,
+          "energia": 0.21,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 165.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 209.5,
+          "energia": 0.67,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "file": "1-01. Earth.flac",
+      "title": "1-01. Earth",
+      "artist": "",
+      "bpm": 112.3,
+      "duration": 238.1,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.23,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 33.0,
+          "energia": 0.38,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 70.0,
+          "energia": 0.45,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 115.0,
+          "energia": 0.77,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 147.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 192.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 223.1,
+          "energia": 0.69,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "file": "Hans Zimmer - Maestro.flac",
+      "title": "Maestro",
+      "artist": "Hans Zimmer",
+      "bpm": 99.4,
+      "duration": 233.7,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.02,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 65.0,
+          "energia": 0.12,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 126.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 166.0,
+          "energia": 0.5,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 218.7,
+          "energia": 0.38,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "file": "Alejandro y María Laura - La Princesa y el Rio.flac",
+      "title": "La Princesa y el Rio",
+      "artist": "Alejandro y María Laura",
+      "bpm": 107.7,
+      "duration": 161.8,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.43,
+          "clase": "energico",
+          "tipo": "intro"
+        },
+        {
+          "t": 32.0,
+          "energia": 0.01,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 85.0,
+          "energia": 0.7,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 146.8,
+          "energia": 0.35,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "file": "Øneheart & reidenshi - snowfall.flac",
+      "title": "snowfall",
+      "artist": "Øneheart & reidenshi",
+      "bpm": 95.7,
+      "duration": 124.1,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.0,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 60.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 109.1,
+          "energia": 0.82,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "file": "Chiaroscuro Quartet - Adagio and Fugue in C Minor, K. 546_ I. Adagio.flac",
+      "title": "Adagio and Fugue in C Minor, K. 546_ I. Adagio",
+      "artist": "Chiaroscuro Quartet",
+      "bpm": 57.4,
+      "duration": 180.4,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.52,
+          "clase": "energico",
+          "tipo": "intro"
+        },
+        {
+          "t": 34.0,
+          "energia": 0.9,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 84.0,
+          "energia": 0.79,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 121.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 165.4,
+          "energia": 0.15,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "file": "Pastel Ghost - Dark Beach.flac",
+      "title": "Dark Beach",
+      "artist": "Pastel Ghost",
+      "bpm": 129.2,
+      "duration": 222.0,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.76,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 47.0,
+          "energia": 0.91,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 80.0,
+          "energia": 0.81,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 136.0,
+          "energia": 0.9,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 173.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 207.0,
+          "energia": 0.85,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "file": "Coldplay - Arabesque.flac",
+      "title": "Arabesque",
+      "artist": "Coldplay",
+      "bpm": 172.3,
+      "duration": 340.3,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.04,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 83.0,
+          "energia": 0.62,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 125.0,
+          "energia": 0.77,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 185.0,
+          "energia": 0.74,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 220.0,
+          "energia": 0.62,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 274.0,
+          "energia": 0.57,
+          "clase": "suave",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 325.3,
+          "energia": 0.68,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "file": "ezios family.flac",
+      "title": "ezios family",
+      "artist": "",
+      "bpm": 129.2,
+      "duration": 237.9,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.06,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 68.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 102.0,
+          "energia": 0.13,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 136.0,
+          "energia": 0.48,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 171.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 222.9,
+          "energia": 0.56,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "file": "Bad Bunny - Callaita.flac",
+      "title": "Callaita",
+      "artist": "Bad Bunny",
+      "bpm": 117.5,
+      "duration": 250.5,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.23,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 47.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 88.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 126.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 167.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 200.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 235.5,
+          "energia": 0.83,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "file": "Alejandro y María Laura - Lugar ideal.flac",
+      "title": "Lugar ideal",
+      "artist": "Alejandro y María Laura",
+      "bpm": 143.6,
+      "duration": 198.6,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.16,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 60.0,
+          "energia": 0.1,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 107.0,
+          "energia": 0.43,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 139.0,
+          "energia": 0.97,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 183.6,
+          "energia": 0.63,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "file": "TheFatRat, Slaydit & Anjulie - Stronger - 01-01 Stronger.flac",
+      "title": "Stronger - 01-01 Stronger",
+      "artist": "TheFatRat, Slaydit & Anjulie",
+      "bpm": 161.5,
+      "duration": 205.5,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.05,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 43.0,
+          "energia": 0.97,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 86.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 129.0,
+          "energia": 0.24,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 190.5,
+          "energia": 0.61,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "file": "Imagine Dragons - Bones.flac",
+      "title": "Bones",
+      "artist": "Imagine Dragons",
+      "bpm": 112.3,
+      "duration": 165.3,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.11,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 37.0,
+          "energia": 0.93,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 79.0,
+          "energia": 0.92,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 113.0,
+          "energia": 0.32,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 150.3,
+          "energia": 0.78,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "file": "Trinix & The Macarons Project - Too Sweet.flac",
+      "title": "Too Sweet",
+      "artist": "Trinix & The Macarons Project",
+      "bpm": 112.3,
+      "duration": 164.2,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.22,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 42.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 79.0,
+          "energia": 0.29,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 111.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 149.2,
+          "energia": 0.76,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "file": "Bad Bunny & Tainy - Callaita.flac",
+      "title": "Callaita",
+      "artist": "Bad Bunny & Tainy",
+      "bpm": 117.5,
+      "duration": 250.5,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.23,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 47.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 88.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 126.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 167.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 200.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 235.5,
+          "energia": 0.83,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "file": "Don Omar - Taboo.flac",
+      "title": "Taboo",
+      "artist": "Don Omar",
+      "bpm": 123.0,
+      "duration": 292.2,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.4,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 51.0,
+          "energia": 0.61,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 107.0,
+          "energia": 0.55,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 143.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 191.0,
+          "energia": 0.82,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 226.0,
+          "energia": 0.5,
+          "clase": "suave",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 277.2,
+          "energia": 0.68,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "file": "Los Kjarkas - Camino de la Montaña.flac",
+      "title": "Camino de la Montaña",
+      "artist": "Los Kjarkas",
+      "bpm": 129.2,
+      "duration": 194.4,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.36,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 34.0,
+          "energia": 0.61,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 69.0,
+          "energia": 0.31,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 117.0,
+          "energia": 0.88,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 148.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 179.4,
+          "energia": 0.6,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "file": "Kygo - Stole the Show.flac",
+      "title": "Stole the Show",
+      "artist": "Kygo",
+      "bpm": 99.4,
+      "duration": 222.8,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.09,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 41.0,
+          "energia": 0.06,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 100.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 145.0,
+          "energia": 0.93,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 207.8,
+          "energia": 0.5,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "file": "08 - Lord Huron - Meet Me in the Woods.flac",
+      "title": "Lord Huron - Meet Me in the Woods",
+      "artist": "08",
+      "bpm": 161.5,
+      "duration": 262.2,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.0,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 62.0,
+          "energia": 0.37,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 109.0,
+          "energia": 0.45,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 146.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 183.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 247.2,
+          "energia": 0.77,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "file": "Lana Del Rey - Brooklyn Baby.flac",
+      "title": "Brooklyn Baby",
+      "artist": "Lana Del Rey",
+      "bpm": 112.3,
+      "duration": 351.6,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.25,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 40.0,
+          "energia": 0.27,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 91.0,
+          "energia": 0.91,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 125.0,
+          "energia": 0.23,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 188.0,
+          "energia": 0.9,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 258.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 293.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 336.6,
+          "energia": 0.71,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "file": "Kenia Os - Bonita.flac",
+      "title": "Bonita",
+      "artist": "Kenia Os",
+      "bpm": 136.0,
+      "duration": 166.4,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.25,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 43.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 96.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 151.4,
+          "energia": 0.86,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "file": "01 - Édith Piaf - Non, je ne regrette rien.flac",
+      "title": "Édith Piaf - Non, je ne regrette rien",
+      "artist": "01",
+      "bpm": 86.1,
+      "duration": 142.3,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.14,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 60.0,
+          "energia": 0.12,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 95.0,
+          "energia": 0.22,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 127.3,
+          "energia": 0.47,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "file": "Teddybears - Punkrocker  (As featured in Superman).flac",
+      "title": "Punkrocker  (As featured in Superman)",
+      "artist": "Teddybears",
+      "bpm": 143.6,
+      "duration": 246.8,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.83,
+          "clase": "energico",
+          "tipo": "intro"
+        },
+        {
+          "t": 63.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 124.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 156.0,
+          "energia": 0.59,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 195.0,
+          "energia": 0.52,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 231.8,
+          "energia": 0.78,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "file": "lázaro suplika dopamina - Terapia.flac",
+      "title": "Terapia",
+      "artist": "lázaro suplika dopamina",
+      "bpm": 112.3,
+      "duration": 203.3,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.05,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 38.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 100.0,
+          "energia": 0.4,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 139.0,
+          "energia": 0.09,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 188.3,
+          "energia": 0.87,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "file": "The Marías - No One Noticed (Extended English).flac",
+      "title": "No One Noticed (Extended English)",
+      "artist": "The Marías",
+      "bpm": 198.8,
+      "duration": 284.5,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.46,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 59.0,
+          "energia": 0.85,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 94.0,
+          "energia": 0.87,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 126.0,
+          "energia": 0.72,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 158.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 230.0,
+          "energia": 0.15,
+          "clase": "suave",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 269.5,
+          "energia": 0.73,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "file": "Kygo - First Time.flac",
+      "title": "First Time",
+      "artist": "Kygo",
+      "bpm": 172.3,
+      "duration": 193.5,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.24,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 42.0,
+          "energia": 0.39,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 87.0,
+          "energia": 0.14,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 147.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 178.5,
+          "energia": 0.61,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "file": "02 - The Score - Legend.flac",
+      "title": "The Score - Legend",
+      "artist": "02",
+      "bpm": 83.4,
+      "duration": 189.1,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.37,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 46.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 93.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 124.0,
+          "energia": 0.65,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 174.1,
+          "energia": 0.85,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "file": "Surf Curse - Disco.flac",
+      "title": "Disco",
+      "artist": "Surf Curse",
+      "bpm": 86.1,
+      "duration": 152.8,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.08,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 47.0,
+          "energia": 0.52,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 105.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 137.8,
+          "energia": 0.7,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "file": "Coldplay - Magic.flac",
+      "title": "Magic",
+      "artist": "Coldplay",
+      "bpm": 92.3,
+      "duration": 285.0,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.69,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 39.0,
+          "energia": 0.62,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 82.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 123.0,
+          "energia": 0.92,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 154.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 186.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 229.0,
+          "energia": 0.4,
+          "clase": "suave",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 270.0,
+          "energia": 0.83,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "file": "Still Corners - All I Know - 2023 Remaster.flac",
+      "title": "All I Know - 2023 Remaster",
+      "artist": "Still Corners",
+      "bpm": 89.1,
+      "duration": 207.2,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.01,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 39.0,
+          "energia": 0.57,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 102.0,
+          "energia": 0.55,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 143.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 192.2,
+          "energia": 0.68,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "file": "Crystal Castles - Vanished.flac",
+      "title": "Vanished",
+      "artist": "Crystal Castles",
+      "bpm": 117.5,
+      "duration": 243.0,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.63,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 47.0,
+          "energia": 0.0,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 78.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 110.0,
+          "energia": 0.03,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 190.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 228.0,
+          "energia": 0.83,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "file": "Hans Zimmer - Time.flac",
+      "title": "Time",
+      "artist": "Hans Zimmer",
+      "bpm": 123.0,
+      "duration": 275.6,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.06,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 41.0,
+          "energia": 0.17,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 79.0,
+          "energia": 0.27,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 126.0,
+          "energia": 0.55,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 164.0,
+          "energia": 0.8,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 195.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 260.6,
+          "energia": 0.32,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "file": "Hans Zimmer - Day One (Interstellar Theme).flac",
+      "title": "Day One (Interstellar Theme)",
+      "artist": "Hans Zimmer",
+      "bpm": 95.7,
+      "duration": 199.4,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.02,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 36.0,
+          "energia": 0.03,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 96.0,
+          "energia": 0.4,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 142.0,
+          "energia": 0.42,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 184.4,
+          "energia": 0.19,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "file": "01 - Hans Zimmer - Jack Sparrow.flac",
+      "title": "Hans Zimmer - Jack Sparrow",
+      "artist": "01",
+      "bpm": 123.0,
+      "duration": 365.4,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.08,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 44.0,
+          "energia": 0.07,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 100.0,
+          "energia": 0.02,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 149.0,
+          "energia": 0.83,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 190.0,
+          "energia": 0.67,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 263.0,
+          "energia": 0.73,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 304.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 350.4,
+          "energia": 0.25,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "file": "Halsey & The Chainsmokers - Closer.flac",
+      "title": "Closer",
+      "artist": "Halsey & The Chainsmokers",
+      "bpm": 95.7,
+      "duration": 245.0,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.18,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 31.0,
+          "energia": 0.43,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 65.0,
+          "energia": 0.8,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 110.0,
+          "energia": 0.37,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 146.0,
+          "energia": 0.81,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 186.0,
+          "energia": 0.52,
+          "clase": "suave",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 230.0,
+          "energia": 0.62,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "file": "Muse - Survival.flac",
+      "title": "Survival",
+      "artist": "Muse",
+      "bpm": 161.5,
+      "duration": 257.5,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.09,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 42.0,
+          "energia": 0.67,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 81.0,
+          "energia": 0.59,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 116.0,
+          "energia": 0.76,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 177.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 242.5,
+          "energia": 0.8,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 91,
+      "file": "Tame Impala - Borderline.flac",
+      "title": "Borderline",
+      "artist": "Tame Impala",
+      "bpm": 99.4,
+      "duration": 237.8,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.3,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 61.0,
+          "energia": 0.22,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 121.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 182.0,
+          "energia": 0.88,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 222.8,
+          "energia": 0.7,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 92,
+      "file": "Nicholas Britell - Adagio in C Minor.flac",
+      "title": "Adagio in C Minor",
+      "artist": "Nicholas Britell",
+      "bpm": 172.3,
+      "duration": 90.0,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.08,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 40.0,
+          "energia": 0.13,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 75.0,
+          "energia": 0.42,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 93,
+      "file": "Fleetwood Mac - The Chain (2004 Remaster).flac",
+      "title": "The Chain (2004 Remaster)",
+      "artist": "Fleetwood Mac",
+      "bpm": 76.0,
+      "duration": 269.8,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.0,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 41.0,
+          "energia": 0.23,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 82.0,
+          "energia": 0.09,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 117.0,
+          "energia": 0.25,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 166.0,
+          "energia": 0.88,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 218.0,
+          "energia": 0.82,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 254.8,
+          "energia": 0.44,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "file": "14 - The Goo Goo Dolls - Iris.flac",
+      "title": "The Goo Goo Dolls - Iris",
+      "artist": "14",
+      "bpm": 107.7,
+      "duration": 289.9,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.17,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 32.0,
+          "energia": 0.59,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 63.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 121.0,
+          "energia": 0.54,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 181.0,
+          "energia": 0.91,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 232.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 274.9,
+          "energia": 0.72,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "file": "Calvin Harris - Sweet Nothing (feat. Florence Welch).flac",
+      "title": "Sweet Nothing (feat. Florence Welch)",
+      "artist": "Calvin Harris",
+      "bpm": 129.2,
+      "duration": 214.0,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.0,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 39.0,
+          "energia": 0.46,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 77.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 114.0,
+          "energia": 0.46,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 151.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 199.0,
+          "energia": 0.61,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "file": "Florence + The Machine - Dog Days Are Over.flac",
+      "title": "Dog Days Are Over",
+      "artist": "Florence + The Machine",
+      "bpm": 99.4,
+      "duration": 251.8,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.12,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 38.0,
+          "energia": 0.15,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 84.0,
+          "energia": 0.82,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 121.0,
+          "energia": 0.08,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 169.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 203.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 236.8,
+          "energia": 0.64,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 97,
+      "file": "Sombr - back to friends.flac",
+      "title": "back to friends",
+      "artist": "Sombr",
+      "bpm": 92.3,
+      "duration": 199.0,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.26,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 43.0,
+          "energia": 0.5,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 86.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 117.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 154.0,
+          "energia": 0.93,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 184.0,
+          "energia": 0.82,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 98,
+      "file": "Bad Bunny - BAILE INoLVIDABLE.flac",
+      "title": "BAILE INoLVIDABLE",
+      "artist": "Bad Bunny",
+      "bpm": 89.1,
+      "duration": 367.7,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.32,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 40.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 71.0,
+          "energia": 0.22,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 152.0,
+          "energia": 0.27,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 185.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 254.0,
+          "energia": 0.48,
+          "clase": "suave",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 302.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 352.7,
+          "energia": 0.77,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "file": "Imagine Dragons - Natural.flac",
+      "title": "Natural",
+      "artist": "Imagine Dragons",
+      "bpm": 99.4,
+      "duration": 189.5,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.19,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 54.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 104.0,
+          "energia": 0.57,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 136.0,
+          "energia": 0.32,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 174.5,
+          "energia": 0.7,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "file": "The Cranberries - Dreams.flac",
+      "title": "Dreams",
+      "artist": "The Cranberries",
+      "bpm": 129.2,
+      "duration": 255.1,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.0,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 42.0,
+          "energia": 0.77,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 85.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 120.0,
+          "energia": 0.77,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 159.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 195.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 240.1,
+          "energia": 0.88,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "file": "The Neighbourhood - Daddy Issues.flac",
+      "title": "Daddy Issues",
+      "artist": "The Neighbourhood",
+      "bpm": 86.1,
+      "duration": 260.2,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.28,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 36.0,
+          "energia": 0.74,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 88.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 134.0,
+          "energia": 0.39,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 191.0,
+          "energia": 0.26,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 245.2,
+          "energia": 0.84,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "file": "The Macarons Project - Too Sweet.flac",
+      "title": "Too Sweet",
+      "artist": "The Macarons Project",
+      "bpm": 107.7,
+      "duration": 198.3,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.6,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 54.0,
+          "energia": 0.88,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 100.0,
+          "energia": 0.29,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 135.0,
+          "energia": 0.38,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 183.3,
+          "energia": 0.68,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "file": "WOS & Nicki Nicole - CAMBIANDO LA PIEL.flac",
+      "title": "CAMBIANDO LA PIEL",
+      "artist": "WOS & Nicki Nicole",
+      "bpm": 112.3,
+      "duration": 158.1,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.81,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 42.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 77.0,
+          "energia": 0.71,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 111.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 143.1,
+          "energia": 0.9,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "file": "Fleetwood Mac - Dreams (2001 Remaster) (1).flac",
+      "title": "Dreams (2001 Remaster) (1)",
+      "artist": "Fleetwood Mac",
+      "bpm": 117.5,
+      "duration": 258.8,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.7,
+          "clase": "energico",
+          "tipo": "intro"
+        },
+        {
+          "t": 34.0,
+          "energia": 0.82,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 72.0,
+          "energia": 0.93,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 117.0,
+          "energia": 0.46,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 177.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 209.0,
+          "energia": 0.83,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 243.8,
+          "energia": 0.66,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "file": "Cannons - Fire for You.flac",
+      "title": "Fire for You",
+      "artist": "Cannons",
+      "bpm": 103.4,
+      "duration": 231.8,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.49,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 31.0,
+          "energia": 0.97,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 72.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 131.0,
+          "energia": 0.72,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 185.0,
+          "energia": 0.97,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 216.8,
+          "energia": 0.86,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "file": "The Verve - Love Is Noise.flac",
+      "title": "Love Is Noise",
+      "artist": "The Verve",
+      "bpm": 123.0,
+      "duration": 327.7,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.47,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 61.0,
+          "energia": 0.82,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 99.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 153.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 214.0,
+          "energia": 0.59,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 245.0,
+          "energia": 0.88,
+          "clase": "suave",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 278.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 312.7,
+          "energia": 0.89,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 107,
+      "file": "Crystal Castles - Suffocation.flac",
+      "title": "Suffocation",
+      "artist": "Crystal Castles",
+      "bpm": 117.5,
+      "duration": 242.3,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.79,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 56.0,
+          "energia": 0.29,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 111.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 144.0,
+          "energia": 0.88,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 191.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 227.3,
+          "energia": 0.8,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "file": "12 - Luna (En Vivo).flac",
+      "title": "Luna (En Vivo)",
+      "artist": "12",
+      "bpm": 117.5,
+      "duration": 280.4,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.11,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 47.0,
+          "energia": 0.21,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 81.0,
+          "energia": 0.75,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 137.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 176.0,
+          "energia": 0.78,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 230.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 265.4,
+          "energia": 0.63,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "file": "Daft Punk, Pharrell Williams & Nile Rodgers - Get Lucky (feat. Pharrell Williams and Nile Rodgers).flac",
+      "title": "Get Lucky (feat. Pharrell Williams and Nile Rodgers)",
+      "artist": "Daft Punk, Pharrell Williams & Nile Rodgers",
+      "bpm": 117.5,
+      "duration": 369.6,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.67,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 32.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 127.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 163.0,
+          "energia": 0.5,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 209.0,
+          "energia": 0.61,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 259.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 300.0,
+          "energia": 0.61,
+          "clase": "suave",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 354.6,
+          "energia": 0.8,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 110,
+      "file": "Still Corners - Beginning to Blue - 2023 Remaster.flac",
+      "title": "Beginning to Blue - 2023 Remaster",
+      "artist": "Still Corners",
+      "bpm": 136.0,
+      "duration": 191.8,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.17,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 38.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 69.0,
+          "energia": 0.75,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 103.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 134.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 176.8,
+          "energia": 0.84,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "file": "Belanova - Baila Mi Corazón (Album Version).flac",
+      "title": "Baila Mi Corazón (Album Version)",
+      "artist": "Belanova",
+      "bpm": 129.2,
+      "duration": 215.7,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.12,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 49.0,
+          "energia": 0.87,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 80.0,
+          "energia": 0.82,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 114.0,
+          "energia": 0.53,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 165.0,
+          "energia": 0.89,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 200.7,
+          "energia": 0.73,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "file": "Michael Jackson - Beat It.flac",
+      "title": "Beat It",
+      "artist": "Michael Jackson",
+      "bpm": 136.0,
+      "duration": 258.2,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.59,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 32.0,
+          "energia": 0.71,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 67.0,
+          "energia": 0.92,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 115.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 153.0,
+          "energia": 0.55,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 199.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 243.2,
+          "energia": 0.72,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 113,
+      "file": "Coldplay - Strawberry Swing (Live in Madrid, 2008).flac",
+      "title": "Strawberry Swing (Live in Madrid, 2008)",
+      "artist": "Coldplay",
+      "bpm": 172.3,
+      "duration": 256.4,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.08,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 31.0,
+          "energia": 0.32,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 66.0,
+          "energia": 0.39,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 101.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 137.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 190.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 241.4,
+          "energia": 0.74,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 114,
+      "file": "Martin Solveig & Dragonette - Hello (feat. Dragonette).flac",
+      "title": "Hello (feat. Dragonette)",
+      "artist": "Martin Solveig & Dragonette",
+      "bpm": 129.2,
+      "duration": 191.4,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.38,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 57.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 97.0,
+          "energia": 0.33,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 133.0,
+          "energia": 0.36,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 176.4,
+          "energia": 0.77,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 115,
+      "file": "Coldplay - Yes.flac",
+      "title": "Yes",
+      "artist": "Coldplay",
+      "bpm": 107.7,
+      "duration": 426.7,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.26,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 41.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 78.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 125.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 170.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 244.0,
+          "energia": 0.02,
+          "clase": "suave",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 286.0,
+          "energia": 0.61,
+          "clase": "suave",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 411.7,
+          "energia": 0.76,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 116,
+      "file": "NoMBe - Wait.flac",
+      "title": "Wait",
+      "artist": "NoMBe",
+      "bpm": 99.4,
+      "duration": 214.3,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.37,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 48.0,
+          "energia": 0.37,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 97.0,
+          "energia": 0.38,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 160.0,
+          "energia": 0.89,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 199.3,
+          "energia": 0.78,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 117,
+      "file": "Cigarettes After Sex - Apocalypse.flac",
+      "title": "Apocalypse",
+      "artist": "Cigarettes After Sex",
+      "bpm": 95.7,
+      "duration": 290.1,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.07,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 49.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 90.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 121.0,
+          "energia": 0.54,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 186.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 217.0,
+          "energia": 0.25,
+          "clase": "suave",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 275.1,
+          "energia": 0.81,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 118,
+      "file": "MisterWives - Our Own House.flac",
+      "title": "Our Own House",
+      "artist": "MisterWives",
+      "bpm": 63.0,
+      "duration": 232.2,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.14,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 39.0,
+          "energia": 0.32,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 71.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 115.0,
+          "energia": 0.32,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 147.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 185.0,
+          "energia": 0.67,
+          "clase": "suave",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 217.2,
+          "energia": 0.84,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 119,
+      "file": "Baiao, Reverb Chamber - Porque Ya Te Extraño.flac",
+      "title": "Porque Ya Te Extraño",
+      "artist": "Baiao, Reverb Chamber",
+      "bpm": 143.6,
+      "duration": 300.4,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.57,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 43.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 80.0,
+          "energia": 0.19,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 115.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 161.0,
+          "energia": 0.69,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 197.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 229.0,
+          "energia": 0.11,
+          "clase": "suave",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 285.4,
+          "energia": 0.79,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "file": "Gibran Alcocer - Idea 22.flac",
+      "title": "Idea 22",
+      "artist": "Gibran Alcocer",
+      "bpm": 136.0,
+      "duration": 152.0,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.39,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 61.0,
+          "energia": 0.09,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 95.0,
+          "energia": 0.41,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 137.0,
+          "energia": 0.56,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 121,
+      "file": "girl in red - bad idea!.flac",
+      "title": "bad idea!",
+      "artist": "girl in red",
+      "bpm": 161.5,
+      "duration": 219.6,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.61,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 58.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 108.0,
+          "energia": 0.92,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 145.0,
+          "energia": 0.55,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 204.6,
+          "energia": 0.82,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 122,
+      "file": "Coldplay - Viva La Vida.flac",
+      "title": "Viva La Vida",
+      "artist": "Coldplay",
+      "bpm": 136.0,
+      "duration": 242.4,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.29,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 39.0,
+          "energia": 0.51,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 78.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 121.0,
+          "energia": 0.51,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 170.0,
+          "energia": 0.38,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 227.4,
+          "energia": 0.61,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 123,
+      "file": "Crystal Castles - Crimewave.flac",
+      "title": "Crimewave",
+      "artist": "Crystal Castles",
+      "bpm": 117.5,
+      "duration": 258.5,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.09,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 58.0,
+          "energia": 0.87,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 95.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 139.0,
+          "energia": 0.69,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 199.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 243.5,
+          "energia": 0.82,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 124,
+      "file": "Maroon 5 - Animals (1).flac",
+      "title": "Animals (1)",
+      "artist": "Maroon 5",
+      "bpm": 95.7,
+      "duration": 231.1,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.22,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 32.0,
+          "energia": 0.69,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 78.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 131.0,
+          "energia": 0.98,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 184.0,
+          "energia": 0.28,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 216.1,
+          "energia": 0.8,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 125,
+      "file": "Cage The Elephant - Cigarette Daydreams.flac",
+      "title": "Cigarette Daydreams",
+      "artist": "Cage The Elephant",
+      "bpm": 112.3,
+      "duration": 208.8,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.05,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 39.0,
+          "energia": 0.21,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 86.0,
+          "energia": 0.41,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 120.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 151.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 193.8,
+          "energia": 0.75,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 126,
+      "file": "lázaro suplika dopamina - Puchito.flac",
+      "title": "Puchito",
+      "artist": "lázaro suplika dopamina",
+      "bpm": 95.7,
+      "duration": 220.1,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.06,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 60.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 102.0,
+          "energia": 0.55,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 146.0,
+          "energia": 0.18,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 205.1,
+          "energia": 0.72,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 127,
+      "file": "Her's - What Once Was.flac",
+      "title": "What Once Was",
+      "artist": "Her's",
+      "bpm": 95.7,
+      "duration": 255.1,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.29,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 56.0,
+          "energia": 0.59,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 96.0,
+          "energia": 0.88,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 131.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 166.0,
+          "energia": 0.51,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 206.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 240.1,
+          "energia": 0.77,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 128,
+      "file": "Michael Jackson - Wanna Be Startin' Somethin'.flac",
+      "title": "Wanna Be Startin' Somethin'",
+      "artist": "Michael Jackson",
+      "bpm": 161.5,
+      "duration": 363.4,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.82,
+          "clase": "energico",
+          "tipo": "intro"
+        },
+        {
+          "t": 58.0,
+          "energia": 0.89,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 101.0,
+          "energia": 0.91,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 146.0,
+          "energia": 0.71,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 199.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 249.0,
+          "energia": 0.71,
+          "clase": "suave",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 294.0,
+          "energia": 0.96,
+          "clase": "energico",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 348.4,
+          "energia": 0.81,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 129,
+      "file": "Ennio Morricone - The Good, The Bad And The Ugly (2004 Remaster).flac",
+      "title": "The Good, The Bad And The Ugly (2004 Remaster)",
+      "artist": "Ennio Morricone",
+      "bpm": 117.5,
+      "duration": 162.1,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.08,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 35.0,
+          "energia": 0.18,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 96.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 147.1,
+          "energia": 0.58,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 130,
+      "file": "Coldplay - God Put a Smile upon Your Face (Live).flac",
+      "title": "God Put a Smile upon Your Face (Live)",
+      "artist": "Coldplay",
+      "bpm": 143.6,
+      "duration": 322.0,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.34,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 47.0,
+          "energia": 0.04,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 95.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 162.0,
+          "energia": 0.81,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 195.0,
+          "energia": 0.83,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 234.0,
+          "energia": 0.81,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 266.0,
+          "energia": 0.92,
+          "clase": "energico",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 307.0,
+          "energia": 0.74,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 131,
+      "file": "Adele - Skyfall.flac",
+      "title": "Skyfall",
+      "artist": "Adele",
+      "bpm": 152.0,
+      "duration": 286.5,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.19,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 36.0,
+          "energia": 0.06,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 75.0,
+          "energia": 0.18,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 109.0,
+          "energia": 0.73,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 149.0,
+          "energia": 0.93,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 180.0,
+          "energia": 0.49,
+          "clase": "suave",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 223.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 271.5,
+          "energia": 0.61,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 132,
+      "file": "Irokz - FUNK UNIVERSO.flac",
+      "title": "FUNK UNIVERSO",
+      "artist": "Irokz",
+      "bpm": 129.2,
+      "duration": 127.5,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.17,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 48.0,
+          "energia": 0.24,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 112.5,
+          "energia": 0.68,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 133,
+      "file": "Mr.Kitty - After Dark.flac",
+      "title": "After Dark",
+      "artist": "Mr.Kitty",
+      "bpm": 143.6,
+      "duration": 259.1,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.13,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 46.0,
+          "energia": 0.67,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 78.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 114.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 145.0,
+          "energia": 0.21,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 194.0,
+          "energia": 0.5,
+          "clase": "suave",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 244.1,
+          "energia": 0.8,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 134,
+      "file": "Woodkid - Iron.flac",
+      "title": "Iron",
+      "artist": "Woodkid",
+      "bpm": 129.2,
+      "duration": 201.7,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.23,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 38.0,
+          "energia": 0.78,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 73.0,
+          "energia": 0.59,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 120.0,
+          "energia": 0.2,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 156.0,
+          "energia": 0.79,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 186.7,
+          "energia": 0.78,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 135,
+      "file": "Los Bunkers - Bailando Solo.flac",
+      "title": "Bailando Solo",
+      "artist": "Los Bunkers",
+      "bpm": 117.5,
+      "duration": 267.8,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.31,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 48.0,
+          "energia": 0.48,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 86.0,
+          "energia": 0.93,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 131.0,
+          "energia": 0.0,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 172.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 216.0,
+          "energia": 0.83,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 252.8,
+          "energia": 0.75,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 136,
+      "file": "The Marías - Run Your Mouth.flac",
+      "title": "Run Your Mouth",
+      "artist": "The Marías",
+      "bpm": 112.3,
+      "duration": 160.0,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.11,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 38.0,
+          "energia": 0.79,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 75.0,
+          "energia": 0.93,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 113.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 145.0,
+          "energia": 0.85,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 137,
+      "file": "Beach Weather - Sex, Drugs, Etc..flac",
+      "title": "Sex, Drugs, Etc.",
+      "artist": "Beach Weather",
+      "bpm": 143.6,
+      "duration": 196.8,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.14,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 37.0,
+          "energia": 0.69,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 71.0,
+          "energia": 0.52,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 115.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 149.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 181.8,
+          "energia": 0.82,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 138,
+      "file": "ezios family.flac",
+      "title": "ezios family",
+      "artist": "",
+      "bpm": 129.2,
+      "duration": 237.9,
+      "mood": "accion",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.06,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 68.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 102.0,
+          "energia": 0.13,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 136.0,
+          "energia": 0.48,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 171.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 222.9,
+          "energia": 0.56,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 139,
+      "file": "Jesper Kyd - Disposal Unit (Imperium Mix).flac",
+      "title": "Disposal Unit (Imperium Mix)",
+      "artist": "Jesper Kyd",
+      "bpm": 99.4,
+      "duration": 213.2,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.64,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 40.0,
+          "energia": 0.37,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 78.0,
+          "energia": 0.79,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 110.0,
+          "energia": 0.49,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 143.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 198.2,
+          "energia": 0.7,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 140,
+      "file": "Kygo - Stole the Show.flac",
+      "title": "Stole the Show",
+      "artist": "Kygo",
+      "bpm": 99.4,
+      "duration": 222.8,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.09,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 41.0,
+          "energia": 0.06,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 100.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 145.0,
+          "energia": 0.93,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 207.8,
+          "energia": 0.5,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 141,
+      "file": "The xx - Intro.flac",
+      "title": "Intro",
+      "artist": "The xx",
+      "bpm": 99.4,
+      "duration": 127.9,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.0,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 34.0,
+          "energia": 0.52,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 79.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 112.9,
+          "energia": 0.66,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 142,
+      "file": "Hans Zimmer - Time.flac",
+      "title": "Time",
+      "artist": "Hans Zimmer",
+      "bpm": 123.0,
+      "duration": 275.6,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.06,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 41.0,
+          "energia": 0.17,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 79.0,
+          "energia": 0.27,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 126.0,
+          "energia": 0.55,
+          "clase": "energico",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 164.0,
+          "energia": 0.8,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 195.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 260.6,
+          "energia": 0.32,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 143,
+      "file": "Fleetwood Mac - The Chain (2004 Remaster).flac",
+      "title": "The Chain (2004 Remaster)",
+      "artist": "Fleetwood Mac",
+      "bpm": 76.0,
+      "duration": 269.8,
+      "mood": "relax",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.0,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 41.0,
+          "energia": 0.23,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 82.0,
+          "energia": 0.09,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 117.0,
+          "energia": 0.25,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 166.0,
+          "energia": 0.88,
+          "clase": "energico",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 218.0,
+          "energia": 0.82,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 254.8,
+          "energia": 0.44,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 144,
+      "file": "Major Lazer - Lean On (feat. MØ & DJ Snake).flac",
+      "title": "Lean On (feat. MØ & DJ Snake)",
+      "artist": "Major Lazer",
+      "bpm": 99.4,
+      "duration": 176.6,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.19,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 63.0,
+          "energia": 0.99,
+          "clase": "energico",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 112.0,
+          "energia": 1.0,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 161.6,
+          "energia": 0.75,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 145,
+      "file": "Woodkid - To Ashes and Blood (from the series Arcane League of Legends).flac",
+      "title": "To Ashes and Blood (from the series Arcane League of Legends)",
+      "artist": "Woodkid",
+      "bpm": 112.3,
+      "duration": 245.6,
+      "mood": "enfoque",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.54,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 59.0,
+          "energia": 0.49,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 104.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 139.0,
+          "energia": 0.19,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 186.0,
+          "energia": 0.63,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 230.6,
+          "energia": 0.74,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    },
+    {
+      "id": 146,
+      "file": "Tame Impala - Let It Happen.flac",
+      "title": "Let It Happen",
+      "artist": "Tame Impala",
+      "bpm": 123.0,
+      "duration": 467.6,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.03,
+          "clase": "suave",
+          "tipo": "intro"
+        },
+        {
+          "t": 55.0,
+          "energia": 0.35,
+          "clase": "suave",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 110.0,
+          "energia": 0.42,
+          "clase": "suave",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 159.0,
+          "energia": 0.53,
+          "clase": "suave",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 292.0,
+          "energia": 0.48,
+          "clase": "suave",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 366.0,
+          "energia": 0.95,
+          "clase": "energico",
+          "tipo": "segmento_6"
+        },
+        {
+          "t": 408.0,
+          "energia": 0.94,
+          "clase": "energico",
+          "tipo": "segmento_7"
+        },
+        {
+          "t": 452.6,
+          "energia": 0.8,
+          "clase": "energico",
+          "tipo": "outro"
+        }
+      ]
+    }
+  ]
+}

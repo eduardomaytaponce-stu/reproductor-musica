@@ -1,0 +1,2509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud-Fi · Reproductor Ambiental</title>
+    <!-- Tipografías: Serif para títulos, Mono/Sans para datos técnicos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           AMBIENT ETHEREAL / CLOUD-FI FOCUS  (Ghibli-Moderna)
+           Paleta derivada de perfil_estetica.json
+           ============================================================ */
+        :root {
+            /* Aurora — atardecer arequipeño transicionando a la noche */
+            --aurora-crema:   rgba(253, 230, 138, 0.15);
+            --aurora-rosa:    rgba(244, 63, 94, 0.15);
+            --aurora-indigo:  rgba(99, 102, 241, 0.15);
+            --aurora-noche:   rgba(30, 41, 59, 0.95);
+            --noche-solida:   #1e293b;
+            --noche-profunda: #0f172a;
+
+            /* Frosted glass */
+            --glass-bg:     rgba(248, 250, 252, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-blur:   24px;
+
+            /* Acentos */
+            --crema:   #fef08a;
+            --lavanda: #c084fc;
+
+            /* Texto */
+            --texto-titulo:  #f8fafc;
+            --texto-tecnico: #cbd5e1;
+            --texto-tenue:   #94a3b8;
+
+            /* Espectro del visualizador */
+            --espectro-1: rgba(192, 132, 252, 0.6);
+            --espectro-2: rgba(253, 230, 138, 0.6);
+
+            /* Color dinámico de la sombra/glow de la carátula */
+            --caratula-color-shadow: rgba(192, 132, 252, 0.45);
+
+            --radio-suave: 28px;
+            --radio-medio: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--texto-tecnico);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(170deg, var(--noche-solida) 0%, var(--noche-profunda) 100%);
+            position: relative;
+        }
+
+        /* ----------------------------------------------------------
+           1. FONDO AURORA — gradiente líquido animado en bucle
+           ---------------------------------------------------------- */
+        .aurora {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+            /* Velo nocturno que se intensifica/aclara como un atardecer */
+            animation: aurora-twilight 28s ease-in-out infinite alternate;
+        }
+
+        .aurora-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.9;
+            mix-blend-mode: screen;
+        }
+
+        /* Crema cálida (sol bajando) arriba a la izquierda */
+        .blob-crema {
+            width: 55vw; height: 55vw;
+            top: -18vw; left: -10vw;
+            background: radial-gradient(circle, rgba(253, 230, 138, 0.55) 0%, rgba(253, 230, 138, 0) 70%);
+            animation: drift-a 26s ease-in-out infinite alternate;
+        }
+        /* Rosa atardecer al centro-derecha */
+        .blob-rosa {
+            width: 50vw; height: 50vw;
+            top: 8vw; right: -12vw;
+            background: radial-gradient(circle, rgba(244, 63, 94, 0.45) 0%, rgba(244, 63, 94, 0) 70%);
+            animation: drift-b 32s ease-in-out infinite alternate;
+        }
+        /* Índigo nocturno abarcando abajo */
+        .blob-indigo {
+            width: 70vw; height: 70vw;
+            bottom: -28vw; left: 15vw;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.5) 0%, rgba(99, 102, 241, 0) 70%);
+            animation: drift-c 30s ease-in-out infinite alternate;
+        }
+        /* Toque lavanda flotante */
+        .blob-lavanda {
+            width: 35vw; height: 35vw;
+            bottom: 5vw; right: 20vw;
+            background: radial-gradient(circle, rgba(192, 132, 252, 0.4) 0%, rgba(192, 132, 252, 0) 70%);
+            animation: drift-a 24s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes drift-a {
+            0%   { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(8vw, 6vw) scale(1.18); }
+        }
+        @keyframes drift-b {
+            0%   { transform: translate(0, 0) scale(1.1); }
+            100% { transform: translate(-7vw, 4vw) scale(0.9); }
+        }
+        @keyframes drift-c {
+            0%   { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(-6vw, -5vw) scale(1.2); }
+        }
+        /* Atardecer -> noche: el velo oscuro entra y sale lentamente */
+        @keyframes aurora-twilight {
+            0%   { background: radial-gradient(120% 90% at 50% 0%, rgba(30,41,59,0) 40%, rgba(15,23,42,0.65) 100%); }
+            100% { background: radial-gradient(120% 110% at 50% 30%, rgba(15,23,42,0.2) 20%, rgba(15,23,42,0.9) 100%); }
+        }
+
+        /* Grano sutil para textura analógica */
+        .aurora::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        /* ----------------------------------------------------------
+           2. FROSTED GLASS — contenedores nube/crema/lavanda
+           ---------------------------------------------------------- */
+        .app-container {
+            width: 95vw;
+            height: 90vh;
+            max-width: 1400px;
+            max-height: 860px;
+            display: grid;
+            grid-template-columns: 320px 1fr 340px;
+            gap: 22px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+            -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radio-suave);
+            padding: 22px;
+            box-shadow: 0 30px 80px rgba(15, 23, 42, 0.55),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            z-index: 10;
+            position: relative;
+        }
+
+        .glass-panel {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radio-medio);
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+        /* Tintes suaves por panel */
+        .sidebar  { background: linear-gradient(160deg, rgba(192,132,252,0.06), rgba(248,250,252,0.03)); }
+        .chat-panel { background: linear-gradient(160deg, rgba(253,240,138,0.05), rgba(248,250,252,0.03)); }
+
+        .sidebar { display: flex; flex-direction: column; gap: 16px; }
+
+        /* Títulos de sección en serif */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            color: var(--texto-titulo);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .section-title span {
+            color: var(--lavanda);
+            font-style: italic;
+        }
+        .chat-panel .section-title span { color: var(--crema); }
+
+        /* Datos técnicos en mono */
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        .scan-box {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 14px;
+            background: rgba(15, 23, 42, 0.25);
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .scan-box label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--texto-tenue);
+        }
+
+        .input-group { display: flex; gap: 8px; }
+
+        input[type="text"] {
+            flex: 1;
+            background: rgba(248, 250, 252, 0.06);
+            border: 1px solid transparent;
+            border-radius: 14px;
+            padding: 10px 14px;
+            color: var(--texto-titulo);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            outline: none;
+            transition: all 0.35s ease;
+        }
+        input[type="text"]::placeholder { color: var(--texto-tenue); }
+        input[type="text"]:focus {
+            background: rgba(248, 250, 252, 0.1);
+            box-shadow: 0 0 0 2px rgba(192, 132, 252, 0.35);
+        }
+
+        /* ----------------------------------------------------------
+           3. CONTROLES FLOTANTES ORGÁNICOS (sin bordes duros)
+           ---------------------------------------------------------- */
+        .btn {
+            background: linear-gradient(135deg, rgba(192,132,252,0.9) 0%, rgba(167,139,250,0.85) 100%);
+            border: none;
+            color: #1e1b2e;
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.82rem;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            box-shadow: 0 6px 20px rgba(192, 132, 252, 0.3);
+        }
+        .btn:hover { animation: floating-leaf-sway 0.6s ease-out; box-shadow: 0 10px 28px rgba(192, 132, 252, 0.45); }
+        .btn:active { transform: scale(0.97); }
+
+        .btn-neon {
+            background: linear-gradient(135deg, rgba(253,230,138,0.95) 0%, rgba(250,204,21,0.85) 100%);
+            color: #422006;
+            box-shadow: 0 6px 20px rgba(253, 230, 138, 0.3);
+        }
+        .btn-neon:hover { box-shadow: 0 10px 28px rgba(253, 230, 138, 0.45); }
+
+        /* Balanceo de hoja flotante */
+        @keyframes floating-leaf-sway {
+            0%   { transform: translateY(0) rotate(0deg); }
+            30%  { transform: translateY(-4px) rotate(-2deg); }
+            60%  { transform: translateY(-2px) rotate(1.5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        .songs-list-container {
+            flex: 1;
+            overflow-y: auto;
+            margin-top: 4px;
+            padding-right: 6px;
+        }
+
+        /* Buscador de canciones */
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(248, 250, 252, 0.06);
+            border-radius: 14px;
+            transition: box-shadow 0.3s ease;
+        }
+        .search-box:focus-within { box-shadow: 0 0 0 2px rgba(192, 132, 252, 0.35); }
+        .search-icon { font-size: 0.8rem; opacity: 0.7; }
+        .search-box input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--texto-titulo);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+        }
+        .search-box input::placeholder { color: var(--texto-tenue); }
+        .search-count {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--texto-tenue);
+            white-space: nowrap;
+        }
+
+        /* Pestañas Biblioteca / Playlists */
+        .sidebar-tabs { display: flex; gap: 8px; }
+        .sidebar-tab {
+            flex: 1; padding: 8px; border: none; border-radius: 50px; cursor: pointer;
+            font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 600;
+            background: rgba(248, 250, 252, 0.05); color: var(--texto-tenue);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .sidebar-tab.active {
+            background: linear-gradient(135deg, rgba(192,132,252,0.25), rgba(253,230,138,0.15));
+            color: var(--texto-titulo);
+        }
+        .sidebar-view { flex: 1; display: flex; flex-direction: column; gap: 14px; min-height: 0; }
+
+        /* Playlists */
+        .playlists-container {
+            flex: 1; overflow-y: auto; display: flex; flex-direction: column;
+            gap: 10px; padding-right: 6px;
+        }
+        .playlists-container::-webkit-scrollbar { width: 5px; }
+        .playlists-container::-webkit-scrollbar-thumb { background: rgba(192,132,252,0.25); border-radius: 3px; }
+        .playlist-card {
+            background: rgba(248, 250, 252, 0.03); border-radius: 14px; padding: 12px 14px;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        .pl-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+        .playlist-name { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--texto-titulo); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .playlist-count { font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; color: var(--texto-tenue); white-space: nowrap; }
+        .playlist-actions { display: flex; gap: 6px; }
+        .pl-btn {
+            border: none; border-radius: 50px; padding: 5px 12px; font-size: 0.72rem;
+            cursor: pointer; font-family: 'Inter', sans-serif; transition: filter 0.2s ease;
+        }
+        .pl-btn:hover { filter: brightness(1.12); }
+        .pl-btn.play { background: linear-gradient(135deg, var(--crema), var(--lavanda)); color: #1e1b2e; font-weight: 600; }
+        .pl-btn.save { background: rgba(192, 132, 252, 0.2); color: #e9d5ff; }
+        .pl-btn.del { background: rgba(244, 63, 94, 0.18); color: #fca5a5; }
+        .pl-section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--texto-tenue); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+        /* Botón "+" para añadir canción a playlist */
+        .song-add {
+            flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+            border: none; cursor: pointer; font-size: 1rem; line-height: 1;
+            background: rgba(192, 132, 252, 0.15); color: #e9d5ff;
+            opacity: 0; transition: opacity 0.2s ease, filter 0.2s ease;
+        }
+        .song-item:hover .song-add { opacity: 1; }
+        .song-add:hover { filter: brightness(1.2); }
+
+        /* Menú flotante de "añadir a playlist" */
+        .add-menu {
+            position: fixed; z-index: 100; min-width: 200px; max-height: 320px; overflow-y: auto;
+            background: rgba(30, 27, 46, 0.96); backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border); border-radius: 14px; padding: 6px;
+            box-shadow: 0 12px 40px rgba(15, 23, 42, 0.6);
+        }
+        .add-menu-item {
+            padding: 9px 12px; border-radius: 10px; cursor: pointer;
+            font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--texto-tecnico);
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .add-menu-item:hover { background: rgba(192, 132, 252, 0.18); color: var(--texto-titulo); }
+        .add-menu-item.nueva { color: var(--crema); font-weight: 600; border-bottom: 1px solid var(--glass-border); margin-bottom: 4px; }
+
+        /* Toast de confirmación */
+        .toast {
+            position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px);
+            background: linear-gradient(135deg, rgba(192,132,252,0.95), rgba(167,139,250,0.95));
+            color: #1e1b2e; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600;
+            padding: 10px 20px; border-radius: 50px; z-index: 200;
+            opacity: 0; transition: opacity 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 8px 30px rgba(192, 132, 252, 0.4);
+        }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        /* Scrollbars suaves */
+        .songs-list-container::-webkit-scrollbar,
+        .chat-messages::-webkit-scrollbar { width: 5px; }
+        .songs-list-container::-webkit-scrollbar-track,
+        .chat-messages::-webkit-scrollbar-track { background: transparent; }
+        .songs-list-container::-webkit-scrollbar-thumb,
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: rgba(192, 132, 252, 0.25);
+            border-radius: 3px;
+        }
+
+        .song-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 14px;
+            border-radius: 16px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            background: rgba(248, 250, 252, 0.015);
+            border: 1px solid transparent;
+        }
+        .song-item:hover {
+            background: rgba(248, 250, 252, 0.06);
+            transform: translateX(3px);
+        }
+        .song-item.active {
+            background: linear-gradient(135deg, rgba(192,132,252,0.16), rgba(253,230,138,0.06));
+            box-shadow: 0 4px 16px rgba(192, 132, 252, 0.18);
+        }
+
+        .song-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: rgba(248, 250, 252, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--texto-tenue);
+            font-size: 1.05rem;
+            flex-shrink: 0;
+            transition: all 0.35s ease;
+        }
+        .song-item.active .song-icon {
+            background: linear-gradient(135deg, var(--lavanda), var(--crema));
+            color: #1e1b2e;
+            box-shadow: 0 0 16px var(--caratula-color-shadow);
+        }
+
+        .song-details { flex: 1; overflow: hidden; }
+        .song-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--texto-titulo);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .song-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--texto-tenue);
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3px;
+        }
+        .song-bpm { color: var(--lavanda); font-weight: 500; }
+        .song-author {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            color: var(--texto-tenue);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: 1px;
+        }
+        .current-author {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--texto-tenue);
+            margin: -2px 0 8px;
+            max-width: 460px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* ----------------------------------------------------------
+           CENTRO: VISUALIZADOR + CARÁTULA + CONTROLES
+           ---------------------------------------------------------- */
+        .player-center {
+            display: grid;
+            grid-template-rows: 1fr auto auto;
+            gap: 22px;
+        }
+
+        .visualizer-card {
+            position: relative;
+            background: linear-gradient(180deg, rgba(15,23,42,0.35), rgba(30,41,59,0.2));
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radio-medio);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            padding: 24px;
+        }
+
+        .now-playing-banner {
+            position: absolute;
+            top: 24px;
+            left: 28px;
+            right: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            z-index: 5;
+        }
+
+        .track-info-large h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.85rem;
+            font-weight: 600;
+            line-height: 1.15;
+            color: var(--texto-titulo);
+            margin-bottom: 8px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: 460px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Ficha técnica en mono */
+        .tech-readout {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--texto-tecnico);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .tech-readout strong { color: var(--crema); font-weight: 700; }
+        .tech-tag {
+            padding: 2px 8px;
+            border-radius: 6px;
+            background: rgba(192, 132, 252, 0.18);
+            color: var(--lavanda);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* 4. CARÁTULA — foco visual con sombra difuminada dinámica */
+        .disc-wrapper {
+            width: 168px;
+            height: 168px;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle at 50% 50%, rgba(30,41,59,0.9) 0%, rgba(15,23,42,1) 60%),
+                conic-gradient(from 0deg, rgba(192,132,252,0.25), rgba(253,230,138,0.2), rgba(244,63,94,0.18), rgba(192,132,252,0.25));
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            animation: spin 9s linear infinite;
+            animation-play-state: paused;
+            /* drop-shadow difuminado y dinámico (color desde --caratula-color-shadow) */
+            filter: drop-shadow(0 18px 45px var(--caratula-color-shadow));
+            transition: filter 0.6s ease;
+        }
+        .disc-wrapper::before {
+            content: "";
+            position: absolute;
+            inset: 14px;
+            border-radius: 50%;
+            border: 1px solid rgba(248, 250, 252, 0.06);
+        }
+        .disc-wrapper.playing {
+            animation-play-state: running;
+            filter: drop-shadow(0 22px 60px var(--caratula-color-shadow));
+        }
+        .disc-center {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavanda), var(--crema));
+            border: 5px solid var(--noche-profunda);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px var(--caratula-color-shadow);
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to   { transform: rotate(360deg); }
+        }
+
+        .waveform-canvas {
+            width: 100%;
+            height: 170px;
+            margin-top: 32px;
+            z-index: 2;
+        }
+
+        .transition-curve-display {
+            position: absolute;
+            bottom: 18px;
+            left: 28px;
+            right: 28px;
+            height: 38px;
+            background: rgba(248, 250, 252, 0.03);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--texto-tenue);
+            gap: 14px;
+        }
+        .curve-active-status { color: var(--lavanda); font-weight: 500; }
+
+        .progress-bar-card {
+            padding: 18px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .time-info {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--texto-tenue);
+        }
+        .slider-wrapper {
+            width: 100%;
+            height: 6px;
+            background: rgba(248, 250, 252, 0.08);
+            border-radius: 50px;
+            position: relative;
+            cursor: pointer;
+        }
+        .slider-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--lavanda) 0%, var(--crema) 100%);
+            border-radius: 50px;
+            width: 0%;
+            box-shadow: 0 0 12px rgba(192, 132, 252, 0.5);
+        }
+
+        .controls-card {
+            display: grid;
+            grid-template-columns: 1fr auto 1.5fr;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .audio-buttons { display: flex; align-items: center; gap: 16px; }
+
+        /* Botones circulares orgánicos sin bordes duros */
+        .btn-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(248, 250, 252, 0.06);
+            border: none;
+            color: var(--texto-titulo);
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn-circle:hover {
+            background: rgba(248, 250, 252, 0.12);
+            animation: floating-leaf-sway 0.6s ease-out;
+        }
+        .btn-circle.btn-play {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--crema), var(--lavanda));
+            color: #1e1b2e;
+            font-size: 1.4rem;
+            box-shadow: 0 8px 24px var(--caratula-color-shadow);
+        }
+        .btn-circle.btn-play:hover {
+            box-shadow: 0 10px 32px rgba(253, 230, 138, 0.5);
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--texto-tenue);
+            font-size: 0.9rem;
+        }
+        .volume-slider {
+            width: 80px;
+            height: 5px;
+            background: rgba(248, 250, 252, 0.1);
+            border-radius: 50px;
+            position: relative;
+            cursor: pointer;
+        }
+        .volume-progress {
+            width: 80%;
+            height: 100%;
+            background: var(--crema);
+            border-radius: 50px;
+        }
+
+        .dj-mix-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-left: 24px;
+            border-left: 1px solid var(--glass-border);
+        }
+        .dj-panel-header {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: var(--crema);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* Pill de modo de transición: Nativo / Pro */
+        .mode-pill {
+            border: none; border-radius: 50px; padding: 3px 12px; cursor: pointer;
+            font-family: 'JetBrains Mono', monospace; font-size: 0.64rem; font-weight: 700;
+            letter-spacing: 0.5px; text-transform: none;
+            background: rgba(192, 132, 252, 0.2); color: #e9d5ff;
+            transition: filter 0.2s ease;
+        }
+        .mode-pill:hover { filter: brightness(1.12); }
+        .mode-pill.pro { background: linear-gradient(135deg, var(--crema), rgba(244, 63, 94, 0.75)); color: #1e1b2e; }
+        .effect-selectors {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+        .effect-btn {
+            background: rgba(248, 250, 252, 0.03);
+            border: none;
+            border-radius: 50px;
+            padding: 8px 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.74rem;
+            color: var(--texto-tenue);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .effect-btn:hover {
+            background: rgba(248, 250, 252, 0.08);
+            color: var(--texto-titulo);
+        }
+        .effect-btn.active {
+            background: linear-gradient(135deg, rgba(192,132,252,0.25), rgba(253,230,138,0.15));
+            color: var(--texto-titulo);
+            box-shadow: 0 4px 14px rgba(192, 132, 252, 0.25);
+        }
+
+        /* ----------------------------------------------------------
+           DERECHA: CHAT DJ AI
+           ---------------------------------------------------------- */
+        .chat-panel { display: flex; flex-direction: column; height: 100%; }
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            margin: 8px 0 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            padding-right: 6px;
+        }
+        .chat-bubble {
+            max-width: 88%;
+            padding: 12px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            line-height: 1.45;
+        }
+        .chat-bubble.assistant {
+            background: rgba(248, 250, 252, 0.05);
+            color: var(--texto-tecnico);
+            align-self: flex-start;
+            border-bottom-left-radius: 6px;
+        }
+        .chat-bubble.assistant b { color: var(--crema); }
+        .chat-bubble.user {
+            background: linear-gradient(135deg, var(--lavanda) 0%, rgba(167,139,250,0.9) 100%);
+            color: #1e1b2e;
+            align-self: flex-end;
+            border-bottom-right-radius: 6px;
+            box-shadow: 0 4px 14px rgba(192, 132, 252, 0.3);
+        }
+        .chat-input-wrapper { display: flex; gap: 8px; }
+
+        /* Indicador de Asistente de Voz */
+        .voice-indicator {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            color: var(--texto-tenue);
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s ease;
+        }
+        .voice-indicator.connected {
+            color: rgba(253, 230, 138, 0.85);
+            background: rgba(253, 230, 138, 0.05);
+            border-color: rgba(253, 230, 138, 0.15);
+        }
+        .voice-indicator.listening {
+            color: #fca5a5;
+            background: rgba(239, 68, 68, 0.12);
+            border-color: rgba(239, 68, 68, 0.35);
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.25);
+        }
+        .voice-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #64748b;
+            transition: all 0.3s ease;
+        }
+        .voice-indicator.connected .voice-dot {
+            background: #34d399; /* Green for ready */
+            box-shadow: 0 0 6px rgba(52, 211, 153, 0.4);
+        }
+        .voice-indicator.listening .voice-dot {
+            background: #ef4444; /* Red flashing for listening */
+            animation: pulse-red 1s infinite alternate;
+        }
+        @keyframes pulse-red {
+            0% { transform: scale(1); opacity: 0.6; box-shadow: 0 0 2px #ef4444; }
+            100% { transform: scale(1.4); opacity: 1; box-shadow: 0 0 8px #ef4444; }
+        }
+
+        /* Flash de beat en el visualizador */
+        .beat-flash {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle, rgba(192, 132, 252, 0.1) 0%, rgba(0,0,0,0) 75%);
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.15s ease;
+        }
+        .beat-flash.active { opacity: 1; }
+
+        .deck-status {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            font-weight: 500;
+            padding: 5px 11px;
+            border-radius: 50px;
+            background: rgba(248, 250, 252, 0.05);
+            color: var(--texto-tenue);
+            white-space: nowrap;
+        }
+        .deck-status.active-deck-label {
+            background: rgba(192, 132, 252, 0.18);
+            color: #e9d5ff;
+        }
+
+        /* Columna derecha del banner: interruptor de modo + estado de deck */
+        .banner-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        /* Interruptor Hi-Fi <-> DJ */
+        .mode-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            color: #1e1b2e;
+            background: linear-gradient(135deg, var(--crema), var(--lavanda));
+            box-shadow: 0 4px 16px rgba(253, 230, 138, 0.3);
+            transition: box-shadow 0.3s ease, filter 0.3s ease;
+        }
+        .mode-toggle:hover { animation: floating-leaf-sway 0.6s ease-out; }
+        .mode-toggle .mode-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: #16a34a;
+            box-shadow: 0 0 8px #16a34a;
+        }
+        /* Modo DJ: paleta lavanda/rosa, indica que NO es bit-perfect */
+        .mode-toggle.dj {
+            background: linear-gradient(135deg, var(--lavanda), rgba(244, 63, 94, 0.85));
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(192, 132, 252, 0.35);
+        }
+        .mode-toggle.dj .mode-dot { background: #f59e0b; box-shadow: 0 0 8px #f59e0b; }
+
+        /* Insignia de calidad bit-perfect */
+        .bitperfect-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 2px 8px;
+            border-radius: 6px;
+            background: rgba(22, 163, 74, 0.15);
+            color: #86efac;
+            white-space: nowrap;
+        }
+        .bitperfect-badge.degradado { background: rgba(245, 158, 11, 0.15); color: #fcd34d; }
+
+        .scanning-loader {
+            display: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.74rem;
+            color: var(--crema);
+            align-items: center;
+            gap: 8px;
+            margin-top: 2px;
+        }
+        .spinner {
+            width: 13px;
+            height: 13px;
+            border: 2px solid rgba(253, 230, 138, 0.25);
+            border-top-color: var(--crema);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Fondo aurora animado -->
+    <div class="aurora">
+        <div class="aurora-blob blob-crema"></div>
+        <div class="aurora-blob blob-rosa"></div>
+        <div class="aurora-blob blob-indigo"></div>
+        <div class="aurora-blob blob-lavanda"></div>
+    </div>
+
+    <div class="app-container">
+
+        <!-- LEFT PANEL: MUSIC LIBRARY -->
+        <div class="glass-panel sidebar">
+            <div class="sidebar-tabs">
+                <button class="sidebar-tab active" data-tab="biblioteca">Biblioteca</button>
+                <button class="sidebar-tab" data-tab="playlists">Playlists</button>
+            </div>
+
+            <!-- Vista: Biblioteca -->
+            <div class="sidebar-view" id="view-biblioteca">
+                <!-- Folder Scanner -->
+                <div class="scan-box">
+                    <label for="music-path">Directorio Local</label>
+                    <div class="input-group">
+                        <input type="text" id="music-path" value="/home/carloseduardo/Música/" placeholder="Ruta absoluta...">
+                        <button class="btn btn-neon" id="scan-btn">Escanear</button>
+                    </div>
+                    <div class="scanning-loader" id="scan-loader">
+                        <div class="spinner"></div>
+                        <span>Escaneando canciones...</span>
+                    </div>
+                </div>
+
+                <!-- Buscador de canciones -->
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="song-search" placeholder="Buscar canción o artista...">
+                    <span class="search-count" id="search-count"></span>
+                </div>
+
+                <!-- Songs List -->
+                <div class="songs-list-container" id="songs-list">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+
+            <!-- Vista: Playlists -->
+            <div class="sidebar-view" id="view-playlists" style="display:none;">
+                <button class="btn btn-neon" id="pl-autogen" style="width:100%;">✨ Auto-generar por mood</button>
+                <button class="btn" id="pl-new" style="width:100%;">➕ Nueva playlist vacía</button>
+                <div class="playlists-container" id="playlists-list">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
+
+        <!-- CENTER PANEL: PLAYER CONTROLS & VISUALIZER -->
+        <div class="player-center">
+
+            <!-- Real-time Visualizer Panel -->
+            <div class="visualizer-card">
+                <div class="beat-flash" id="beat-flash"></div>
+
+                <!-- Track Meta banner -->
+                <div class="now-playing-banner">
+                    <div class="track-info-large">
+                        <h2 id="current-title">Ninguna pista cargada</h2>
+                        <div class="current-author" id="current-author"></div>
+                        <p class="tech-readout" id="current-meta">
+                            <span class="tech-tag" id="current-format">FLAC</span>
+                            <span>BPM <strong id="current-bpm">-</strong></span>
+                            <span>DUR <strong id="current-duration">-</strong></span>
+                            <span class="bitperfect-badge" id="bitperfect-badge">— esperando DAC —</span>
+                        </p>
+                    </div>
+                    <div class="banner-right">
+                        <!-- Interruptor Hi-Fi (bit-perfect) <-> DJ (mezcla) -->
+                        <button class="mode-toggle" id="mode-toggle" title="Alternar modo de audio">
+                            <span class="mode-dot"></span>
+                            <span id="mode-label">Hi-Fi · bit-perfect</span>
+                        </button>
+                        <div class="deck-status active-deck-label" id="deck-status">Deck A listo</div>
+                    </div>
+                </div>
+
+                <!-- Carátula / disco con glow dinámico -->
+                <div class="disc-wrapper" id="disc-cover">
+                    <div class="disc-center"></div>
+                </div>
+
+                <!-- Canvas Visualizer (ondas fluidas) -->
+                <canvas class="waveform-canvas" id="canvas-visualizer"></canvas>
+
+                <!-- Transition Curve Align State -->
+                <div class="transition-curve-display">
+                    <div>Sincronía de Beats: <span class="curve-active-status" id="beat-sync-status">Inactivo</span></div>
+                    <div>·</div>
+                    <div>Curva de Transición: <span class="curve-active-status" id="fade-status">Listo</span></div>
+                </div>
+            </div>
+
+            <!-- Progress Bar Card -->
+            <div class="glass-panel progress-bar-card">
+                <div class="time-info">
+                    <span id="time-elapsed">0:00</span>
+                    <span id="time-total">0:00</span>
+                </div>
+                <div class="slider-wrapper" id="progress-bar-slider">
+                    <div class="slider-progress" id="progress-bar-fill"></div>
+                </div>
+            </div>
+
+            <!-- Controller Decks and DJ Mix Effects -->
+            <div class="glass-panel controls-card">
+
+                <!-- Playback Buttons -->
+                <div class="audio-buttons">
+                    <button class="btn-circle" id="prev-btn">⏮</button>
+                    <button class="btn-circle btn-play" id="play-btn">▶</button>
+                    <button class="btn-circle" id="next-btn">⏭</button>
+                </div>
+
+                <!-- Volume slider -->
+                <div class="volume-control">
+                    <span>🔊</span>
+                    <div class="volume-slider" id="volume-slider">
+                        <div class="volume-progress" id="volume-fill"></div>
+                    </div>
+                </div>
+
+                <!-- DJ Transition selection -->
+                <div class="dj-mix-panel">
+                    <div class="dj-panel-header">
+                        <span>Efecto Transición</span>
+                        <button class="mode-pill" id="transition-mode-toggle" title="Nativo: cada canción suena un mínimo (~20s). Pro: transiciones puente, cualquier duración.">Nativo</button>
+                    </div>
+                    <div class="effect-selectors">
+                        <button class="effect-btn active" data-effect="crossfade">Crossfade Suave</button>
+                        <button class="effect-btn" data-effect="lowpass">Barrido Filtro</button>
+                        <button class="effect-btn" data-effect="vinyl">Freno Vinilo</button>
+                        <button class="effect-btn" data-effect="echo">Eco/Cola Delay</button>
+                    </div>
+                    <button class="btn btn-neon" id="force-mix-btn" style="width: 100%; margin-top: 4px; font-size: 0.75rem;">¡MEZCLAR YA!</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT PANEL: AI MUSIC DJ CHAT -->
+        <div class="glass-panel chat-panel">
+            <div class="section-title" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <span><span>DJ</span> Inteligente</span>
+                <div id="voice-indicator" class="voice-indicator" title="Asistente de voz local listo. Di 'Activa reproductor' o 'Hey Jarvis'.">
+                    <span class="voice-dot"></span>
+                    <span id="voice-text">Voz Off</span>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="chat-bubble assistant">
+                    ¡Hola! Soy tu DJ Inteligente. Puedes pedirme canciones basándote en tu estado de ánimo o ritmo.
+                    <br><br>
+                    <i>Prueba escribiendo algo como: "Pon una canción alegre", "Dame algo para entrenar" o "Quiero relajarme".</i>
+                </div>
+            </div>
+
+            <div class="chat-input-wrapper">
+                <input type="text" id="chat-input" placeholder="Pregúntale a tu DJ...">
+                <button class="btn" id="send-chat-btn">Enviar</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Web Audio Context setup
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)({
+            latencyHint: 'playback'
+        });
+        let audioGraphInitialized = false;
+
+        // Custom Deck Class
+        class Deck {
+            constructor(id) {
+                this.id = id;
+                this.audio = new Audio();
+                this.audio.crossOrigin = "anonymous";
+                this.audio.preservesPitch = false;
+                this.audio.webkitPreservesPitch = false;
+                this.audio.mozPreservesPitch = false;
+
+                // Lowpass filter (allpass por defecto para transparencia absoluta)
+                this.filter = audioCtx.createBiquadFilter();
+                this.filter.type = "allpass";
+                this.filter.frequency.value = 20000;
+
+                // Gain
+                this.gainNode = audioCtx.createGain();
+                this.gainNode.gain.value = 0.8;
+            }
+
+            initializeSource() {
+                if (!this.source) {
+                    this.source = audioCtx.createMediaElementSource(this.audio);
+                    this.source.connect(this.filter);
+                    this.filter.connect(this.gainNode);
+                }
+            }
+        }
+
+        const deck1 = new Deck(1);
+        const deck2 = new Deck(2);
+
+        let activeDeck = deck1;
+        let inactiveDeck = deck2;
+        let currentSong = null;
+        let nextSong = null;
+        let songs = [];
+        let activeEffect = 'crossfade';
+        let isPlaying = false;
+        let mixLock = false;
+
+        // Analyser node
+        const analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 128;
+        const bufferLength = analyser.frequencyBinCount;
+        const dataArray = new Uint8Array(bufferLength);
+
+        // Global Delay Node (for echo effects)
+        const globalDelay = audioCtx.createDelay(2.0);
+        const globalDelayFeedback = audioCtx.createGain();
+        globalDelayFeedback.gain.value = 0.55;
+        globalDelay.delayTime.value = 0.35; // 350ms echo
+
+        globalDelay.connect(globalDelayFeedback);
+        globalDelayFeedback.connect(globalDelay);
+
+        const globalDelayGain = audioCtx.createGain();
+        globalDelayGain.gain.value = 0.0; // Muted by default
+
+        globalDelay.connect(globalDelayGain);
+
+        // UI Elements
+        const playBtn = document.getElementById('play-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const forceMixBtn = document.getElementById('force-mix-btn');
+        const songsList = document.getElementById('songs-list');
+        const scanBtn = document.getElementById('scan-btn');
+        const musicPathInput = document.getElementById('music-path');
+        const scanLoader = document.getElementById('scan-loader');
+
+        const currentTitleEl = document.getElementById('current-title');
+        const currentBpmEl = document.getElementById('current-bpm');
+        const currentDurationEl = document.getElementById('current-duration');
+        const currentFormatEl = document.getElementById('current-format');
+        const deckStatusEl = document.getElementById('deck-status');
+        const discCoverEl = document.getElementById('disc-cover');
+        const beatSyncStatusEl = document.getElementById('beat-sync-status');
+        const fadeStatusEl = document.getElementById('fade-status');
+
+        const progressBarFill = document.getElementById('progress-bar-fill');
+        const progressBarSlider = document.getElementById('progress-bar-slider');
+        const timeElapsedEl = document.getElementById('time-elapsed');
+        const timeTotalEl = document.getElementById('time-total');
+
+        const volumeFill = document.getElementById('volume-fill');
+        const volumeSlider = document.getElementById('volume-slider');
+
+        const chatInput = document.getElementById('chat-input');
+        const sendChatBtn = document.getElementById('send-chat-btn');
+        const chatMessages = document.getElementById('chat-messages');
+        const beatFlash = document.getElementById('beat-flash');
+
+        // Derive technical format tag from filename extension
+        function getFormat(name) {
+            const ext = (name && name.includes('.')) ? name.split('.').pop().toUpperCase() : '';
+            return (ext && ext.length <= 4) ? ext : 'AUDIO';
+        }
+
+        // --- Selección inteligente de puntos de transición (Bloque 1) ---
+        // Si el contexto es enérgico (BPM alto), la entrante entra en una de sus
+        // secciones enérgicas (no su intro suave). Si no, entra por el inicio.
+        function chooseEntryOffset(fromSong, toSong) {
+            const pts = (toSong && toSong.transition_points) || [];
+            if (!pts.length) return 0;
+            const energetic = ((fromSong && fromSong.bpm) ? fromSong.bpm : 0) >= 115;
+            if (energetic) {
+                const dur = toSong.duration || 0;
+                // En modo NATIVO no entrar tan al final: deja ≥ MIN_PLAY de reproducción.
+                // En modo PRO se permite cualquier punto (transiciones puente).
+                const maxEntry = (transitionMode === 'nativo')
+                    ? Math.max(0, dur - MIN_PLAY_NATIVO - 8)
+                    : dur * 0.75;
+                const cand = pts
+                    .filter(p => p.clase === 'energico' && p.tipo !== 'outro'
+                              && p.timestamp_seg > 10 && p.timestamp_seg < maxEntry)
+                    .sort((a, b) => (b.energia || 0) - (a.energia || 0));   // la más intensa
+                if (cand.length) return cand[0].timestamp_seg;
+            }
+            return 0;
+        }
+
+        // Punto de SALIDA (intermedio): el ÚLTIMO punto enérgico cerca del final
+        // (entre 70% y -8s). Así conserva la mayor parte de la canción y transiciona
+        // todavía con energía, sin saltar demasiado temprano ni esperar a que muera.
+        function exitTriggerTime(song) {
+            const total = (song && song.duration) ? song.duration : 0;
+            const pts = (song && song.transition_points) || [];
+            if (total <= 30) return Math.max(0, total - 5);
+            const tail = pts.filter(p => p.clase === 'energico' && p.tipo !== 'outro'
+                                      && p.timestamp_seg > total * 0.7
+                                      && p.timestamp_seg < total - 8);
+            if (tail.length) return Math.max(...tail.map(p => p.timestamp_seg));
+            const o = pts.find(p => p.tipo === 'outro');
+            return (o && o.timestamp_seg) ? o.timestamp_seg : total - 15;
+        }
+
+        // Separa "Autor - Canción.flac" -> { title, author }
+        function splitTitle(name) {
+            let n = (name || '').replace(/\.[^.]+$/, '');   // quita la extensión
+            const i = n.indexOf(' - ');
+            if (i > -1) {
+                return { author: n.slice(0, i).trim(), title: n.slice(i + 3).trim() };
+            }
+            return { author: '', title: n.trim() };
+        }
+
+        // ===========================================================
+        //  MODO DE REPRODUCCIÓN
+        //   'hifi' = backend mpv -> ALSA exclusivo (bit-perfect, supera a VLC)
+        //   'dj'   = Web Audio (mezcla + crossfade + efectos, no bit-perfect)
+        //  Solo un motor posee el DAC a la vez.
+        // ===========================================================
+        let playbackMode = 'hifi';
+
+        const currentAuthorEl = document.getElementById('current-author');
+        function updateNowPlaying(song) {
+            const nm = splitTitle(song.title);
+            currentTitleEl.textContent = nm.title;
+            if (currentAuthorEl) currentAuthorEl.textContent = nm.author;
+            currentBpmEl.textContent = song.bpm ? Math.round(song.bpm) : 'Desconocido';
+            currentDurationEl.textContent = formatTime(song.duration);
+            currentFormatEl.textContent = getFormat(song.title);
+        }
+
+        const bitperfectBadge = document.getElementById('bitperfect-badge');
+        function updateBitPerfectBadge(a) {
+            if (!bitperfectBadge) return;
+            if (a && a.bit_perfect && a.samplerate_dac) {
+                bitperfectBadge.textContent = `${(a.samplerate_dac / 1000).toFixed(1)} kHz · ${a.formato_dac} · BIT-PERFECT`;
+                bitperfectBadge.classList.remove('degradado');
+            } else if (a && a.samplerate_dac) {
+                bitperfectBadge.textContent = `${(a.samplerate_dac / 1000).toFixed(1)} kHz · remuestreado`;
+                bitperfectBadge.classList.add('degradado');
+            } else {
+                bitperfectBadge.textContent = '— esperando DAC —';
+                bitperfectBadge.classList.add('degradado');
+            }
+        }
+
+        const HiFi = {
+            timePos: 0, duration: 0, isPlaying: false, _poll: null, _cutGuard: false,
+
+            _post(path, body) {
+                const opt = { method: 'POST' };
+                if (body) { opt.headers = { 'Content-Type': 'application/json' }; opt.body = JSON.stringify(body); }
+                return fetch(path, opt);
+            },
+
+            async play(song, crossfade = 0, entryOffset = 0) {
+                if (!song) return;
+                this._startedAt = Date.now();   // para el mínimo de reproducción (modo nativo)
+                currentSong = song;
+                updateNowPlaying(song);
+                fadeStatusEl.textContent = crossfade > 0
+                    ? (entryOffset > 0 ? `Crossfade → entrada enérgica ${Math.floor(entryOffset/60)}:${String(Math.floor(entryOffset%60)).padStart(2,'0')}` : 'Crossfade…')
+                    : 'Abriendo DAC...';
+                deckStatusEl.textContent = 'DAC exclusivo';
+                try {
+                    const r = await this._post('/api/hifi/play', { song_id: song.id, crossfade, entry_offset: entryOffset });
+                    if (!r.ok) throw new Error('play ' + r.status);
+                    this.isPlaying = true;
+                    playBtn.textContent = '⏸';
+                    discCoverEl.classList.add('playing');
+                    fadeStatusEl.textContent = 'Reproduciendo (Hi-Fi)';
+                    fadeStatusEl.style.color = 'var(--texto-titulo)';
+                    this.startPolling();
+                    renderSongs();
+                    nextSong = await selectSmartNextSong(song);
+                } catch (e) {
+                    console.error('HiFi.play', e);
+                    fadeStatusEl.textContent = 'Error abriendo DAC (¿ocupado por otra app?)';
+                }
+            },
+
+            async togglePlay() {
+                if (!currentSong) { if (songs.length) this.play(songs[0]); return; }
+                if (this.isPlaying) {
+                    await this._post('/api/hifi/pause');
+                    this.isPlaying = false; playBtn.textContent = '▶';
+                    discCoverEl.classList.remove('playing'); fadeStatusEl.textContent = 'Pausado';
+                } else {
+                    await this._post('/api/hifi/resume');
+                    this.isPlaying = true; playBtn.textContent = '⏸';
+                    discCoverEl.classList.add('playing'); fadeStatusEl.textContent = 'Reproduciendo (Hi-Fi)';
+                }
+            },
+
+            async next() {
+                if (!nextSong) nextSong = await selectSmartNextSong(currentSong);
+                if (nextSong) {
+                    const entry = chooseEntryOffset(currentSong, nextSong);   // entrada enérgica si aplica
+                    await this.play(nextSong, 6, entry);   // fundido alta-res; vuelve a bit-perfect tras él
+                }
+            },
+
+            async prev() {
+                if (!currentSong) { if (songs.length) this.play(songs[0]); return; }
+                const i = songs.findIndex(s => s.id === currentSong.id);
+                let p = i - 1; if (p < 0) p = songs.length - 1;
+                if (songs[p]) this.play(songs[p]);
+            },
+
+            async seek(pct) {
+                const total = this.duration || (currentSong && currentSong.duration) || 0;
+                await this._post('/api/hifi/seek', { seconds: pct * total });
+            },
+
+            startPolling() { if (!this._poll) this._poll = setInterval(() => this._tick(), 500); },
+            stopPolling() { if (this._poll) { clearInterval(this._poll); this._poll = null; } },
+
+            async _tick() {
+                if (playbackMode !== 'hifi') return;
+                try {
+                    const s = await (await fetch('/api/hifi/status')).json();
+                    if (s.time_pos != null) this.timePos = s.time_pos;
+                    if (s.duration != null) this.duration = s.duration;
+                    if (s.pause != null) this.isPlaying = (s.pause === false);
+                    const total = this.duration || (currentSong && currentSong.duration) || 0;
+                    if (total > 0) {
+                        progressBarFill.style.width = `${Math.min(100, (this.timePos / total) * 100)}%`;
+                        timeElapsedEl.textContent = formatTime(this.timePos);
+                        timeTotalEl.textContent = formatTime(total);
+                    }
+                    updateBitPerfectBadge(s.audio);
+                    this._maybeAutoNext(total);
+                } catch (e) { /* backend ocupado: reintenta al próximo tick */ }
+            },
+
+            _maybeAutoNext(total) {
+                if (!this.isPlaying || !total || total <= 30) return;
+                // Modo NATIVO: la canción debe sonar un mínimo antes de transicionar
+                // (evita que se usen como puente de <3s). Modo PRO: sin mínimo.
+                if (transitionMode === 'nativo') {
+                    const elapsed = (Date.now() - (this._startedAt || 0)) / 1000;
+                    if (elapsed < MIN_PLAY_NATIVO) return;
+                }
+                // Dispara en el punto de salida enérgico (no espera a perder el ritmo).
+                const trigger = exitTriggerTime(currentSong);
+                if (this.timePos >= trigger && !this._cutGuard) {
+                    this._cutGuard = true;
+                    this.next().finally(() => setTimeout(() => { this._cutGuard = false; }, 8000));
+                }
+            },
+
+            async stopEngine() {
+                this.stopPolling(); this.isPlaying = false;
+                try { await this._post('/api/hifi/stop'); } catch (e) {}
+            }
+        };
+
+        // Visualizador en modo Hi-Fi: sintetiza un espectro a partir del BPM real
+        // y la posición de reproducción (no hay señal en el navegador), así late
+        // sincronizado al tempo de la canción.
+        let hifiVisLevel = 0;
+        function synthSpectrumFromBpm() {
+            const bpm = (currentSong && currentSong.bpm) ? currentSong.bpm : 120;
+            const t = HiFi.timePos;
+            const beatPhase = (((t * bpm / 60) % 1) + 1) % 1;
+            const pulse = HiFi.isPlaying ? Math.pow(1 - beatPhase, 2.4) : 0;
+            const target = HiFi.isPlaying ? (35 + pulse * 215) : 6;
+            hifiVisLevel += (target - hifiVisLevel) * 0.18;
+            for (let i = 0; i < bufferLength; i++) {
+                const shape = Math.exp(-i / (bufferLength * 0.45));      // más energía en graves
+                const wobble = 0.55 + 0.45 * Math.sin(t * 2.0 + i * 0.4); // vida orgánica
+                dataArray[i] = Math.max(0, Math.min(255, hifiVisLevel * shape * wobble));
+            }
+        }
+
+        // Interruptor de modo
+        const modeToggle = document.getElementById('mode-toggle');
+        const modeLabel = document.getElementById('mode-label');
+        const volumeControlEl = document.querySelector('.volume-control');
+
+        async function setMode(mode) {
+            if (mode === playbackMode) return;
+            playbackMode = mode;
+            const dj = (mode === 'dj');
+            modeToggle.classList.toggle('dj', dj);
+            modeLabel.textContent = dj ? 'DJ · mezcla' : 'Hi-Fi · bit-perfect';
+            if (volumeControlEl) volumeControlEl.style.visibility = dj ? 'visible' : 'hidden';
+            if (bitperfectBadge) bitperfectBadge.style.display = dj ? 'none' : '';
+
+            if (dj) {
+                await HiFi.stopEngine();           // libera el DAC y reactiva PipeWire
+                initAudioGraph();
+                await audioCtx.resume();            // asegura que el grafo Web Audio suene
+                if (currentSong) selectSong(currentSong);
+            } else {
+                try { activeDeck.audio.pause(); inactiveDeck.audio.pause(); } catch (e) {}
+                isPlaying = false;                 // detener Web Audio
+                if (currentSong) HiFi.play(currentSong);
+            }
+        }
+        modeToggle.addEventListener('click', () => setMode(playbackMode === 'hifi' ? 'dj' : 'hifi'));
+        // Estado inicial: modo Hi-Fi (sin slider de volumen; volumen fijo 100% bit-perfect)
+        if (volumeControlEl) volumeControlEl.style.visibility = 'hidden';
+
+        // Setup canvas
+        const canvas = document.getElementById('canvas-visualizer');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            // Account for device pixel ratio for crisp fluid curves
+            const dpr = window.devicePixelRatio || 1;
+            const cssWidth = canvas.parentElement.clientWidth - 48;
+            const cssHeight = 170;
+            canvas.width = cssWidth * dpr;
+            canvas.height = cssHeight * dpr;
+            canvas.style.width = cssWidth + 'px';
+            canvas.style.height = cssHeight + 'px';
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Initialize Audio Graph on first click
+        function initAudioGraph() {
+            if (audioGraphInitialized) return;
+            audioCtx.resume();
+
+            deck1.initializeSource();
+            deck2.initializeSource();
+
+            deck1.gainNode.connect(analyser);
+            deck2.gainNode.connect(analyser);
+
+            deck1.filter.connect(globalDelay);
+            deck2.filter.connect(globalDelay);
+
+            analyser.connect(audioCtx.destination);
+            globalDelayGain.connect(audioCtx.destination);
+
+            audioGraphInitialized = true;
+            console.log("Web Audio API Graph successfully built in pristine bypass mode.");
+        }
+
+        /* ============================================================
+           6. VISUALIZADOR DE ONDAS FLUIDAS (Cloud-Fi)
+           Capas suaves dibujadas con curvas, no barras rígidas,
+           usando los colores de espectro del perfil estético.
+           ============================================================ */
+        let wavePhase = 0;
+
+        // Dibuja una capa de onda fluida mediante curvas suavizadas (Catmull -> quad)
+        function drawWaveLayer(viewW, viewH, ampScale, phase, lineColor, fill1, fill2, lineWidth) {
+            const mid = viewH / 2;
+            const n = bufferLength;
+            const step = viewW / (n - 1);
+            const pts = [];
+
+            for (let i = 0; i < n; i++) {
+                const v = dataArray[i] / 255;                 // 0..1 energía de la banda
+                const idle = Math.sin(i * 0.45 + phase) * 7;  // movimiento líquido en reposo
+                const amp = (v * (viewH * 0.34) + idle) * ampScale;
+                pts.push({ x: i * step, y: mid - amp });
+            }
+
+            // Trazo suavizado (punto medio cuadrático) sobre la onda superior
+            ctx.beginPath();
+            ctx.moveTo(0, pts[0].y);
+            for (let i = 0; i < n - 1; i++) {
+                const xc = (pts[i].x + pts[i + 1].x) / 2;
+                const yc = (pts[i].y + pts[i + 1].y) / 2;
+                ctx.quadraticCurveTo(pts[i].x, pts[i].y, xc, yc);
+            }
+            ctx.lineTo(pts[n - 1].x, pts[n - 1].y);
+
+            // Relleno fluido descendente con gradiente del espectro
+            ctx.lineTo(viewW, viewH);
+            ctx.lineTo(0, viewH);
+            ctx.closePath();
+            const grad = ctx.createLinearGradient(0, 0, 0, viewH);
+            grad.addColorStop(0, fill1);
+            grad.addColorStop(1, fill2);
+            ctx.fillStyle = grad;
+            ctx.fill();
+
+            // Línea de cresta luminosa
+            ctx.beginPath();
+            ctx.moveTo(0, pts[0].y);
+            for (let i = 0; i < n - 1; i++) {
+                const xc = (pts[i].x + pts[i + 1].x) / 2;
+                const yc = (pts[i].y + pts[i + 1].y) / 2;
+                ctx.quadraticCurveTo(pts[i].x, pts[i].y, xc, yc);
+            }
+            ctx.lineTo(pts[n - 1].x, pts[n - 1].y);
+            ctx.strokeStyle = lineColor;
+            ctx.lineWidth = lineWidth;
+            ctx.lineJoin = 'round';
+            ctx.shadowColor = lineColor;
+            ctx.shadowBlur = 12;
+            ctx.stroke();
+            ctx.shadowBlur = 0;
+        }
+
+        function drawVisualizer() {
+            requestAnimationFrame(drawVisualizer);
+
+            if (playbackMode === 'hifi') {
+                synthSpectrumFromBpm();           // sin señal en el navegador: sintetizar desde BPM
+            } else {
+                if (!audioGraphInitialized) return;
+                analyser.getByteFrequencyData(dataArray);
+            }
+
+            const viewW = canvas.clientWidth;
+            const viewH = canvas.clientHeight;
+            ctx.clearRect(0, 0, viewW, viewH);
+
+            wavePhase += 0.035;
+
+            // Capa de fondo: crema (espectro-2), más lenta y amplia
+            drawWaveLayer(
+                viewW, viewH, 0.7, -wavePhase * 0.7,
+                'rgba(253, 230, 138, 0.55)',
+                'rgba(253, 230, 138, 0.18)',
+                'rgba(253, 230, 138, 0.0)',
+                2
+            );
+            // Capa frontal: lavanda (espectro-1)
+            drawWaveLayer(
+                viewW, viewH, 1.0, wavePhase,
+                'rgba(192, 132, 252, 0.7)',
+                'rgba(192, 132, 252, 0.22)',
+                'rgba(192, 132, 252, 0.0)',
+                2.5
+            );
+
+            // Beat tracking -> flash + glow dinámico de la carátula
+            let sum = 0;
+            for (let i = 0; i < 10; i++) sum += dataArray[i];
+            const averageBass = sum / 10;
+            const playingNow = (playbackMode === 'hifi') ? HiFi.isPlaying : isPlaying;
+            if (averageBass > 190 && playingNow) {
+                beatFlash.classList.add('active');
+                beatSyncStatusEl.textContent = 'Alineado';
+                beatSyncStatusEl.style.color = 'var(--crema)';
+                document.documentElement.style.setProperty('--caratula-color-shadow', 'rgba(253, 230, 138, 0.55)');
+            } else {
+                beatFlash.classList.remove('active');
+                document.documentElement.style.setProperty('--caratula-color-shadow', 'rgba(192, 132, 252, 0.45)');
+            }
+        }
+        drawVisualizer();
+
+        // Format times
+        function formatTime(secs) {
+            if (isNaN(secs)) return "0:00";
+            const m = Math.floor(secs / 60);
+            const s = Math.floor(secs % 60).toString().padStart(2, '0');
+            return `${m}:${s}`;
+        }
+
+        // Fetch Songs
+        async function fetchSongs() {
+            try {
+                const res = await fetch('/api/songs');
+                songs = await res.json();
+                renderSongs();
+            } catch (err) {
+                console.error("Error loading songs from database:", err);
+            }
+        }
+
+        // Render Songs Sidebar
+        let songFilter = '';
+        let playlistQueue = null;   // array de canciones cuando se reproduce una playlist
+        let transitionMode = 'nativo';   // 'nativo' (min ~20s/canción) | 'pro' (puentes, cualquier duración)
+        const MIN_PLAY_NATIVO = 20;      // segundos mínimos de reproducción antes de transicionar en nativo
+        const songSearchInput = document.getElementById('song-search');
+        const songSearchCount = document.getElementById('search-count');
+        if (songSearchInput) {
+            songSearchInput.addEventListener('input', () => {
+                songFilter = songSearchInput.value.trim().toLowerCase();
+                renderSongs();
+            });
+        }
+
+        function renderSongs() {
+            songsList.innerHTML = '';
+            if (songs.length === 0) {
+                if (songSearchCount) songSearchCount.textContent = '';
+                songsList.innerHTML = '<div style="color: var(--texto-tenue); font-size: 0.85rem; text-align: center; margin-top: 24px;">No hay canciones analizadas. Pulsa Escanear.</div>';
+                return;
+            }
+            const visibles = songFilter
+                ? songs.filter(s => (s.title || '').toLowerCase().includes(songFilter))
+                : songs;
+            if (songSearchCount) {
+                songSearchCount.textContent = songFilter ? `${visibles.length}/${songs.length}` : `${songs.length}`;
+            }
+            if (visibles.length === 0) {
+                songsList.innerHTML = `<div style="color: var(--texto-tenue); font-size: 0.85rem; text-align: center; margin-top: 24px;">Sin resultados para «${songFilter}».</div>`;
+                return;
+            }
+            visibles.forEach(song => {
+                const item = document.createElement('div');
+                item.className = 'song-item';
+                if (currentSong && currentSong.id === song.id) {
+                    item.classList.add('active');
+                }
+
+                const nm = splitTitle(song.title);
+                item.innerHTML = `
+                    <div class="song-icon">♪</div>
+                    <div class="song-details">
+                        <div class="song-title">${nm.title}</div>
+                        ${nm.author ? `<div class="song-author">${nm.author}</div>` : ''}
+                        <div class="song-meta">
+                            <span>${formatTime(song.duration)}</span>
+                            <span class="song-bpm">${song.bpm ? Math.round(song.bpm) + ' BPM' : 'N/A'}</span>
+                        </div>
+                    </div>
+                    <button class="song-add" title="Añadir a playlist">＋</button>
+                `;
+                item.querySelector('.song-add').addEventListener('click', (e) => {
+                    e.stopPropagation();          // no reproducir al pulsar +
+                    openAddToPlaylist(song, e.currentTarget);
+                });
+                item.addEventListener('click', () => {
+                    playlistQueue = null;          // elegir de la biblioteca sale del modo playlist
+                    if (playbackMode === 'hifi') { HiFi.play(song); return; }
+                    initAudioGraph();
+                    if (isPlaying && currentSong && currentSong.id !== song.id) {
+                        nextSong = song;
+                        triggerTransition();
+                    } else {
+                        selectSong(song);
+                    }
+                });
+                songsList.appendChild(item);
+            });
+        }
+
+        // Select and Play Song
+        async function selectSong(song) {
+            if (playbackMode === 'hifi') { return HiFi.play(song); }
+            initAudioGraph();
+            currentSong = song;
+
+            nextSong = await selectSmartNextSong(song);
+
+            activeDeck.audio.src = `/api/stream/${song.id}`;
+            activeDeck.filter.type = "allpass";
+            activeDeck.filter.frequency.value = 20000;
+            activeDeck.gainNode.gain.value = currentVolume;
+            globalDelayGain.gain.value = 0.0;
+
+            activeDeck.audio.play().then(() => {
+                isPlaying = true;
+                playBtn.textContent = '⏸';
+                discCoverEl.classList.add('playing');
+            }).catch(e => console.error("Error playing audio:", e));
+
+            updateNowPlaying(song);
+            deckStatusEl.textContent = `Deck ${activeDeck.id === 1 ? 'A' : 'B'} Activo`;
+            fadeStatusEl.textContent = 'Transmitiendo';
+            fadeStatusEl.style.color = 'var(--texto-titulo)';
+
+            renderSongs();
+        }
+
+        // Update Progress Bar (solo modo DJ; en Hi-Fi el sondeo del backend lo maneja)
+        function updateProgress() {
+            if (playbackMode === 'hifi') return;
+            if (!isPlaying || !currentSong || !activeDeck.audio) return;
+
+            const current = activeDeck.audio.currentTime;
+            const total = activeDeck.audio.duration || currentSong.duration;
+            const pct = (current / total) * 100;
+
+            progressBarFill.style.width = `${pct}%`;
+            timeElapsedEl.textContent = formatTime(current);
+            timeTotalEl.textContent = formatTime(total);
+
+            // Obtener el punto de transición óptimo (outro) de la base de datos
+            let outroTime = total - 15; // Fallback
+            if (currentSong.transition_points && currentSong.transition_points.length > 0) {
+                const outroPt = currentSong.transition_points.find(pt => pt.tipo === 'outro');
+                if (outroPt && outroPt.timestamp_seg) {
+                    outroTime = outroPt.timestamp_seg;
+                }
+            }
+
+            if (total > 30 && current >= outroTime && !mixLock) {
+                console.log(`Outro reached at ${current.toFixed(2)}s (optimal: ${outroTime.toFixed(2)}s), triggering automatic transition.`);
+                triggerTransition();
+            }
+        }
+        setInterval(updateProgress, 250);
+
+        // Progress Bar Seek
+        progressBarSlider.addEventListener('click', (e) => {
+            if (!currentSong) return;
+            const rect = progressBarSlider.getBoundingClientRect();
+            const pct = (e.clientX - rect.left) / rect.width;
+            if (playbackMode === 'hifi') { HiFi.seek(pct); return; }
+            if (!activeDeck.audio) return;
+            activeDeck.audio.currentTime = pct * (activeDeck.audio.duration || currentSong.duration);
+        });
+
+        let currentVolume = 0.8;
+
+        // Volume Control
+        volumeSlider.addEventListener('click', (e) => {
+            const rect = volumeSlider.getBoundingClientRect();
+            currentVolume = Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width));
+            volumeFill.style.width = `${currentVolume * 100}%`;
+            if (deck1.gainNode) deck1.gainNode.gain.setValueAtTime(currentVolume, audioCtx.currentTime);
+            if (deck2.gainNode) deck2.gainNode.gain.setValueAtTime(currentVolume, audioCtx.currentTime);
+        });
+
+        let playedHistory = [];
+
+        async function selectSmartNextSong(current) {
+            // Si hay una playlist activa, la siguiente es la próxima de la cola.
+            if (playlistQueue && playlistQueue.length && current) {
+                const i = playlistQueue.findIndex(s => s.id === current.id);
+                return (i > -1) ? playlistQueue[(i + 1) % playlistQueue.length] : playlistQueue[0];
+            }
+            if (songs.length <= 1) return null;
+
+            // Mantener historial acotado a la mitad de la biblioteca para evitar repeticiones
+            if (playedHistory.length >= Math.floor(songs.length / 2)) {
+                playedHistory.shift();
+            }
+            if (!playedHistory.includes(current.id)) {
+                playedHistory.push(current.id);
+            }
+
+            try {
+                const res = await fetch('/api/songs/smart_next', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        current_song_id: current.id,
+                        played_history: playedHistory
+                    })
+                });
+                if (res.ok) {
+                    const nextSongData = await res.json();
+                    return nextSongData;
+                }
+            } catch (err) {
+                console.warn("Error calling smart_next endpoint, falling back locally:", err);
+            }
+
+            // Fallback local en caso de fallo de red
+            let candidates = songs.filter(s => s.id !== current.id && !playedHistory.includes(s.id));
+            if (candidates.length === 0) {
+                candidates = songs.filter(s => s.id !== current.id);
+            }
+
+            let bestCandidate = null;
+            let lowestDiff = Infinity;
+
+            candidates.forEach(s => {
+                const bpmA = current.bpm || 120;
+                const bpmB = s.bpm || 120;
+
+                let bestKDiff = Infinity;
+                [0.5, 1.0, 2.0].forEach(k => {
+                    const bpmBMod = bpmB * k;
+                    const diff = Math.abs(bpmA - bpmBMod) / ((bpmA + bpmBMod) / 2.0);
+                    if (diff < bestKDiff) {
+                        bestKDiff = diff;
+                    }
+                });
+
+                if (bestKDiff < lowestDiff) {
+                    lowestDiff = bestKDiff;
+                    bestCandidate = s;
+                }
+            });
+
+            return bestCandidate || candidates[0] || null;
+        }
+
+        // Trigger Transition
+        async function triggerTransition() {
+            if (playbackMode === 'hifi') { return HiFi.next(); }   // corte gapless bit-perfect
+            if (mixLock || !nextSong || !currentSong) return;
+            mixLock = true;
+
+            fadeStatusEl.textContent = 'Analizando mezcla...';
+            fadeStatusEl.style.color = 'var(--lavanda)';
+
+            let transitionType = activeEffect; // Fallback
+            let transitionDuration = activeEffect === 'crossfade' ? 6.0 : (activeEffect === 'lowpass' ? 4.5 : (activeEffect === 'vinyl' ? 1.8 : 4.0));
+            let speedFactorB = 1.0;
+            let reasonStr = "Transición manual / por defecto.";
+            let data = null;
+
+            let currentTimeA = activeDeck.audio.currentTime;
+
+            try {
+                const res = await fetch('/api/transition', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        song_a_id: currentSong.id,
+                        song_b_id: nextSong.id,
+                        current_time_a: currentTimeA
+                    })
+                });
+                if (res.ok) {
+                    data = await res.json();
+                    console.log("Optimal transition calculated by backend:", data);
+                    transitionType = data.tipo_transicion;
+                    transitionDuration = data.parametros.duracion_seg;
+                    if (data.alineacion_beats && data.alineacion_beats.factor_velocidad_B) {
+                        speedFactorB = data.alineacion_beats.factor_velocidad_B;
+                    }
+                    reasonStr = data.razon;
+
+                    appendChatBubble(`🤖 <b>DJ DSP Engine:</b> ${reasonStr}<br><i>Similitud Armónica: ${(data.diagnostico.similitud_armonica * 100).toFixed(1)}% | Diferencia BPM: ${(data.diagnostico.diferencia_bpm_relativa ? (data.diagnostico.diferencia_bpm_relativa * 100).toFixed(1) : 0)}%</i>`, 'assistant');
+                }
+            } catch (err) {
+                console.warn("Could not calculate optimal transition from backend, using fallbacks:", err);
+            }
+
+            fadeStatusEl.textContent = `Mezclando (${transitionType === 'crossfade_suave' ? 'Crossfade' : (transitionType === 'barrido_filtro' ? 'Barrido' : (transitionType === 'freno_vinilo' ? 'Freno Vinilo' : 'Eco Tail'))})...`;
+            console.log(`Transitioning from ${currentSong.title} to ${nextSong.title} using ${transitionType} for ${transitionDuration}s`);
+
+            // Calcular offset de inicio para alineación de beats en fase (Beatmatching)
+            let startOffsetB = 0.0;
+            let alignBeatsEnabled = false;
+            let maxGainB = currentVolume;
+
+            if (typeof data !== 'undefined' && data && data.alineacion_beats && data.parametros) {
+                maxGainB = (data.parametros.ganancia_inicio_B || 1.0) * currentVolume;
+                if (data.alineacion_beats.dentro_limite && data.parametros.alinear_beats) {
+                    const current = activeDeck.audio.currentTime;
+                    let lastBeatA = 0;
+                    if (currentSong.outro && currentSong.outro.beats && currentSong.outro.beats.length > 0) {
+                        let pastBeats = currentSong.outro.beats.filter(b => b <= current);
+                        if (pastBeats.length > 0) {
+                            lastBeatA = pastBeats[pastBeats.length - 1];
+                        } else {
+                            lastBeatA = currentSong.outro.beats[0] || 0;
+                        }
+                    }
+                    
+                    const period = Number(data.alineacion_beats.periodo_beat_seg) || (60.0 / (currentSong.bpm || 120));
+                    if (isFinite(period) && period > 0) {
+                        let phaseA = (current - lastBeatA) % period;
+                        if (isNaN(phaseA) || phaseA < 0) phaseA = 0;
+
+                        const primer_beat_b = nextSong.intro && nextSong.intro.beats && nextSong.intro.beats.length > 0 ? nextSong.intro.beats[0] : 0.0;
+                        const finalSpeedFactor = Number(speedFactorB) || 1.0;
+                        startOffsetB = primer_beat_b - (period - phaseA) * finalSpeedFactor;
+                        const beat_period_B = period * finalSpeedFactor;
+                        
+                        if (isFinite(beat_period_B) && beat_period_B > 0) {
+                            let safetyCount = 0;
+                            while (startOffsetB < 0 && safetyCount < 100) {
+                                startOffsetB += beat_period_B;
+                                safetyCount++;
+                            }
+                        }
+                        
+                        if (isFinite(startOffsetB) && startOffsetB >= 0) {
+                            alignBeatsEnabled = true;
+                            console.log(`[Beatmatch] Phase align: starting B at ${startOffsetB.toFixed(3)}s to match A's next beat.`);
+                        } else {
+                            startOffsetB = 0.0;
+                        }
+                    }
+                }
+            }
+
+            inactiveDeck.audio.src = `/api/stream/${nextSong.id}`;
+            inactiveDeck.filter.frequency.value = 20000;
+            inactiveDeck.gainNode.gain.value = 0.001;
+
+            inactiveDeck.audio.play().then(() => {
+                const now = audioCtx.currentTime;
+
+                if (alignBeatsEnabled && startOffsetB > 0) {
+                    inactiveDeck.audio.currentTime = startOffsetB;
+                }
+
+                // Beatmatch por velocidad DESACTIVADO: cambiar playbackRate con
+                // preservesPitch=false distorsiona el tono y deja la canción
+                // remodulada. Mantenemos tempo/tono NATIVO (1.0) en ambos decks;
+                // el crossfade se hace solo por ganancia, sin distorsión.
+                inactiveDeck.audio.playbackRate = 1.0;
+                activeDeck.audio.playbackRate = 1.0;
+                beatSyncStatusEl.textContent = 'Tempo nativo';
+                beatSyncStatusEl.style.color = 'var(--texto-tenue)';
+
+                if (transitionType === 'crossfade_suave' || transitionType === 'crossfade') {
+                    activeDeck.gainNode.gain.setValueAtTime(activeDeck.gainNode.gain.value, now);
+                    activeDeck.gainNode.gain.linearRampToValueAtTime(0.0, now + transitionDuration);
+
+                    inactiveDeck.gainNode.gain.setValueAtTime(0.0, now);
+                    inactiveDeck.gainNode.gain.linearRampToValueAtTime(maxGainB, now + transitionDuration);
+
+                } else if (transitionType === 'barrido_filtro' || transitionType === 'lowpass') {
+                    activeDeck.filter.type = "lowpass";
+                    activeDeck.filter.frequency.setValueAtTime(20000, now);
+                    activeDeck.filter.frequency.exponentialRampToValueAtTime(150, now + transitionDuration);
+
+                    activeDeck.gainNode.gain.setValueAtTime(activeDeck.gainNode.gain.value, now);
+                    activeDeck.gainNode.gain.linearRampToValueAtTime(0.0, now + transitionDuration);
+
+                    inactiveDeck.gainNode.gain.setValueAtTime(0.0, now);
+                    inactiveDeck.gainNode.gain.linearRampToValueAtTime(maxGainB, now + transitionDuration);
+
+                } else if (transitionType === 'freno_vinilo' || transitionType === 'vinyl') {
+                    let startTime = performance.now();
+                    const audioEl = activeDeck.audio;
+                    function rampDown(time) {
+                        let elapsed = (time - startTime) / 1000;
+                        let progress = Math.min(1, elapsed / 1.5);
+                        let rate = Math.max(0.005, 1.0 - progress);
+                        audioEl.playbackRate = rate;
+                        if (progress < 1) {
+                            requestAnimationFrame(rampDown);
+                        } else {
+                            audioEl.playbackRate = 1.0;
+                            audioEl.pause();
+                        }
+                    }
+                    requestAnimationFrame(rampDown);
+
+                    activeDeck.gainNode.gain.setValueAtTime(activeDeck.gainNode.gain.value, now);
+                    activeDeck.gainNode.gain.linearRampToValueAtTime(0.0, now + 1.2);
+
+                    inactiveDeck.gainNode.gain.setValueAtTime(0.0, now);
+                    inactiveDeck.gainNode.gain.linearRampToValueAtTime(maxGainB, now + 1.5);
+
+                } else if (transitionType === 'eco_delay' || transitionType === 'echo') {
+                    globalDelayGain.gain.setValueAtTime(0.0, now);
+                    globalDelayGain.gain.linearRampToValueAtTime(0.85, now + 0.1);
+
+                    activeDeck.gainNode.gain.setValueAtTime(activeDeck.gainNode.gain.value, now);
+                    activeDeck.gainNode.gain.linearRampToValueAtTime(0.0, now + 0.15);
+
+                    inactiveDeck.gainNode.gain.setValueAtTime(0.0, now);
+                    inactiveDeck.gainNode.gain.linearRampToValueAtTime(1.0, now + 0.8);
+
+                    globalDelayGain.gain.setValueAtTime(0.85, now + transitionDuration - 1.0);
+                    globalDelayGain.gain.linearRampToValueAtTime(0.0, now + transitionDuration);
+                }
+
+                setTimeout(async () => {
+                    activeDeck.audio.pause();
+                    activeDeck.audio.currentTime = 0;
+                    activeDeck.filter.type = "allpass";
+                    activeDeck.filter.frequency.value = 20000;
+                    activeDeck.audio.playbackRate = 1.0;
+
+                    // Recuperación suave del tempo original (1.0) para el deck entrante
+                    const incomingDeck = inactiveDeck;
+                    const startRate = incomingDeck.audio.playbackRate;
+                    if (startRate !== 1.0) {
+                        const slideStart = performance.now();
+                        const slideDuration = 2500; // 2.5 segundos para máxima suavidad auditiva
+                        function slideRate(time) {
+                            const elapsed = time - slideStart;
+                            const pct = Math.min(1, elapsed / slideDuration);
+                            incomingDeck.audio.playbackRate = startRate + (1.0 - startRate) * pct;
+                            if (pct < 1) {
+                                requestAnimationFrame(slideRate);
+                            } else {
+                                incomingDeck.audio.playbackRate = 1.0;
+                            }
+                        }
+                        requestAnimationFrame(slideRate);
+                    }
+
+                    const temp = activeDeck;
+                    activeDeck = inactiveDeck;
+                    inactiveDeck = temp;
+
+                    currentSong = nextSong;
+                    nextSong = await selectSmartNextSong(currentSong);
+
+                    updateNowPlaying(currentSong);
+                    deckStatusEl.textContent = `Deck ${activeDeck.id === 1 ? 'A' : 'B'} Activo`;
+                    fadeStatusEl.textContent = 'Transición Completa';
+                    fadeStatusEl.style.color = 'var(--texto-titulo)';
+
+                    renderSongs();
+                    mixLock = false;
+                }, transitionDuration * 1000);
+
+            }).catch(e => {
+                console.error("Failed to start next track transition:", e);
+                mixLock = false;
+            });
+        }
+
+        // Effect Buttons Click
+        document.querySelectorAll('.effect-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.effect-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeEffect = btn.dataset.effect;
+            });
+        });
+
+        // Interruptor de modo de transición: Nativo (min ~20s) <-> Pro (puentes)
+        const transitionModeToggle = document.getElementById('transition-mode-toggle');
+        if (transitionModeToggle) {
+            transitionModeToggle.addEventListener('click', () => {
+                transitionMode = (transitionMode === 'nativo') ? 'pro' : 'nativo';
+                transitionModeToggle.textContent = (transitionMode === 'nativo') ? 'Nativo' : 'Pro';
+                transitionModeToggle.classList.toggle('pro', transitionMode === 'pro');
+            });
+        }
+
+        // Trigger manual mix
+        forceMixBtn.addEventListener('click', () => {
+            if (playbackMode === 'hifi') { HiFi.next(); return; }
+            initAudioGraph();
+            if (nextSong) triggerTransition();
+        });
+
+        // Play Button Click
+        playBtn.addEventListener('click', () => {
+            if (playbackMode === 'hifi') { HiFi.togglePlay(); return; }
+            initAudioGraph();
+            if (!currentSong && songs.length > 0) {
+                selectSong(songs[0]);
+                return;
+            }
+            if (!currentSong) return;
+
+            if (isPlaying) {
+                activeDeck.audio.pause();
+                isPlaying = false;
+                playBtn.textContent = '▶';
+                discCoverEl.classList.remove('playing');
+                fadeStatusEl.textContent = 'Pausado';
+            } else {
+                activeDeck.audio.play();
+                isPlaying = true;
+                playBtn.textContent = '⏸';
+                discCoverEl.classList.add('playing');
+                fadeStatusEl.textContent = 'Reproduciendo';
+            }
+        });
+
+        // Next/Prev Buttons Click
+        nextBtn.addEventListener('click', () => {
+            if (playbackMode === 'hifi') { HiFi.next(); return; }
+            initAudioGraph();
+            if (nextSong) {
+                triggerTransition();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (playbackMode === 'hifi') { HiFi.prev(); return; }
+            initAudioGraph();
+            if (!currentSong) return;
+            const currentIndex = songs.findIndex(s => s.id === currentSong.id);
+            let prevIndex = currentIndex - 1;
+            if (prevIndex < 0) prevIndex = songs.length - 1;
+            selectSong(songs[prevIndex]);
+        });
+
+        // Scanner Button Click
+        scanBtn.addEventListener('click', async () => {
+            const dir = musicPathInput.value.trim();
+            if (!dir) return;
+            scanBtn.disabled = true;
+            scanLoader.style.display = 'flex';
+
+            try {
+                const res = await fetch('/api/scan', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ directory: dir, limit: 1000 })
+                });
+                const data = await res.json();
+                console.log(data.message);
+                await fetchSongs();
+            } catch (err) {
+                console.error("Scan failed:", err);
+            } finally {
+                scanBtn.disabled = false;
+                scanLoader.style.display = 'none';
+            }
+        });
+
+        // AI Chat mood helper
+        sendChatBtn.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        async function sendMessage() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            appendChatBubble(text, 'user');
+            chatInput.value = '';
+
+            const typingBubble = appendChatBubble('<i>DJ analizando estado de ánimo...</i>', 'assistant');
+
+            try {
+                const res = await fetch('/api/search', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query: text })
+                });
+                const data = await res.json();
+                typingBubble.remove();
+
+                appendChatBubble(data.reply, 'assistant');
+
+                if (data.matched_song_id) {
+                    const matchedSong = songs.find(s => s.id === data.matched_song_id);
+                    if (matchedSong) {
+                        nextSong = matchedSong;
+                        triggerTransition();
+                    }
+                }
+            } catch (err) {
+                typingBubble.remove();
+                appendChatBubble("Disculpa, hubo un problema al conectarse con el servidor.", "assistant");
+            }
+        }
+
+        function appendChatBubble(content, sender) {
+            const bubble = document.createElement('div');
+            bubble.className = `chat-bubble ${sender}`;
+            bubble.innerHTML = content;
+            chatMessages.appendChild(bubble);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return bubble;
+        }
+
+        // ===========================================================
+        //  PLAYLISTS (pestañas, auto-generar por mood, reproducir cola)
+        // ===========================================================
+        const plListEl = document.getElementById('playlists-list');
+        const plAutogenBtn = document.getElementById('pl-autogen');
+
+        document.querySelectorAll('.sidebar-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.sidebar-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const which = tab.dataset.tab;
+                document.getElementById('view-biblioteca').style.display = which === 'biblioteca' ? 'flex' : 'none';
+                document.getElementById('view-playlists').style.display = which === 'playlists' ? 'flex' : 'none';
+                if (which === 'playlists') loadPlaylists();
+            });
+        });
+
+        async function loadPlaylists() {
+            try {
+                const saved = await (await fetch('/api/playlists')).json();
+                renderPlaylists(saved, null);
+            } catch (e) { console.error('playlists', e); }
+        }
+
+        function renderPlaylists(saved, suggested) {
+            plListEl.innerHTML = '';
+            if (saved && saved.length) {
+                const l = document.createElement('div'); l.className = 'pl-section-label'; l.textContent = 'Mis playlists';
+                plListEl.appendChild(l);
+                saved.forEach(p => plListEl.appendChild(playlistCard(p, 'saved')));
+            }
+            if (suggested && suggested.length) {
+                const l = document.createElement('div'); l.className = 'pl-section-label'; l.textContent = 'Sugeridas (auto)';
+                plListEl.appendChild(l);
+                suggested.forEach(p => plListEl.appendChild(playlistCard(p, 'suggested')));
+            }
+            if ((!saved || !saved.length) && (!suggested || !suggested.length)) {
+                plListEl.innerHTML = '<div style="color:var(--texto-tenue);font-size:0.85rem;text-align:center;margin-top:20px;">Sin playlists. Pulsa «Auto-generar».</div>';
+            }
+        }
+
+        function playlistCard(p, kind) {
+            const card = document.createElement('div'); card.className = 'playlist-card';
+            const ids = p.song_ids || [];
+            card.innerHTML = `
+                <div class="pl-head">
+                    <span class="playlist-name">${p.name}</span>
+                    <span class="playlist-count">${ids.length} ♪</span>
+                </div>
+                <div class="playlist-actions"></div>`;
+            const actions = card.querySelector('.playlist-actions');
+            const playBtn = document.createElement('button');
+            playBtn.className = 'pl-btn play'; playBtn.textContent = '▶ Reproducir';
+            playBtn.onclick = () => playPlaylist(ids);
+            actions.appendChild(playBtn);
+            if (kind === 'suggested') {
+                const saveBtn = document.createElement('button');
+                saveBtn.className = 'pl-btn save'; saveBtn.textContent = 'Guardar';
+                saveBtn.onclick = async () => {
+                    const name = prompt('Nombre de la playlist:', p.name);
+                    if (!name) return;
+                    await fetch('/api/playlists', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, song_ids: ids }) });
+                    loadPlaylists();
+                };
+                actions.appendChild(saveBtn);
+            } else {
+                const delBtn = document.createElement('button');
+                delBtn.className = 'pl-btn del'; delBtn.textContent = 'Borrar';
+                delBtn.onclick = async () => { await fetch(`/api/playlists/${p.id}`, { method: 'DELETE' }); loadPlaylists(); };
+                actions.appendChild(delBtn);
+            }
+            return card;
+        }
+
+        plAutogenBtn.addEventListener('click', async () => {
+            try {
+                const [saved, suggested] = await Promise.all([
+                    fetch('/api/playlists').then(r => r.json()),
+                    fetch('/api/playlists/suggest').then(r => r.json()),
+                ]);
+                renderPlaylists(saved, suggested);
+            } catch (e) { console.error(e); }
+        });
+
+        function playPlaylist(ids) {
+            const queue = ids.map(id => songs.find(s => s.id === id)).filter(Boolean);
+            if (!queue.length) return;
+            playlistQueue = queue;
+            nextSong = queue[1] || null;
+            if (playbackMode === 'hifi') HiFi.play(queue[0]); else selectSong(queue[0]);
+        }
+
+        // Nueva playlist vacía (con nombre)
+        document.getElementById('pl-new').addEventListener('click', async () => {
+            const name = prompt('Nombre de la nueva playlist:', '');
+            if (!name) return;
+            await fetch('/api/playlists', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, song_ids: [] }) });
+            loadPlaylists();
+        });
+
+        // Menú "añadir canción a playlist" (desde la lista / buscador)
+        function closeAddMenu() { const m = document.getElementById('add-menu'); if (m) m.remove(); }
+
+        async function openAddToPlaylist(song, anchor) {
+            closeAddMenu();
+            let saved = [];
+            try { saved = await (await fetch('/api/playlists')).json(); } catch (e) {}
+            const menu = document.createElement('div');
+            menu.className = 'add-menu'; menu.id = 'add-menu';
+
+            const nuevo = document.createElement('div');
+            nuevo.className = 'add-menu-item nueva';
+            nuevo.textContent = '➕ Nueva playlist…';
+            nuevo.onclick = async (ev) => {
+                ev.stopPropagation();
+                const name = prompt('Nombre de la nueva playlist:', '');
+                if (name) {
+                    await fetch('/api/playlists', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, song_ids: [song.id] }) });
+                    toast(`Creada «${name}» con la canción`);
+                }
+                closeAddMenu();
+            };
+            menu.appendChild(nuevo);
+
+            saved.forEach(p => {
+                const it = document.createElement('div');
+                it.className = 'add-menu-item';
+                const has = (p.song_ids || []).includes(song.id);
+                it.textContent = (has ? '✓ ' : '') + p.name;
+                it.onclick = async (ev) => {
+                    ev.stopPropagation();
+                    if (!has) {
+                        const ids = [...(p.song_ids || []), song.id];
+                        await fetch(`/api/playlists/${p.id}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: p.name, song_ids: ids }) });
+                        toast(`Añadida a «${p.name}»`);
+                    }
+                    closeAddMenu();
+                };
+                menu.appendChild(it);
+            });
+
+            document.body.appendChild(menu);
+            const r = anchor.getBoundingClientRect();
+            menu.style.top = `${r.bottom + 4}px`;
+            menu.style.left = `${Math.max(8, Math.min(r.left - 120, window.innerWidth - 230))}px`;
+            setTimeout(() => document.addEventListener('click', closeAddMenu, { once: true }), 0);
+        }
+
+        function toast(msg) {
+            const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg;
+            document.body.appendChild(t);
+            requestAnimationFrame(() => t.classList.add('show'));
+            setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 300); }, 2200);
+        }
+
+        // ===========================================================
+        //  ASISTENTE DE VOZ (WebSocket & Web Speech API)
+        // ===========================================================
+        const voiceIndicatorEl = document.getElementById('voice-indicator');
+        const voiceTextEl = document.getElementById('voice-text');
+        let ws = null;
+
+        function connectVoiceWebSocket() {
+            const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+            ws = new WebSocket(`${protocol}//${window.location.host}/api/ws`);
+
+            ws.onopen = () => {
+                console.log("🔌 Conectado al WebSocket del Asistente de Voz");
+                if (voiceIndicatorEl && voiceTextEl) {
+                    voiceIndicatorEl.className = 'voice-indicator connected';
+                    voiceTextEl.textContent = 'Voz Activa';
+                }
+            };
+
+            ws.onmessage = (event) => {
+                try {
+                    const data = JSON.parse(event.data);
+                    console.log("📩 Mensaje de voz recibido:", data);
+
+                    if (data.event === 'wake_word_detected') {
+                        if (voiceIndicatorEl && voiceTextEl) {
+                            voiceIndicatorEl.className = 'voice-indicator listening';
+                            voiceTextEl.textContent = 'Escuchando...';
+                        }
+                        
+                        appendChatBubble("🎙️ <i>Asistente de voz activado. Escuchando comando...</i>", "assistant");
+                        
+                        if (data.online) {
+                            startWebSpeechAPI();
+                        }
+                    } else if (data.event === 'offline_transcription') {
+                        const text = data.text;
+                        if (text) {
+                            appendChatBubble(`🎙️ <i>Comando de voz (offline):</i> "${text}"`, "user");
+                            executeVoiceCommand(text);
+                        } else {
+                            appendChatBubble("🎙️ <i>No pude entender el comando de voz local.</i>", "assistant");
+                        }
+                        restoreVoiceIndicator();
+                    }
+                } catch (e) {
+                    console.error("Error al procesar WebSocket data:", e);
+                }
+            };
+
+            ws.onclose = () => {
+                console.log("🔌 WebSocket desconectado. Reintentando en 5s...");
+                if (voiceIndicatorEl && voiceTextEl) {
+                    voiceIndicatorEl.className = 'voice-indicator';
+                    voiceTextEl.textContent = 'Voz Off';
+                }
+                setTimeout(connectVoiceWebSocket, 5000);
+            };
+
+            ws.onerror = (err) => {
+                console.error("⚠️ Error WebSocket:", err);
+            };
+        }
+
+        function restoreVoiceIndicator() {
+            if (voiceIndicatorEl && voiceTextEl) {
+                voiceIndicatorEl.className = 'voice-indicator connected';
+                voiceTextEl.textContent = 'Voz Activa';
+            }
+        }
+
+        function startWebSpeechAPI() {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (!SpeechRecognition) {
+                toast("Web Speech API no soportada en este navegador.");
+                appendChatBubble("🎙️ <i>Web Speech API no está soportada en este navegador.</i>", "assistant");
+                restoreVoiceIndicator();
+                return;
+            }
+
+            const recognition = new SpeechRecognition();
+            recognition.lang = 'es-ES';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            recognition.onstart = () => {
+                toast("Escuchando comando por voz...");
+            };
+
+            recognition.onerror = (event) => {
+                console.error("Error Web Speech API:", event.error);
+                appendChatBubble(`🎙️ <i>Error de reconocimiento de voz: ${event.error}</i>`, "assistant");
+                restoreVoiceIndicator();
+            };
+
+            recognition.onend = () => {
+                restoreVoiceIndicator();
+            };
+
+            recognition.onresult = (event) => {
+                const text = event.results[0][0].transcript;
+                console.log("Transcripción de Web Speech API:", text);
+                appendChatBubble(`🎙️ <i>Comando de voz (online):</i> "${text}"`, "user");
+                executeVoiceCommand(text);
+            };
+
+            recognition.start();
+        }
+
+        async function executeVoiceCommand(text) {
+            if (!text.trim()) return;
+            
+            const typingBubble = appendChatBubble('<i>DJ analizando comando de voz...</i>', 'assistant');
+            try {
+                const res = await fetch('/api/search', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query: text })
+                });
+                const data = await res.json();
+                typingBubble.remove();
+
+                appendChatBubble(data.reply, 'assistant');
+
+                if (data.matched_song_id) {
+                    const matchedSong = songs.find(s => s.id === data.matched_song_id);
+                    if (matchedSong) {
+                        nextSong = matchedSong;
+                        triggerTransition();
+                    }
+                }
+            } catch (err) {
+                typingBubble.remove();
+                appendChatBubble("Disculpa, hubo un problema al procesar el comando de voz.", "assistant");
+            }
+        }
+
+        // Conectar WebSocket al cargar la página
+        connectVoiceWebSocket();
+
+        // Initialize volume fill and fetch list on load
+        volumeFill.style.width = '80%';
+        fetchSongs();
+    </script>
+</body>
+</html>
