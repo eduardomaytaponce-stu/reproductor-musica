@@ -14,3 +14,7 @@ wheels/
 *.db-journal
 *.sqlite3
 *.bak
+
+# Backups y export de audio generado
+_backups/
+export/music/

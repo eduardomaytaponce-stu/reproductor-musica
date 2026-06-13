@@ -81,11 +81,12 @@ def detectar_puntos_energia(filepath, duration, n=8):
 
     puntos = []
     for i, (t, en) in enumerate(sel):
+        nivel = int(np.clip(en * 10, 1, 10))
         puntos.append({
             "timestamp_seg": round(t, 1),
             "tipo": _tipo(i, len(sel)),
             "energia": round(en, 2),
-            "clase": ENERGIA_ALTA if en >= med else ENERGIA_BAJA,
+            "clase": f"nivel_{nivel}",
         })
     return puntos
 

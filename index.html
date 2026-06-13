@@ -352,6 +352,7 @@
         .pl-btn.play { background: linear-gradient(135deg, var(--crema), var(--lavanda)); color: #1e1b2e; font-weight: 600; }
         .pl-btn.save { background: rgba(192, 132, 252, 0.2); color: #e9d5ff; }
         .pl-btn.del { background: rgba(244, 63, 94, 0.18); color: #fca5a5; }
+        .pl-btn.bpm { background: rgba(253, 230, 138, 0.18); color: var(--crema); }
         .pl-section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--texto-tenue); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
 
         /* Botón "+" para añadir canción a playlist */
@@ -1243,7 +1244,8 @@
                     ? Math.max(0, dur - MIN_PLAY_NATIVO - 8)
                     : dur * 0.75;
                 const cand = pts
-                    .filter(p => p.clase === 'energico' && p.tipo !== 'outro'
+                    .filter(p => (p.clase === 'energico' || (typeof p.clase === 'string' && p.clase.startsWith('nivel_') && parseInt(p.clase.split('_')[1]) >= 6)) 
+                              && p.tipo !== 'outro'
                               && p.timestamp_seg > 10 && p.timestamp_seg < maxEntry)
                     .sort((a, b) => (b.energia || 0) - (a.energia || 0));   // la más intensa
                 if (cand.length) return cand[0].timestamp_seg;
@@ -1258,7 +1260,8 @@
             const total = (song && song.duration) ? song.duration : 0;
             const pts = (song && song.transition_points) || [];
             if (total <= 30) return Math.max(0, total - 5);
-            const tail = pts.filter(p => p.clase === 'energico' && p.tipo !== 'outro'
+            const tail = pts.filter(p => (p.clase === 'energico' || (typeof p.clase === 'string' && p.clase.startsWith('nivel_') && parseInt(p.clase.split('_')[1]) >= 6))
+                                      && p.tipo !== 'outro'
                                       && p.timestamp_seg > total * 0.7
                                       && p.timestamp_seg < total - 8);
             if (tail.length) return Math.max(...tail.map(p => p.timestamp_seg));
@@ -1384,6 +1387,16 @@
                 if (playbackMode !== 'hifi') return;
                 try {
                     const s = await (await fetch('/api/hifi/status')).json();
+                    // FIN NATURAL de pista: había una pista cargada y ahora no -> avanzar.
+                    // (Corrige que la reproducción se detuviera al terminar una canción,
+                    // p.ej. cuando entró en un punto enérgico tardío y llegó a su final.)
+                    const ended = this._prevPath && !s.path && s.pause === false && !this._cutGuard;
+                    this._prevPath = s.path;
+                    if (ended) {
+                        this._cutGuard = true;
+                        this.next().finally(() => setTimeout(() => { this._cutGuard = false; }, 8000));
+                        return;
+                    }
                     if (s.time_pos != null) this.timePos = s.time_pos;
                     if (s.duration != null) this.duration = s.duration;
                     if (s.pause != null) this.isPlaying = (s.pause === false);
@@ -1637,6 +1650,7 @@
         // Render Songs Sidebar
         let songFilter = '';
         let playlistQueue = null;   // array de canciones cuando se reproduce una playlist
+        let playlistBpmTarget = null;   // BPM medio/objetivo para continuar al terminar la lista
         let transitionMode = 'nativo';   // 'nativo' (min ~20s/canción) | 'pro' (puentes, cualquier duración)
         const MIN_PLAY_NATIVO = 20;      // segundos mínimos de reproducción antes de transicionar en nativo
         const songSearchInput = document.getElementById('song-search');
@@ -1691,6 +1705,7 @@
                 });
                 item.addEventListener('click', () => {
                     playlistQueue = null;          // elegir de la biblioteca sale del modo playlist
+                    playlistBpmTarget = null;      // y de la continuación por BPM
                     if (playbackMode === 'hifi') { HiFi.play(song); return; }
                     initAudioGraph();
                     if (isPlaying && currentSong && currentSong.id !== song.id) {
@@ -1785,11 +1800,16 @@
         let playedHistory = [];
 
         async function selectSmartNextSong(current) {
-            // Si hay una playlist activa, la siguiente es la próxima de la cola.
+            // Playlist activa: la siguiente es la próxima de la cola (aleatoria)...
             if (playlistQueue && playlistQueue.length && current) {
                 const i = playlistQueue.findIndex(s => s.id === current.id);
-                return (i > -1) ? playlistQueue[(i + 1) % playlistQueue.length] : playlistQueue[0];
+                if (i > -1 && i < playlistQueue.length - 1) return playlistQueue[i + 1];
+                // ...hasta la ÚLTIMA: termina la lista -> continúa con BPM similar.
+                playlistQueue = null;
+                return pickByBpm(playlistBpmTarget, current);
             }
+            // Tras una playlist: seguir ofreciendo canciones de BPM similar a su media.
+            if (playlistBpmTarget) return pickByBpm(playlistBpmTarget, current);
             if (songs.length <= 1) return null;
 
             // Mantener historial acotado a la mitad de la biblioteca para evitar repeticiones
@@ -2250,17 +2270,29 @@
         function playlistCard(p, kind) {
             const card = document.createElement('div'); card.className = 'playlist-card';
             const ids = p.song_ids || [];
+            const bpmTag = p.target_bpm ? ` · 🎯 ${Math.round(p.target_bpm)} BPM` : '';
             card.innerHTML = `
                 <div class="pl-head">
                     <span class="playlist-name">${p.name}</span>
-                    <span class="playlist-count">${ids.length} ♪</span>
+                    <span class="playlist-count">${ids.length} ♪${bpmTag}</span>
                 </div>
                 <div class="playlist-actions"></div>`;
             const actions = card.querySelector('.playlist-actions');
             const playBtn = document.createElement('button');
             playBtn.className = 'pl-btn play'; playBtn.textContent = '▶ Reproducir';
-            playBtn.onclick = () => playPlaylist(ids);
+            playBtn.onclick = () => playPlaylist(ids, p.target_bpm);
             actions.appendChild(playBtn);
+            if (kind === 'saved') {
+                const bpmBtn = document.createElement('button');
+                bpmBtn.className = 'pl-btn bpm'; bpmBtn.textContent = '🎯 BPM';
+                bpmBtn.onclick = async () => {
+                    const v = prompt('BPM objetivo de la playlist (vacío = ninguno):', p.target_bpm || '');
+                    const tb = (v && !isNaN(parseFloat(v))) ? parseFloat(v) : null;
+                    await fetch(`/api/playlists/${p.id}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: p.name, song_ids: ids, target_bpm: tb }) });
+                    loadPlaylists();
+                };
+                actions.appendChild(bpmBtn);
+            }
             if (kind === 'suggested') {
                 const saveBtn = document.createElement('button');
                 saveBtn.className = 'pl-btn save'; saveBtn.textContent = 'Guardar';
@@ -2290,10 +2322,31 @@
             } catch (e) { console.error(e); }
         });
 
-        function playPlaylist(ids) {
-            const queue = ids.map(id => songs.find(s => s.id === id)).filter(Boolean);
+        function shuffleArray(a) {
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        // Elige una canción de la biblioteca cercana a `target` BPM (continuación).
+        function pickByBpm(target, current) {
+            if (!target) return null;
+            const exclude = current ? current.id : -1;
+            let cands = songs.filter(s => s.id !== exclude && Math.abs((s.bpm || 0) - target) <= 12);
+            if (!cands.length) cands = songs.filter(s => s.id !== exclude && Math.abs((s.bpm || 0) - target) <= 25);
+            if (!cands.length) cands = songs.filter(s => s.id !== exclude);
+            return cands.length ? cands[Math.floor(Math.random() * cands.length)] : null;
+        }
+
+        function playPlaylist(ids, targetBpm) {
+            let queue = ids.map(id => songs.find(s => s.id === id)).filter(Boolean);
             if (!queue.length) return;
+            queue = shuffleArray(queue.slice());          // ORDEN ALEATORIO
             playlistQueue = queue;
+            // BPM para continuar al terminar la lista: el objetivo o la media de la playlist.
+            playlistBpmTarget = targetBpm || (queue.reduce((s, x) => s + (x.bpm || 0), 0) / queue.length);
             nextSong = queue[1] || null;
             if (playbackMode === 'hifi') HiFi.play(queue[0]); else selectSong(queue[0]);
         }
@@ -2302,7 +2355,9 @@
         document.getElementById('pl-new').addEventListener('click', async () => {
             const name = prompt('Nombre de la nueva playlist:', '');
             if (!name) return;
-            await fetch('/api/playlists', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, song_ids: [] }) });
+            const v = prompt('BPM objetivo (opcional, ej. 140 para combate / 90 para relax). Vacío = ninguno:', '');
+            const target_bpm = (v && !isNaN(parseFloat(v))) ? parseFloat(v) : null;
+            await fetch('/api/playlists', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, song_ids: [], target_bpm }) });
             loadPlaylists();
         });
 

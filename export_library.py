@@ -93,12 +93,29 @@ def main(copy_audio=False):
                 shutil.copy2(fp, dst)
                 copiados += 1
 
+    # Playlists (con BPM objetivo) para el modo actividad del app móvil.
+    playlists = []
+    try:
+        conn = sqlite3.connect(DB_NAME)
+        conn.row_factory = sqlite3.Row
+        prows = conn.execute("SELECT name, song_ids, target_bpm FROM playlists ORDER BY id").fetchall()
+        conn.close()
+        for p in prows:
+            playlists.append({
+                "name": p["name"],
+                "song_ids": json.loads(p["song_ids"]) if p["song_ids"] else [],
+                "target_bpm": p["target_bpm"],
+            })
+    except Exception:
+        pass
+
     paquete = {
         "version": 1,
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "count": len(songs),
         "moods": sorted({s["mood"] for s in songs}),
         "songs": songs,
+        "playlists": playlists,
     }
 
     out_json = os.path.join(OUT_DIR, "library.json")

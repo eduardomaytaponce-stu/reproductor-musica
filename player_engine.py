@@ -316,9 +316,11 @@ class AplayHiFiEngine:
 
     # ---- aplay (salida ALSA hw: directa = bit-perfect exclusivo) ----
     def _spawn_aplay(self, rate, ch):
+        # Búfer amplio (1.5 s): da margen para el resample del fundido entre
+        # frecuencias distintas (44.1k↔48k) sin underrun -> elimina micropausas.
         return subprocess.Popen(
             ['aplay', '-D', self.device, '-f', 'S32_LE',
-             '-r', str(rate), '-c', str(ch), '--buffer-time=500000', '-q', '-'],
+             '-r', str(rate), '-c', str(ch), '--buffer-time=1500000', '-q', '-'],
             stdin=subprocess.PIPE, stderr=subprocess.DEVNULL,
         )
 
@@ -391,6 +393,8 @@ class AplayHiFiEngine:
     def _worker(self):
         cur = None
         block = 4410
+        resampler = None     # soxr.ResampleStream con estado: cross-rate SIN clics
+        rs_key = None        # (src, dst, ch) para el que está configurado
         while not self._stop.is_set():
             with self._lock:
                 req, self._req = self._req, None
@@ -403,6 +407,7 @@ class AplayHiFiEngine:
                     self._close_aplay()
                     self._pw_suspend(False)     # devolver el DAC a PipeWire
                     self._cur_path = None; self._pos = 0; self._cur_sr = None
+                    resampler = None; rs_key = None
                     continue
                 if req[0] == 'load':
                     _, path, xf, entry = req
@@ -435,6 +440,7 @@ class AplayHiFiEngine:
                     self._cur_frames = cur.frames
                     self._pos = cur.tell()
                     block = int(cur.samplerate * 0.1)
+                    resampler = None; rs_key = None   # nueva pista -> nuevo resampler
                     self._paused.clear()
                     continue
 
@@ -453,16 +459,53 @@ class AplayHiFiEngine:
                 time.sleep(0.03)
                 continue
 
-            data = cur.read(block, dtype='int32', always_2d=True)
-            if len(data) == 0:                 # fin natural de la pista
-                cur.close(); cur = None
-                self._cur_path = None
-                time.sleep(0.03)
-                continue
-            if not self._write(data):
-                cur.close(); cur = None
-                continue
-            self._pos = cur.tell()
+            # Asegurar el DAC abierto (p.ej. si la 1ª apertura falló por ocupado).
+            if self._aplay_rate is None:
+                self._ensure_aplay(cur.samplerate, cur.channels)
+                resampler = None; rs_key = None
+                if self._aplay_rate is None:
+                    time.sleep(0.2)            # DAC ocupado: reintentar
+                    continue
+
+            if cur.samplerate == self._aplay_rate:
+                # --- Camino BIT-PERFECT: misma frecuencia, muestras crudas ---
+                data = cur.read(block, dtype='int32', always_2d=True)
+                if len(data) == 0:                 # fin natural de la pista
+                    cur.close(); cur = None
+                    self._cur_path = None
+                    time.sleep(0.03)
+                    continue
+                if not self._write(data):
+                    cur.close(); cur = None
+                    continue
+                self._pos = cur.tell()
+            else:
+                # --- Camino RESAMPLE con estado (cross-rate): SIN reabrir el DAC,
+                #     SIN clics. Tras una transición a otra frecuencia, la pista
+                #     continúa resampleada al rate abierto -> cero pausa. ---
+                if resampler is None or rs_key != (cur.samplerate, self._aplay_rate, cur.channels):
+                    import soxr
+                    resampler = soxr.ResampleStream(
+                        cur.samplerate, self._aplay_rate, cur.channels,
+                        dtype='float32', quality='MQ')
+                    rs_key = (cur.samplerate, self._aplay_rate, cur.channels)
+                fdata = cur.read(block, dtype='float32', always_2d=True)
+                if len(fdata) == 0:                # fin -> vaciar el resampler
+                    tail = resampler.resample_chunk(
+                        np.zeros((0, cur.channels), dtype='float32'), last=True)
+                    if len(tail):
+                        self._write(np.clip(tail * 2147483647.0, -2147483648, 2147483647).astype('<i4'))
+                    cur.close(); cur = None
+                    self._cur_path = None
+                    resampler = None; rs_key = None
+                    time.sleep(0.03)
+                    continue
+                rs = resampler.resample_chunk(fdata)
+                if len(rs):
+                    if not self._write(np.clip(rs * 2147483647.0, -2147483648, 2147483647).astype('<i4')):
+                        cur.close(); cur = None
+                        continue
+                self._pos = cur.tell()
 
     def _do_crossfade(self, cur, nxt, dur, entry_offset=0.0):
         """Fundido equal-power SIN hueco: se mezcla al rate del DAC ya abierto (= el
@@ -476,12 +519,18 @@ class AplayHiFiEngine:
             except Exception:
                 pass
         self._xfading = True
-        tail = cur.read(int(dur * rate), dtype='float32', always_2d=True)
+        # IMPORTANTE: la saliente puede estar en un rate DISTINTO al abierto (si venía
+        # de una transición cross-rate, sonaba resampleada al vuelo). Se lee a SU rate
+        # nativo y se resamplea al rate abierto, igual que la entrante. (Antes se asumía
+        # que la saliente estaba al rate abierto -> la 2ª transición se rompía/pausaba.)
+        tail = cur.read(int(dur * cur.samplerate), dtype='float32', always_2d=True)
         head = nxt.read(int(dur * nxt.samplerate), dtype='float32', always_2d=True)
-        # La saliente ya está al rate abierto; resampleamos solo la CABEZA entrante.
-        if nxt.samplerate != rate and len(head) > 0:
+        if (cur.samplerate != rate and len(tail) > 0) or (nxt.samplerate != rate and len(head) > 0):
             import librosa
-            head = librosa.resample(head.T, orig_sr=nxt.samplerate, target_sr=rate).T
+            if cur.samplerate != rate and len(tail) > 0:
+                tail = librosa.resample(tail.T, orig_sr=cur.samplerate, target_sr=rate, res_type='soxr_mq').T
+            if nxt.samplerate != rate and len(head) > 0:
+                head = librosa.resample(head.T, orig_sr=nxt.samplerate, target_sr=rate, res_type='soxr_mq').T
         m = min(len(tail), len(head))
         if m > 0 and tail.shape[1] == head.shape[1]:
             t = np.linspace(0.0, 1.0, m)[:, None]
@@ -495,9 +544,9 @@ class AplayHiFiEngine:
             self._write(mix32)              # al DAC YA abierto -> fundido sin hueco
         cur.close()
         self._xfading = False
-        # Tras el fundido, la entrante continúa a su rate NATIVO (bit-perfect).
-        # Si difiere del fundido, reapertura RÁPIDA (hueco mínimo, ya con B sonando).
-        self._ensure_aplay(nxt.samplerate, nxt.channels)
+        # NO reabrimos el DAC: si la entrante tiene otra frecuencia, el worker la
+        # resamplea al vuelo (soxr con estado) -> CERO pausa. Si es la misma
+        # frecuencia, continúa bit-perfect. (La reapertura era la causa de la pausa.)
         return nxt
 
     # ---- estado (interfaz compatible con el endpoint /api/hifi/status) ----

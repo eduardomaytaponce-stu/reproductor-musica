@@ -550,6 +550,7 @@ def search_song(req: SearchRequest):
 class PlaylistCreate(BaseModel):
     name: str
     song_ids: list[int] = []
+    target_bpm: float | None = None   # BPM objetivo de la playlist (actividad/mood)
 
 def _ensure_playlists_table():
     conn = sqlite3.connect(DB_NAME)
@@ -558,9 +559,14 @@ def _ensure_playlists_table():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
             song_ids TEXT NOT NULL DEFAULT '[]',
+            target_bpm REAL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
     """)
+    # Migración: añadir target_bpm si la tabla ya existía sin esa columna.
+    cols = [r[1] for r in conn.execute("PRAGMA table_info(playlists)").fetchall()]
+    if "target_bpm" not in cols:
+        conn.execute("ALTER TABLE playlists ADD COLUMN target_bpm REAL")
     conn.commit()
     conn.close()
 
@@ -569,31 +575,32 @@ def list_playlists():
     _ensure_playlists_table()
     conn = sqlite3.connect(DB_NAME)
     conn.row_factory = sqlite3.Row
-    rows = conn.execute("SELECT id, name, song_ids FROM playlists ORDER BY id").fetchall()
+    rows = conn.execute("SELECT id, name, song_ids, target_bpm FROM playlists ORDER BY id").fetchall()
     conn.close()
-    return [{"id": r["id"], "name": r["name"], "song_ids": json.loads(r["song_ids"])} for r in rows]
+    return [{"id": r["id"], "name": r["name"], "song_ids": json.loads(r["song_ids"]),
+             "target_bpm": r["target_bpm"]} for r in rows]
 
 @app.post("/api/playlists")
 def create_playlist(req: PlaylistCreate):
     _ensure_playlists_table()
     conn = sqlite3.connect(DB_NAME)
-    cur = conn.execute("INSERT INTO playlists (name, song_ids) VALUES (?, ?)",
-                       (req.name, json.dumps(req.song_ids)))
+    cur = conn.execute("INSERT INTO playlists (name, song_ids, target_bpm) VALUES (?, ?, ?)",
+                       (req.name, json.dumps(req.song_ids), req.target_bpm))
     pid = cur.lastrowid
     conn.commit()
     conn.close()
-    return {"id": pid, "name": req.name, "song_ids": req.song_ids}
+    return {"id": pid, "name": req.name, "song_ids": req.song_ids, "target_bpm": req.target_bpm}
 
 @app.put("/api/playlists/{pid}")
 def update_playlist(pid: int, req: PlaylistCreate):
-    """Actualiza nombre y/o canciones de una playlist (para añadir/quitar a mano)."""
+    """Actualiza nombre, canciones y/o BPM objetivo de una playlist."""
     _ensure_playlists_table()
     conn = sqlite3.connect(DB_NAME)
-    conn.execute("UPDATE playlists SET name = ?, song_ids = ? WHERE id = ?",
-                 (req.name, json.dumps(req.song_ids), pid))
+    conn.execute("UPDATE playlists SET name = ?, song_ids = ?, target_bpm = ? WHERE id = ?",
+                 (req.name, json.dumps(req.song_ids), req.target_bpm, pid))
     conn.commit()
     conn.close()
-    return {"id": pid, "name": req.name, "song_ids": req.song_ids}
+    return {"id": pid, "name": req.name, "song_ids": req.song_ids, "target_bpm": req.target_bpm}
 
 @app.delete("/api/playlists/{pid}")
 def delete_playlist(pid: int):

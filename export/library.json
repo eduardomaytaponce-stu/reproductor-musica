@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-06-05T13:53:46",
-  "count": 143,
+  "generated_at": "2026-06-13T10:43:43",
+  "count": 144,
   "moods": [
     "accion",
     "energia",
@@ -21,37 +21,37 @@
         {
           "t": 0.0,
           "energia": 0.02,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 34.0,
           "energia": 0.64,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_2"
         },
         {
           "t": 65.0,
           "energia": 0.34,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_3"
         },
         {
           "t": 121.0,
           "energia": 0.97,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 159.0,
           "energia": 0.61,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_5"
         },
         {
           "t": 192.3,
           "energia": 0.75,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -68,43 +68,43 @@
         {
           "t": 0.0,
           "energia": 0.13,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 34.0,
           "energia": 0.2,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 89.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 127.0,
           "energia": 0.23,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_4"
         },
         {
           "t": 165.0,
           "energia": 0.3,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_5"
         },
         {
           "t": 217.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 267.8,
           "energia": 0.45,
-          "clase": "energico",
+          "clase": "nivel_4",
           "tipo": "outro"
         }
       ]
@@ -114,44 +114,44 @@
       "file": "Rupert Gregson-Williams - Duck Shoot.flac",
       "title": "Duck Shoot",
       "artist": "Rupert Gregson-Williams",
-      "bpm": 123.0,
+      "bpm": 117.5,
       "duration": 247.2,
       "mood": "energia",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.06,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 32.0,
           "energia": 0.06,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 84.0,
           "energia": 0.53,
-          "clase": "energico",
+          "clase": "nivel_5",
           "tipo": "segmento_3"
         },
         {
           "t": 117.0,
           "energia": 0.92,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 181.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 232.2,
           "energia": 0.31,
-          "clase": "energico",
+          "clase": "nivel_3",
           "tipo": "outro"
         }
       ]
@@ -161,56 +161,56 @@
       "file": "Adele - Skyfall.flac",
       "title": "Skyfall",
       "artist": "Adele",
-      "bpm": 152.0,
+      "bpm": 143.6,
       "duration": 286.5,
       "mood": "accion",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.19,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 36.0,
           "energia": 0.06,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 75.0,
           "energia": 0.18,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_3"
         },
         {
           "t": 109.0,
           "energia": 0.73,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "segmento_4"
         },
         {
           "t": 149.0,
           "energia": 0.93,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 180.0,
           "energia": 0.49,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_6"
         },
         {
           "t": 223.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_7"
         },
         {
           "t": 271.5,
           "energia": 0.61,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -227,49 +227,49 @@
         {
           "t": 0.0,
           "energia": 0.29,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 43.0,
           "energia": 0.6,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_2"
         },
         {
           "t": 75.0,
           "energia": 0.61,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_3"
         },
         {
           "t": 108.0,
           "energia": 0.6,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_4"
         },
         {
           "t": 206.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 249.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 318.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_7"
         },
         {
           "t": 349.4,
           "energia": 0.75,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -286,31 +286,31 @@
         {
           "t": 0.0,
           "energia": 0.28,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 68.0,
           "energia": 0.38,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_2"
         },
         {
           "t": 102.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 165.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 202.9,
           "energia": 0.67,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -327,19 +327,19 @@
         {
           "t": 0.0,
           "energia": 0.17,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 48.0,
           "energia": 0.24,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_2"
         },
         {
           "t": 112.5,
           "energia": 0.68,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -356,49 +356,49 @@
         {
           "t": 0.0,
           "energia": 0.02,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 34.0,
           "energia": 0.7,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_2"
         },
         {
           "t": 66.0,
           "energia": 0.97,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 101.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 146.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 189.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 232.0,
           "energia": 0.86,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_7"
         },
         {
           "t": 272.9,
           "energia": 0.81,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -408,9 +408,9 @@
       "file": "girl in red - we fell in love in october.flac",
       "title": "we fell in love in october",
       "artist": "girl in red",
-      "bpm": 258.4,
+      "bpm": 103.4,
       "duration": 2.8,
-      "mood": "accion",
+      "mood": "enfoque",
       "cue_points": [
         {
           "t": 0.0,
@@ -467,50 +467,50 @@
       "file": "Mr.Kitty - After Dark.flac",
       "title": "After Dark",
       "artist": "Mr.Kitty",
-      "bpm": 143.6,
+      "bpm": 136.0,
       "duration": 259.1,
       "mood": "accion",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.13,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 46.0,
           "energia": 0.67,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_2"
         },
         {
           "t": 78.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 114.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 145.0,
           "energia": 0.21,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_5"
         },
         {
           "t": 194.0,
           "energia": 0.5,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_6"
         },
         {
           "t": 244.1,
           "energia": 0.8,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -520,44 +520,44 @@
       "file": "The Marías - No One Noticed (Extended Spanish).flac",
       "title": "No One Noticed (Extended Spanish)",
       "artist": "The Marías",
-      "bpm": 198.8,
+      "bpm": 99.4,
       "duration": 284.5,
-      "mood": "accion",
+      "mood": "enfoque",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.46,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "intro"
         },
         {
           "t": 59.0,
           "energia": 0.85,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_2"
         },
         {
           "t": 112.0,
           "energia": 0.19,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_3"
         },
         {
           "t": 158.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 225.0,
           "energia": 0.14,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_5"
         },
         {
           "t": 269.5,
           "energia": 0.73,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -574,31 +574,31 @@
         {
           "t": 0.0,
           "energia": 0.12,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 43.0,
           "energia": 0.72,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_2"
         },
         {
           "t": 84.0,
           "energia": 0.97,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 135.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 181.9,
           "energia": 0.88,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -615,31 +615,31 @@
         {
           "t": 0.0,
           "energia": 0.03,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 38.0,
           "energia": 0.29,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_2"
         },
         {
           "t": 79.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 152.0,
           "energia": 0.93,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 214.1,
           "energia": 0.57,
-          "clase": "energico",
+          "clase": "nivel_5",
           "tipo": "outro"
         }
       ]
@@ -656,25 +656,25 @@
         {
           "t": 0.0,
           "energia": 0.0,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 77.0,
           "energia": 0.76,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "segmento_2"
         },
         {
           "t": 108.0,
           "energia": 0.37,
-          "clase": "energico",
+          "clase": "nivel_3",
           "tipo": "segmento_3"
         },
         {
           "t": 145.0,
           "energia": 0.3,
-          "clase": "energico",
+          "clase": "nivel_3",
           "tipo": "outro"
         }
       ]
@@ -691,43 +691,43 @@
         {
           "t": 0.0,
           "energia": 0.23,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 33.0,
           "energia": 0.38,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_2"
         },
         {
           "t": 70.0,
           "energia": 0.45,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_3"
         },
         {
           "t": 115.0,
           "energia": 0.77,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "segmento_4"
         },
         {
           "t": 147.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 192.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 223.8,
           "energia": 0.69,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -744,19 +744,19 @@
         {
           "t": 0.0,
           "energia": 0.37,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "intro"
         },
         {
           "t": 43.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 103.5,
           "energia": 0.78,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -773,31 +773,31 @@
         {
           "t": 0.0,
           "energia": 0.31,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "intro"
         },
         {
           "t": 34.0,
           "energia": 0.84,
-          "clase": "suave",
+          "clase": "nivel_8",
           "tipo": "segmento_2"
         },
         {
           "t": 95.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 152.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 187.5,
           "energia": 0.91,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "outro"
         }
       ]
@@ -814,37 +814,37 @@
         {
           "t": 0.0,
           "energia": 0.78,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "intro"
         },
         {
           "t": 52.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 115.0,
           "energia": 0.74,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_3"
         },
         {
           "t": 151.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 193.0,
           "energia": 0.79,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_5"
         },
         {
           "t": 236.5,
           "energia": 0.85,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -861,49 +861,49 @@
         {
           "t": 0.0,
           "energia": 0.44,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "intro"
         },
         {
           "t": 42.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 74.0,
           "energia": 0.65,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_3"
         },
         {
           "t": 106.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 144.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 204.0,
           "energia": 0.97,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 243.0,
           "energia": 0.7,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_7"
         },
         {
           "t": 276.6,
           "energia": 0.82,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -920,37 +920,37 @@
         {
           "t": 0.0,
           "energia": 0.76,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "intro"
         },
         {
           "t": 32.0,
           "energia": 0.68,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_2"
         },
         {
           "t": 80.0,
           "energia": 0.45,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_3"
         },
         {
           "t": 120.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 158.0,
           "energia": 0.5,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_5"
         },
         {
           "t": 198.9,
           "energia": 0.85,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -967,37 +967,37 @@
         {
           "t": 0.0,
           "energia": 0.57,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "intro"
         },
         {
           "t": 36.0,
           "energia": 0.51,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_2"
         },
         {
           "t": 96.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 148.0,
           "energia": 0.11,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_4"
         },
         {
           "t": 202.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 252.6,
           "energia": 0.77,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -1007,38 +1007,38 @@
       "file": "TheFatRat - Rise Up.flac",
       "title": "Rise Up",
       "artist": "TheFatRat",
-      "bpm": 161.5,
+      "bpm": 80.8,
       "duration": 169.8,
-      "mood": "accion",
+      "mood": "relax",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.06,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 34.0,
           "energia": 0.37,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_2"
         },
         {
           "t": 70.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 108.0,
           "energia": 0.37,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_4"
         },
         {
           "t": 154.8,
           "energia": 0.51,
-          "clase": "energico",
+          "clase": "nivel_5",
           "tipo": "outro"
         }
       ]
@@ -1048,44 +1048,44 @@
       "file": "Kings Of Leon - Sex on Fire.flac",
       "title": "Sex on Fire",
       "artist": "Kings Of Leon",
-      "bpm": 76.0,
+      "bpm": 152.0,
       "duration": 203.3,
-      "mood": "relax",
+      "mood": "accion",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.02,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 34.0,
           "energia": 0.5,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_2"
         },
         {
           "t": 65.0,
           "energia": 0.52,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_3"
         },
         {
           "t": 101.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 139.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 188.3,
           "energia": 0.76,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -1102,31 +1102,31 @@
         {
           "t": 0.0,
           "energia": 0.6,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "intro"
         },
         {
           "t": 46.0,
           "energia": 0.86,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_2"
         },
         {
           "t": 85.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 130.0,
           "energia": 0.97,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 195.0,
           "energia": 0.68,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -1143,37 +1143,37 @@
         {
           "t": 0.0,
           "energia": 0.23,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 32.0,
           "energia": 0.69,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_2"
         },
         {
           "t": 86.0,
           "energia": 0.59,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_3"
         },
         {
           "t": 121.0,
           "energia": 0.55,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_4"
         },
         {
           "t": 156.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 214.1,
           "energia": 0.8,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -1190,49 +1190,49 @@
         {
           "t": 0.0,
           "energia": 0.04,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 41.0,
           "energia": 0.41,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_2"
         },
         {
           "t": 89.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 126.0,
           "energia": 0.43,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_4"
         },
         {
           "t": 173.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 216.0,
           "energia": 0.51,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_6"
         },
         {
           "t": 266.0,
           "energia": 0.92,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_7"
         },
         {
           "t": 296.1,
           "energia": 0.75,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -1249,43 +1249,43 @@
         {
           "t": 0.0,
           "energia": 0.31,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "intro"
         },
         {
           "t": 48.0,
           "energia": 0.48,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_2"
         },
         {
           "t": 86.0,
           "energia": 0.93,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 131.0,
           "energia": 0.0,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_4"
         },
         {
           "t": 172.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 216.0,
           "energia": 0.83,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_6"
         },
         {
           "t": 252.8,
           "energia": 0.75,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -1295,56 +1295,56 @@
       "file": "Gustavo Cerati - Cosas Imposibles.flac",
       "title": "Cosas Imposibles",
       "artist": "Gustavo Cerati",
-      "bpm": 80.7,
+      "bpm": 117.5,
       "duration": 305.6,
-      "mood": "relax",
+      "mood": "energia",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.21,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 31.0,
           "energia": 0.56,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_2"
         },
         {
           "t": 64.0,
           "energia": 0.66,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_3"
         },
         {
           "t": 120.0,
           "energia": 0.65,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_4"
         },
         {
           "t": 155.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 186.0,
           "energia": 0.54,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_6"
         },
         {
           "t": 228.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_7"
         },
         {
           "t": 290.6,
           "energia": 0.77,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -1361,37 +1361,37 @@
         {
           "t": 0.0,
           "energia": 0.15,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 61.0,
           "energia": 0.97,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 106.0,
           "energia": 0.59,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_3"
         },
         {
           "t": 139.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 190.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 251.7,
           "energia": 0.77,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -1408,43 +1408,43 @@
         {
           "t": 0.0,
           "energia": 0.08,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 53.0,
           "energia": 0.02,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 102.0,
           "energia": 0.88,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_3"
         },
         {
           "t": 135.0,
           "energia": 0.92,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 175.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 221.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 253.4,
           "energia": 0.78,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -1461,37 +1461,37 @@
         {
           "t": 0.0,
           "energia": 0.51,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "intro"
         },
         {
           "t": 35.0,
           "energia": 0.69,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_2"
         },
         {
           "t": 72.0,
           "energia": 0.63,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_3"
         },
         {
           "t": 116.0,
           "energia": 0.97,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 154.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 194.0,
           "energia": 0.81,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -1501,56 +1501,56 @@
       "file": "Lynyrd Skynyrd - Free Bird.flac",
       "title": "Free Bird",
       "artist": "Lynyrd Skynyrd",
-      "bpm": 129.2,
+      "bpm": 136.0,
       "duration": 550.3,
       "mood": "accion",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.31,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "intro"
         },
         {
           "t": 58.0,
           "energia": 0.6,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_2"
         },
         {
           "t": 91.0,
           "energia": 0.63,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_3"
         },
         {
           "t": 132.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 252.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 341.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 424.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_7"
         },
         {
           "t": 535.3,
           "energia": 0.86,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -1560,32 +1560,32 @@
       "file": "Fazerdaze - Lucky Girl.flac",
       "title": "Lucky Girl",
       "artist": "Fazerdaze",
-      "bpm": 172.3,
+      "bpm": 86.1,
       "duration": 171.0,
-      "mood": "accion",
+      "mood": "relax",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.48,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "intro"
         },
         {
           "t": 62.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 120.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 156.0,
           "energia": 0.85,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -1602,31 +1602,31 @@
         {
           "t": 0.0,
           "energia": 0.22,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 63.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 129.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 176.0,
           "energia": 0.78,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_4"
         },
         {
           "t": 209.1,
           "energia": 0.78,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -1636,56 +1636,56 @@
       "file": "Harmless - Swing Lynn.flac",
       "title": "Swing Lynn",
       "artist": "Harmless",
-      "bpm": 161.5,
+      "bpm": 80.8,
       "duration": 321.4,
-      "mood": "accion",
+      "mood": "relax",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.0,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 61.0,
           "energia": 0.68,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_2"
         },
         {
           "t": 102.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 150.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 188.0,
           "energia": 0.71,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_5"
         },
         {
           "t": 235.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 276.0,
           "energia": 0.79,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_7"
         },
         {
           "t": 306.4,
           "energia": 0.81,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -1702,31 +1702,31 @@
         {
           "t": 0.0,
           "energia": 0.12,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 48.0,
           "energia": 0.29,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_2"
         },
         {
           "t": 82.0,
           "energia": 0.02,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_3"
         },
         {
           "t": 130.0,
           "energia": 0.39,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_4"
         },
         {
           "t": 168.9,
           "energia": 0.62,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -1743,37 +1743,37 @@
         {
           "t": 0.0,
           "energia": 0.49,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "intro"
         },
         {
           "t": 52.0,
           "energia": 0.4,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_2"
         },
         {
           "t": 103.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 134.0,
           "energia": 0.97,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 181.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 241.9,
           "energia": 0.84,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -1790,43 +1790,43 @@
         {
           "t": 0.0,
           "energia": 0.09,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 44.0,
           "energia": 0.04,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 96.0,
           "energia": 0.41,
-          "clase": "energico",
+          "clase": "nivel_4",
           "tipo": "segmento_3"
         },
         {
           "t": 129.0,
           "energia": 0.06,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_4"
         },
         {
           "t": 171.0,
           "energia": 0.83,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_5"
         },
         {
           "t": 227.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 291.5,
           "energia": 0.2,
-          "clase": "energico",
+          "clase": "nivel_2",
           "tipo": "outro"
         }
       ]
@@ -1836,38 +1836,38 @@
       "file": "iilliaa - gone for life.flac",
       "title": "gone for life",
       "artist": "iilliaa",
-      "bpm": 83.4,
+      "bpm": 123.0,
       "duration": 177.1,
-      "mood": "relax",
+      "mood": "energia",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.0,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 44.0,
           "energia": 0.02,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 83.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 128.0,
           "energia": 0.06,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_4"
         },
         {
           "t": 162.1,
           "energia": 0.84,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -1884,31 +1884,31 @@
         {
           "t": 0.0,
           "energia": 0.03,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 38.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 72.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 134.0,
           "energia": 0.24,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_4"
         },
         {
           "t": 166.9,
           "energia": 0.93,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "outro"
         }
       ]
@@ -1918,44 +1918,44 @@
       "file": "The Neighbourhood - Sweater Weather.flac",
       "title": "Sweater Weather",
       "artist": "The Neighbourhood",
-      "bpm": 61.5,
+      "bpm": 123.0,
       "duration": 240.4,
-      "mood": "relax",
+      "mood": "energia",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.48,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "intro"
         },
         {
           "t": 55.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 109.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 157.0,
           "energia": 0.13,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_4"
         },
         {
           "t": 191.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 225.4,
           "energia": 0.85,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -1972,37 +1972,37 @@
         {
           "t": 0.0,
           "energia": 0.15,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 61.0,
           "energia": 0.97,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 106.0,
           "energia": 0.59,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_3"
         },
         {
           "t": 139.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 190.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 251.7,
           "energia": 0.77,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -2019,49 +2019,49 @@
         {
           "t": 0.0,
           "energia": 0.4,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "intro"
         },
         {
           "t": 46.0,
           "energia": 0.31,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_2"
         },
         {
           "t": 145.0,
           "energia": 0.97,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 201.0,
           "energia": 0.12,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_4"
         },
         {
           "t": 253.0,
           "energia": 0.97,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 307.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 497.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_7"
         },
         {
           "t": 563.0,
           "energia": 0.65,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -2071,44 +2071,44 @@
       "file": "Cults - Always Forever.flac",
       "title": "Always Forever",
       "artist": "Cults",
-      "bpm": 161.5,
+      "bpm": 80.8,
       "duration": 223.8,
-      "mood": "accion",
+      "mood": "relax",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.72,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "intro"
         },
         {
           "t": 40.0,
           "energia": 0.87,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_2"
         },
         {
           "t": 75.0,
           "energia": 0.66,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_3"
         },
         {
           "t": 121.0,
           "energia": 0.72,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_4"
         },
         {
           "t": 153.0,
           "energia": 0.42,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_5"
         },
         {
           "t": 208.8,
           "energia": 0.77,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -2118,38 +2118,38 @@
       "file": "BUNT. - Clouds.flac",
       "title": "Clouds",
       "artist": "BUNT.",
-      "bpm": 64.6,
+      "bpm": 129.2,
       "duration": 158.8,
-      "mood": "relax",
+      "mood": "accion",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.5,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "intro"
         },
         {
           "t": 35.0,
           "energia": 0.14,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 68.0,
           "energia": 0.54,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_3"
         },
         {
           "t": 103.0,
           "energia": 0.26,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_4"
         },
         {
           "t": 143.8,
           "energia": 0.64,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -2159,44 +2159,44 @@
       "file": "Rootkit - Against the Sun (feat. Anna Yvette).flac",
       "title": "Against the Sun (feat. Anna Yvette)",
       "artist": "Rootkit",
-      "bpm": 86.1,
+      "bpm": 129.2,
       "duration": 212.3,
-      "mood": "relax",
+      "mood": "accion",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.01,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 34.0,
           "energia": 0.78,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "segmento_2"
         },
         {
           "t": 68.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 103.0,
           "energia": 0.28,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_4"
         },
         {
           "t": 139.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 197.3,
           "energia": 0.75,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -2213,31 +2213,31 @@
         {
           "t": 0.0,
           "energia": 0.12,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 47.0,
           "energia": 0.42,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_2"
         },
         {
           "t": 98.0,
           "energia": 0.2,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_3"
         },
         {
           "t": 144.0,
           "energia": 0.87,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_4"
         },
         {
           "t": 205.8,
           "energia": 0.57,
-          "clase": "energico",
+          "clase": "nivel_5",
           "tipo": "outro"
         }
       ]
@@ -2254,31 +2254,31 @@
         {
           "t": 0.0,
           "energia": 0.3,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 32.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 84.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 122.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 165.9,
           "energia": 0.72,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -2295,25 +2295,25 @@
         {
           "t": 0.0,
           "energia": 0.41,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "intro"
         },
         {
           "t": 61.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 125.0,
           "energia": 0.36,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_3"
         },
         {
           "t": 176.3,
           "energia": 0.59,
-          "clase": "energico",
+          "clase": "nivel_5",
           "tipo": "outro"
         }
       ]
@@ -2330,37 +2330,37 @@
         {
           "t": 0.0,
           "energia": 0.81,
-          "clase": "suave",
+          "clase": "nivel_8",
           "tipo": "intro"
         },
         {
           "t": 32.0,
           "energia": 0.42,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_2"
         },
         {
           "t": 70.0,
           "energia": 0.59,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_3"
         },
         {
           "t": 127.0,
           "energia": 0.41,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_4"
         },
         {
           "t": 163.0,
           "energia": 0.92,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 197.0,
           "energia": 0.85,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -2377,43 +2377,43 @@
         {
           "t": 0.0,
           "energia": 0.01,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 32.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 65.0,
           "energia": 0.48,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_3"
         },
         {
           "t": 101.0,
           "energia": 0.83,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_4"
         },
         {
           "t": 150.0,
           "energia": 0.02,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_5"
         },
         {
           "t": 187.0,
           "energia": 0.86,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_6"
         },
         {
           "t": 218.5,
           "energia": 0.61,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -2430,37 +2430,37 @@
         {
           "t": 0.0,
           "energia": 0.11,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 37.0,
           "energia": 0.2,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_2"
         },
         {
           "t": 82.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 128.0,
           "energia": 0.21,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_4"
         },
         {
           "t": 165.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 209.5,
           "energia": 0.67,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -2477,43 +2477,43 @@
         {
           "t": 0.0,
           "energia": 0.23,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 33.0,
           "energia": 0.38,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_2"
         },
         {
           "t": 70.0,
           "energia": 0.45,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_3"
         },
         {
           "t": 115.0,
           "energia": 0.77,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "segmento_4"
         },
         {
           "t": 147.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 192.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 223.1,
           "energia": 0.69,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -2530,31 +2530,31 @@
         {
           "t": 0.0,
           "energia": 0.02,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 65.0,
           "energia": 0.12,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 126.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 166.0,
           "energia": 0.5,
-          "clase": "energico",
+          "clase": "nivel_4",
           "tipo": "segmento_4"
         },
         {
           "t": 218.7,
           "energia": 0.38,
-          "clase": "energico",
+          "clase": "nivel_3",
           "tipo": "outro"
         }
       ]
@@ -2564,32 +2564,32 @@
       "file": "Alejandro y María Laura - La Princesa y el Rio.flac",
       "title": "La Princesa y el Rio",
       "artist": "Alejandro y María Laura",
-      "bpm": 107.7,
+      "bpm": 112.3,
       "duration": 161.8,
       "mood": "enfoque",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.43,
-          "clase": "energico",
+          "clase": "nivel_4",
           "tipo": "intro"
         },
         {
           "t": 32.0,
           "energia": 0.01,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 85.0,
           "energia": 0.7,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "segmento_3"
         },
         {
           "t": 146.8,
           "energia": 0.35,
-          "clase": "energico",
+          "clase": "nivel_3",
           "tipo": "outro"
         }
       ]
@@ -2606,19 +2606,19 @@
         {
           "t": 0.0,
           "energia": 0.0,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 60.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 109.1,
           "energia": 0.82,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -2628,38 +2628,38 @@
       "file": "Chiaroscuro Quartet - Adagio and Fugue in C Minor, K. 546_ I. Adagio.flac",
       "title": "Adagio and Fugue in C Minor, K. 546_ I. Adagio",
       "artist": "Chiaroscuro Quartet",
-      "bpm": 57.4,
+      "bpm": 123.0,
       "duration": 180.4,
-      "mood": "relax",
+      "mood": "energia",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.52,
-          "clase": "energico",
+          "clase": "nivel_5",
           "tipo": "intro"
         },
         {
           "t": 34.0,
           "energia": 0.9,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_2"
         },
         {
           "t": 84.0,
           "energia": 0.79,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "segmento_3"
         },
         {
           "t": 121.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 165.4,
           "energia": 0.15,
-          "clase": "energico",
+          "clase": "nivel_1",
           "tipo": "outro"
         }
       ]
@@ -2676,37 +2676,37 @@
         {
           "t": 0.0,
           "energia": 0.76,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "intro"
         },
         {
           "t": 47.0,
           "energia": 0.91,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 80.0,
           "energia": 0.81,
-          "clase": "suave",
+          "clase": "nivel_8",
           "tipo": "segmento_3"
         },
         {
           "t": 136.0,
           "energia": 0.9,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_4"
         },
         {
           "t": 173.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 207.0,
           "energia": 0.85,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -2716,50 +2716,50 @@
       "file": "Coldplay - Arabesque.flac",
       "title": "Arabesque",
       "artist": "Coldplay",
-      "bpm": 172.3,
+      "bpm": 86.1,
       "duration": 340.3,
-      "mood": "accion",
+      "mood": "relax",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.04,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 83.0,
           "energia": 0.62,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_2"
         },
         {
           "t": 125.0,
           "energia": 0.77,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "segmento_3"
         },
         {
           "t": 185.0,
           "energia": 0.74,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "segmento_4"
         },
         {
           "t": 220.0,
           "energia": 0.62,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_5"
         },
         {
           "t": 274.0,
           "energia": 0.57,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_6"
         },
         {
           "t": 325.3,
           "energia": 0.68,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -2776,37 +2776,37 @@
         {
           "t": 0.0,
           "energia": 0.06,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 68.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 102.0,
           "energia": 0.13,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_3"
         },
         {
           "t": 136.0,
           "energia": 0.48,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_4"
         },
         {
           "t": 171.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 222.9,
           "energia": 0.56,
-          "clase": "energico",
+          "clase": "nivel_5",
           "tipo": "outro"
         }
       ]
@@ -2823,43 +2823,43 @@
         {
           "t": 0.0,
           "energia": 0.23,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 47.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 88.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 126.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 167.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 200.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 235.5,
           "energia": 0.83,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -2876,31 +2876,31 @@
         {
           "t": 0.0,
           "energia": 0.16,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 60.0,
           "energia": 0.1,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 107.0,
           "energia": 0.43,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_3"
         },
         {
           "t": 139.0,
           "energia": 0.97,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 183.6,
           "energia": 0.63,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -2910,38 +2910,38 @@
       "file": "TheFatRat, Slaydit & Anjulie - Stronger - 01-01 Stronger.flac",
       "title": "Stronger - 01-01 Stronger",
       "artist": "TheFatRat, Slaydit & Anjulie",
-      "bpm": 161.5,
+      "bpm": 80.8,
       "duration": 205.5,
-      "mood": "accion",
+      "mood": "relax",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.05,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 43.0,
           "energia": 0.97,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 86.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 129.0,
           "energia": 0.24,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_4"
         },
         {
           "t": 190.5,
           "energia": 0.61,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -2958,31 +2958,31 @@
         {
           "t": 0.0,
           "energia": 0.11,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 37.0,
           "energia": 0.93,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 79.0,
           "energia": 0.92,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 113.0,
           "energia": 0.32,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_4"
         },
         {
           "t": 150.3,
           "energia": 0.78,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -2999,31 +2999,31 @@
         {
           "t": 0.0,
           "energia": 0.22,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 42.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 79.0,
           "energia": 0.29,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_3"
         },
         {
           "t": 111.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 149.2,
           "energia": 0.76,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -3040,43 +3040,43 @@
         {
           "t": 0.0,
           "energia": 0.23,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 47.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 88.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 126.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 167.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 200.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 235.5,
           "energia": 0.83,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -3093,43 +3093,43 @@
         {
           "t": 0.0,
           "energia": 0.4,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "intro"
         },
         {
           "t": 51.0,
           "energia": 0.61,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_2"
         },
         {
           "t": 107.0,
           "energia": 0.55,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_3"
         },
         {
           "t": 143.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 191.0,
           "energia": 0.82,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_5"
         },
         {
           "t": 226.0,
           "energia": 0.5,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_6"
         },
         {
           "t": 277.2,
           "energia": 0.68,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -3146,37 +3146,37 @@
         {
           "t": 0.0,
           "energia": 0.36,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "intro"
         },
         {
           "t": 34.0,
           "energia": 0.61,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "segmento_2"
         },
         {
           "t": 69.0,
           "energia": 0.31,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_3"
         },
         {
           "t": 117.0,
           "energia": 0.88,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_4"
         },
         {
           "t": 148.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 179.4,
           "energia": 0.6,
-          "clase": "energico",
+          "clase": "nivel_5",
           "tipo": "outro"
         }
       ]
@@ -3193,31 +3193,31 @@
         {
           "t": 0.0,
           "energia": 0.09,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 41.0,
           "energia": 0.06,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 100.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 145.0,
           "energia": 0.93,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 207.8,
           "energia": 0.5,
-          "clase": "energico",
+          "clase": "nivel_4",
           "tipo": "outro"
         }
       ]
@@ -3227,44 +3227,44 @@
       "file": "08 - Lord Huron - Meet Me in the Woods.flac",
       "title": "Lord Huron - Meet Me in the Woods",
       "artist": "08",
-      "bpm": 161.5,
+      "bpm": 107.7,
       "duration": 262.2,
-      "mood": "accion",
+      "mood": "enfoque",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.0,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 62.0,
           "energia": 0.37,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_2"
         },
         {
           "t": 109.0,
           "energia": 0.45,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_3"
         },
         {
           "t": 146.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 183.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 247.2,
           "energia": 0.77,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -3281,49 +3281,49 @@
         {
           "t": 0.0,
           "energia": 0.25,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 40.0,
           "energia": 0.27,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_2"
         },
         {
           "t": 91.0,
           "energia": 0.91,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 125.0,
           "energia": 0.23,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_4"
         },
         {
           "t": 188.0,
           "energia": 0.9,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 258.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 293.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_7"
         },
         {
           "t": 336.6,
           "energia": 0.71,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -3340,25 +3340,25 @@
         {
           "t": 0.0,
           "energia": 0.25,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 43.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 96.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 151.4,
           "energia": 0.86,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -3368,32 +3368,32 @@
       "file": "01 - Édith Piaf - Non, je ne regrette rien.flac",
       "title": "Édith Piaf - Non, je ne regrette rien",
       "artist": "01",
-      "bpm": 86.1,
+      "bpm": 129.2,
       "duration": 142.3,
-      "mood": "relax",
+      "mood": "accion",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.14,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 60.0,
           "energia": 0.12,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 95.0,
           "energia": 0.22,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_3"
         },
         {
           "t": 127.3,
           "energia": 0.47,
-          "clase": "energico",
+          "clase": "nivel_4",
           "tipo": "outro"
         }
       ]
@@ -3410,37 +3410,37 @@
         {
           "t": 0.0,
           "energia": 0.83,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "intro"
         },
         {
           "t": 63.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 124.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 156.0,
           "energia": 0.59,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_4"
         },
         {
           "t": 195.0,
           "energia": 0.52,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_5"
         },
         {
           "t": 231.8,
           "energia": 0.78,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -3457,31 +3457,31 @@
         {
           "t": 0.0,
           "energia": 0.05,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 38.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 100.0,
           "energia": 0.4,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_3"
         },
         {
           "t": 139.0,
           "energia": 0.09,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_4"
         },
         {
           "t": 188.3,
           "energia": 0.87,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -3491,50 +3491,50 @@
       "file": "The Marías - No One Noticed (Extended English).flac",
       "title": "No One Noticed (Extended English)",
       "artist": "The Marías",
-      "bpm": 198.8,
+      "bpm": 99.4,
       "duration": 284.5,
-      "mood": "accion",
+      "mood": "enfoque",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.46,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "intro"
         },
         {
           "t": 59.0,
           "energia": 0.85,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_2"
         },
         {
           "t": 94.0,
           "energia": 0.87,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_3"
         },
         {
           "t": 126.0,
           "energia": 0.72,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_4"
         },
         {
           "t": 158.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 230.0,
           "energia": 0.15,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_6"
         },
         {
           "t": 269.5,
           "energia": 0.73,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -3544,38 +3544,38 @@
       "file": "Kygo - First Time.flac",
       "title": "First Time",
       "artist": "Kygo",
-      "bpm": 172.3,
+      "bpm": 117.5,
       "duration": 193.5,
-      "mood": "accion",
+      "mood": "energia",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.24,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 42.0,
           "energia": 0.39,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_2"
         },
         {
           "t": 87.0,
           "energia": 0.14,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_3"
         },
         {
           "t": 147.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 178.5,
           "energia": 0.61,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -3585,38 +3585,38 @@
       "file": "02 - The Score - Legend.flac",
       "title": "The Score - Legend",
       "artist": "02",
-      "bpm": 83.4,
+      "bpm": 80.8,
       "duration": 189.1,
       "mood": "relax",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.37,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "intro"
         },
         {
           "t": 46.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 93.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 124.0,
           "energia": 0.65,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_4"
         },
         {
           "t": 174.1,
           "energia": 0.85,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -3633,25 +3633,25 @@
         {
           "t": 0.0,
           "energia": 0.08,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 47.0,
           "energia": 0.52,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_2"
         },
         {
           "t": 105.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 137.8,
           "energia": 0.7,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -3668,49 +3668,49 @@
         {
           "t": 0.0,
           "energia": 0.69,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "intro"
         },
         {
           "t": 39.0,
           "energia": 0.62,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_2"
         },
         {
           "t": 82.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 123.0,
           "energia": 0.92,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 154.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 186.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 229.0,
           "energia": 0.4,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_7"
         },
         {
           "t": 270.0,
           "energia": 0.83,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -3727,31 +3727,31 @@
         {
           "t": 0.0,
           "energia": 0.01,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 39.0,
           "energia": 0.57,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_2"
         },
         {
           "t": 102.0,
           "energia": 0.55,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_3"
         },
         {
           "t": 143.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 192.2,
           "energia": 0.68,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -3768,37 +3768,37 @@
         {
           "t": 0.0,
           "energia": 0.63,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "intro"
         },
         {
           "t": 47.0,
           "energia": 0.0,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 78.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 110.0,
           "energia": 0.03,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_4"
         },
         {
           "t": 190.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 228.0,
           "energia": 0.83,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -3815,43 +3815,43 @@
         {
           "t": 0.0,
           "energia": 0.06,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 41.0,
           "energia": 0.17,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 79.0,
           "energia": 0.27,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_3"
         },
         {
           "t": 126.0,
           "energia": 0.55,
-          "clase": "energico",
+          "clase": "nivel_5",
           "tipo": "segmento_4"
         },
         {
           "t": 164.0,
           "energia": 0.8,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_5"
         },
         {
           "t": 195.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 260.6,
           "energia": 0.32,
-          "clase": "energico",
+          "clase": "nivel_3",
           "tipo": "outro"
         }
       ]
@@ -3868,31 +3868,31 @@
         {
           "t": 0.0,
           "energia": 0.02,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 36.0,
           "energia": 0.03,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 96.0,
           "energia": 0.4,
-          "clase": "energico",
+          "clase": "nivel_3",
           "tipo": "segmento_3"
         },
         {
           "t": 142.0,
           "energia": 0.42,
-          "clase": "energico",
+          "clase": "nivel_4",
           "tipo": "segmento_4"
         },
         {
           "t": 184.4,
           "energia": 0.19,
-          "clase": "energico",
+          "clase": "nivel_1",
           "tipo": "outro"
         }
       ]
@@ -3909,49 +3909,49 @@
         {
           "t": 0.0,
           "energia": 0.08,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 44.0,
           "energia": 0.07,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 100.0,
           "energia": 0.02,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_3"
         },
         {
           "t": 149.0,
           "energia": 0.83,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_4"
         },
         {
           "t": 190.0,
           "energia": 0.67,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "segmento_5"
         },
         {
           "t": 263.0,
           "energia": 0.73,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "segmento_6"
         },
         {
           "t": 304.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_7"
         },
         {
           "t": 350.4,
           "energia": 0.25,
-          "clase": "energico",
+          "clase": "nivel_2",
           "tipo": "outro"
         }
       ]
@@ -3968,43 +3968,43 @@
         {
           "t": 0.0,
           "energia": 0.18,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 31.0,
           "energia": 0.43,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_2"
         },
         {
           "t": 65.0,
           "energia": 0.8,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "segmento_3"
         },
         {
           "t": 110.0,
           "energia": 0.37,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_4"
         },
         {
           "t": 146.0,
           "energia": 0.81,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_5"
         },
         {
           "t": 186.0,
           "energia": 0.52,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_6"
         },
         {
           "t": 230.0,
           "energia": 0.62,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -4014,44 +4014,44 @@
       "file": "Muse - Survival.flac",
       "title": "Survival",
       "artist": "Muse",
-      "bpm": 161.5,
+      "bpm": 80.8,
       "duration": 257.5,
-      "mood": "accion",
+      "mood": "relax",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.09,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 42.0,
           "energia": 0.67,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_2"
         },
         {
           "t": 81.0,
           "energia": 0.59,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_3"
         },
         {
           "t": 116.0,
           "energia": 0.76,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_4"
         },
         {
           "t": 177.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 242.5,
           "energia": 0.8,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -4068,31 +4068,31 @@
         {
           "t": 0.0,
           "energia": 0.3,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "intro"
         },
         {
           "t": 61.0,
           "energia": 0.22,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_2"
         },
         {
           "t": 121.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 182.0,
           "energia": 0.88,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_4"
         },
         {
           "t": 222.8,
           "energia": 0.7,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -4102,26 +4102,26 @@
       "file": "Nicholas Britell - Adagio in C Minor.flac",
       "title": "Adagio in C Minor",
       "artist": "Nicholas Britell",
-      "bpm": 172.3,
+      "bpm": 123.0,
       "duration": 90.0,
-      "mood": "accion",
+      "mood": "energia",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.08,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 40.0,
           "energia": 0.13,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 75.0,
           "energia": 0.42,
-          "clase": "energico",
+          "clase": "nivel_4",
           "tipo": "outro"
         }
       ]
@@ -4131,50 +4131,50 @@
       "file": "Fleetwood Mac - The Chain (2004 Remaster).flac",
       "title": "The Chain (2004 Remaster)",
       "artist": "Fleetwood Mac",
-      "bpm": 76.0,
+      "bpm": 152.0,
       "duration": 269.8,
-      "mood": "relax",
+      "mood": "accion",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.0,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 41.0,
           "energia": 0.23,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_2"
         },
         {
           "t": 82.0,
           "energia": 0.09,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_3"
         },
         {
           "t": 117.0,
           "energia": 0.25,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_4"
         },
         {
           "t": 166.0,
           "energia": 0.88,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_5"
         },
         {
           "t": 218.0,
           "energia": 0.82,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_6"
         },
         {
           "t": 254.8,
           "energia": 0.44,
-          "clase": "energico",
+          "clase": "nivel_4",
           "tipo": "outro"
         }
       ]
@@ -4191,43 +4191,43 @@
         {
           "t": 0.0,
           "energia": 0.17,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 32.0,
           "energia": 0.59,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_2"
         },
         {
           "t": 63.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 121.0,
           "energia": 0.54,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_4"
         },
         {
           "t": 181.0,
           "energia": 0.91,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 232.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 274.9,
           "energia": 0.72,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -4244,37 +4244,37 @@
         {
           "t": 0.0,
           "energia": 0.0,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 39.0,
           "energia": 0.46,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_2"
         },
         {
           "t": 77.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 114.0,
           "energia": 0.46,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_4"
         },
         {
           "t": 151.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 199.0,
           "energia": 0.61,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -4284,50 +4284,50 @@
       "file": "Florence + The Machine - Dog Days Are Over.flac",
       "title": "Dog Days Are Over",
       "artist": "Florence + The Machine",
-      "bpm": 99.4,
+      "bpm": 143.6,
       "duration": 251.8,
-      "mood": "enfoque",
+      "mood": "accion",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.12,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 38.0,
           "energia": 0.15,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 84.0,
           "energia": 0.82,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_3"
         },
         {
           "t": 121.0,
           "energia": 0.08,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_4"
         },
         {
           "t": 169.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 203.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 236.8,
           "energia": 0.64,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -4337,44 +4337,44 @@
       "file": "Sombr - back to friends.flac",
       "title": "back to friends",
       "artist": "Sombr",
-      "bpm": 92.3,
+      "bpm": 123.0,
       "duration": 199.0,
-      "mood": "relax",
+      "mood": "energia",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.26,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 43.0,
           "energia": 0.5,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_2"
         },
         {
           "t": 86.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 117.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 154.0,
           "energia": 0.93,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 184.0,
           "energia": 0.82,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -4384,56 +4384,56 @@
       "file": "Bad Bunny - BAILE INoLVIDABLE.flac",
       "title": "BAILE INoLVIDABLE",
       "artist": "Bad Bunny",
-      "bpm": 89.1,
+      "bpm": 117.5,
       "duration": 367.7,
-      "mood": "relax",
+      "mood": "energia",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.32,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "intro"
         },
         {
           "t": 40.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 71.0,
           "energia": 0.22,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_3"
         },
         {
           "t": 152.0,
           "energia": 0.27,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_4"
         },
         {
           "t": 185.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 254.0,
           "energia": 0.48,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_6"
         },
         {
           "t": 302.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_7"
         },
         {
           "t": 352.7,
           "energia": 0.77,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -4450,31 +4450,31 @@
         {
           "t": 0.0,
           "energia": 0.19,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 54.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 104.0,
           "energia": 0.57,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_3"
         },
         {
           "t": 136.0,
           "energia": 0.32,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_4"
         },
         {
           "t": 174.5,
           "energia": 0.7,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -4491,43 +4491,43 @@
         {
           "t": 0.0,
           "energia": 0.0,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 42.0,
           "energia": 0.77,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_2"
         },
         {
           "t": 85.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 120.0,
           "energia": 0.77,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_4"
         },
         {
           "t": 159.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 195.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 240.1,
           "energia": 0.88,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -4544,37 +4544,37 @@
         {
           "t": 0.0,
           "energia": 0.28,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 36.0,
           "energia": 0.74,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_2"
         },
         {
           "t": 88.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 134.0,
           "energia": 0.39,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_4"
         },
         {
           "t": 191.0,
           "energia": 0.26,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_5"
         },
         {
           "t": 245.2,
           "energia": 0.84,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -4591,31 +4591,31 @@
         {
           "t": 0.0,
           "energia": 0.6,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "intro"
         },
         {
           "t": 54.0,
           "energia": 0.88,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_2"
         },
         {
           "t": 100.0,
           "energia": 0.29,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_3"
         },
         {
           "t": 135.0,
           "energia": 0.38,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_4"
         },
         {
           "t": 183.3,
           "energia": 0.68,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -4632,31 +4632,31 @@
         {
           "t": 0.0,
           "energia": 0.81,
-          "clase": "suave",
+          "clase": "nivel_8",
           "tipo": "intro"
         },
         {
           "t": 42.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 77.0,
           "energia": 0.71,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_3"
         },
         {
           "t": 111.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 143.1,
           "energia": 0.9,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "outro"
         }
       ]
@@ -4673,43 +4673,43 @@
         {
           "t": 0.0,
           "energia": 0.7,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "intro"
         },
         {
           "t": 34.0,
           "energia": 0.82,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_2"
         },
         {
           "t": 72.0,
           "energia": 0.93,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 117.0,
           "energia": 0.46,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_4"
         },
         {
           "t": 177.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 209.0,
           "energia": 0.83,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_6"
         },
         {
           "t": 243.8,
           "energia": 0.66,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -4726,37 +4726,37 @@
         {
           "t": 0.0,
           "energia": 0.49,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "intro"
         },
         {
           "t": 31.0,
           "energia": 0.97,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 72.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 131.0,
           "energia": 0.72,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_4"
         },
         {
           "t": 185.0,
           "energia": 0.97,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 216.8,
           "energia": 0.86,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -4773,49 +4773,49 @@
         {
           "t": 0.0,
           "energia": 0.47,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "intro"
         },
         {
           "t": 61.0,
           "energia": 0.82,
-          "clase": "suave",
+          "clase": "nivel_8",
           "tipo": "segmento_2"
         },
         {
           "t": 99.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 153.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 214.0,
           "energia": 0.59,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_5"
         },
         {
           "t": 245.0,
           "energia": 0.88,
-          "clase": "suave",
+          "clase": "nivel_8",
           "tipo": "segmento_6"
         },
         {
           "t": 278.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_7"
         },
         {
           "t": 312.7,
           "energia": 0.89,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -4832,37 +4832,37 @@
         {
           "t": 0.0,
           "energia": 0.79,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "intro"
         },
         {
           "t": 56.0,
           "energia": 0.29,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_2"
         },
         {
           "t": 111.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 144.0,
           "energia": 0.88,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_4"
         },
         {
           "t": 191.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 227.3,
           "energia": 0.8,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -4872,50 +4872,50 @@
       "file": "12 - Luna (En Vivo).flac",
       "title": "Luna (En Vivo)",
       "artist": "12",
-      "bpm": 117.5,
+      "bpm": 123.0,
       "duration": 280.4,
       "mood": "energia",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.11,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 47.0,
           "energia": 0.21,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_2"
         },
         {
           "t": 81.0,
           "energia": 0.75,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "segmento_3"
         },
         {
           "t": 137.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 176.0,
           "energia": 0.78,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "segmento_5"
         },
         {
           "t": 230.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 265.4,
           "energia": 0.63,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -4932,49 +4932,49 @@
         {
           "t": 0.0,
           "energia": 0.67,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "intro"
         },
         {
           "t": 32.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 127.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 163.0,
           "energia": 0.5,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_4"
         },
         {
           "t": 209.0,
           "energia": 0.61,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_5"
         },
         {
           "t": 259.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 300.0,
           "energia": 0.61,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_7"
         },
         {
           "t": 354.6,
           "energia": 0.8,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -4984,44 +4984,44 @@
       "file": "Still Corners - Beginning to Blue - 2023 Remaster.flac",
       "title": "Beginning to Blue - 2023 Remaster",
       "artist": "Still Corners",
-      "bpm": 136.0,
+      "bpm": 129.2,
       "duration": 191.8,
       "mood": "accion",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.17,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 38.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 69.0,
           "energia": 0.75,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_3"
         },
         {
           "t": 103.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 134.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 176.8,
           "energia": 0.84,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -5038,37 +5038,37 @@
         {
           "t": 0.0,
           "energia": 0.12,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 49.0,
           "energia": 0.87,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_2"
         },
         {
           "t": 80.0,
           "energia": 0.82,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_3"
         },
         {
           "t": 114.0,
           "energia": 0.53,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_4"
         },
         {
           "t": 165.0,
           "energia": 0.89,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_5"
         },
         {
           "t": 200.7,
           "energia": 0.73,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -5085,43 +5085,43 @@
         {
           "t": 0.0,
           "energia": 0.59,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "intro"
         },
         {
           "t": 32.0,
           "energia": 0.71,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_2"
         },
         {
           "t": 67.0,
           "energia": 0.92,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 115.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 153.0,
           "energia": 0.55,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_5"
         },
         {
           "t": 199.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 243.2,
           "energia": 0.72,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -5131,50 +5131,50 @@
       "file": "Coldplay - Strawberry Swing (Live in Madrid, 2008).flac",
       "title": "Strawberry Swing (Live in Madrid, 2008)",
       "artist": "Coldplay",
-      "bpm": 172.3,
+      "bpm": 117.5,
       "duration": 256.4,
-      "mood": "accion",
+      "mood": "energia",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.08,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 31.0,
           "energia": 0.32,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_2"
         },
         {
           "t": 66.0,
           "energia": 0.39,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_3"
         },
         {
           "t": 101.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 137.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 190.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 241.4,
           "energia": 0.74,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -5191,31 +5191,31 @@
         {
           "t": 0.0,
           "energia": 0.38,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "intro"
         },
         {
           "t": 57.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 97.0,
           "energia": 0.33,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_3"
         },
         {
           "t": 133.0,
           "energia": 0.36,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_4"
         },
         {
           "t": 176.4,
           "energia": 0.77,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -5232,49 +5232,49 @@
         {
           "t": 0.0,
           "energia": 0.26,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 41.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 78.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 125.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 170.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 244.0,
           "energia": 0.02,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_6"
         },
         {
           "t": 286.0,
           "energia": 0.61,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_7"
         },
         {
           "t": 411.7,
           "energia": 0.76,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -5291,31 +5291,31 @@
         {
           "t": 0.0,
           "energia": 0.37,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "intro"
         },
         {
           "t": 48.0,
           "energia": 0.37,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_2"
         },
         {
           "t": 97.0,
           "energia": 0.38,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_3"
         },
         {
           "t": 160.0,
           "energia": 0.89,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_4"
         },
         {
           "t": 199.3,
           "energia": 0.78,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -5332,43 +5332,43 @@
         {
           "t": 0.0,
           "energia": 0.07,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 49.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 90.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 121.0,
           "energia": 0.54,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_4"
         },
         {
           "t": 186.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 217.0,
           "energia": 0.25,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_6"
         },
         {
           "t": 275.1,
           "energia": 0.81,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -5378,50 +5378,50 @@
       "file": "MisterWives - Our Own House.flac",
       "title": "Our Own House",
       "artist": "MisterWives",
-      "bpm": 63.0,
+      "bpm": 129.2,
       "duration": 232.2,
-      "mood": "relax",
+      "mood": "accion",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.14,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 39.0,
           "energia": 0.32,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_2"
         },
         {
           "t": 71.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 115.0,
           "energia": 0.32,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_4"
         },
         {
           "t": 147.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 185.0,
           "energia": 0.67,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_6"
         },
         {
           "t": 217.2,
           "energia": 0.84,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -5438,49 +5438,49 @@
         {
           "t": 0.0,
           "energia": 0.57,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "intro"
         },
         {
           "t": 43.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 80.0,
           "energia": 0.19,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_3"
         },
         {
           "t": 115.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 161.0,
           "energia": 0.69,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_5"
         },
         {
           "t": 197.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 229.0,
           "energia": 0.11,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_7"
         },
         {
           "t": 285.4,
           "energia": 0.79,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -5497,25 +5497,25 @@
         {
           "t": 0.0,
           "energia": 0.39,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "intro"
         },
         {
           "t": 61.0,
           "energia": 0.09,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 95.0,
           "energia": 0.41,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_3"
         },
         {
           "t": 137.0,
           "energia": 0.56,
-          "clase": "energico",
+          "clase": "nivel_5",
           "tipo": "outro"
         }
       ]
@@ -5525,38 +5525,38 @@
       "file": "girl in red - bad idea!.flac",
       "title": "bad idea!",
       "artist": "girl in red",
-      "bpm": 161.5,
+      "bpm": 107.7,
       "duration": 219.6,
-      "mood": "accion",
+      "mood": "enfoque",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.61,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "intro"
         },
         {
           "t": 58.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 108.0,
           "energia": 0.92,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 145.0,
           "energia": 0.55,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_4"
         },
         {
           "t": 204.6,
           "energia": 0.82,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -5573,37 +5573,37 @@
         {
           "t": 0.0,
           "energia": 0.29,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 39.0,
           "energia": 0.51,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_2"
         },
         {
           "t": 78.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 121.0,
           "energia": 0.51,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_4"
         },
         {
           "t": 170.0,
           "energia": 0.38,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_5"
         },
         {
           "t": 227.4,
           "energia": 0.61,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -5620,37 +5620,37 @@
         {
           "t": 0.0,
           "energia": 0.09,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 58.0,
           "energia": 0.87,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_2"
         },
         {
           "t": 95.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 139.0,
           "energia": 0.69,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_4"
         },
         {
           "t": 199.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 243.5,
           "energia": 0.82,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -5667,37 +5667,37 @@
         {
           "t": 0.0,
           "energia": 0.22,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 32.0,
           "energia": 0.69,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_2"
         },
         {
           "t": 78.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 131.0,
           "energia": 0.98,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 184.0,
           "energia": 0.28,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_5"
         },
         {
           "t": 216.1,
           "energia": 0.8,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -5714,37 +5714,37 @@
         {
           "t": 0.0,
           "energia": 0.05,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 39.0,
           "energia": 0.21,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_2"
         },
         {
           "t": 86.0,
           "energia": 0.41,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_3"
         },
         {
           "t": 120.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 151.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 193.8,
           "energia": 0.75,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -5761,31 +5761,31 @@
         {
           "t": 0.0,
           "energia": 0.06,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 60.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 102.0,
           "energia": 0.55,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_3"
         },
         {
           "t": 146.0,
           "energia": 0.18,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_4"
         },
         {
           "t": 205.1,
           "energia": 0.72,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -5802,43 +5802,43 @@
         {
           "t": 0.0,
           "energia": 0.29,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 56.0,
           "energia": 0.59,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_2"
         },
         {
           "t": 96.0,
           "energia": 0.88,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_3"
         },
         {
           "t": 131.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 166.0,
           "energia": 0.51,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_5"
         },
         {
           "t": 206.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 240.1,
           "energia": 0.77,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -5848,56 +5848,56 @@
       "file": "Michael Jackson - Wanna Be Startin' Somethin'.flac",
       "title": "Wanna Be Startin' Somethin'",
       "artist": "Michael Jackson",
-      "bpm": 161.5,
+      "bpm": 123.0,
       "duration": 363.4,
-      "mood": "accion",
+      "mood": "energia",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.82,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "intro"
         },
         {
           "t": 58.0,
           "energia": 0.89,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_2"
         },
         {
           "t": 101.0,
           "energia": 0.91,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 146.0,
           "energia": 0.71,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_4"
         },
         {
           "t": 199.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 249.0,
           "energia": 0.71,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_6"
         },
         {
           "t": 294.0,
           "energia": 0.96,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_7"
         },
         {
           "t": 348.4,
           "energia": 0.81,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -5914,25 +5914,25 @@
         {
           "t": 0.0,
           "energia": 0.08,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 35.0,
           "energia": 0.18,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 96.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 147.1,
           "energia": 0.58,
-          "clase": "energico",
+          "clase": "nivel_5",
           "tipo": "outro"
         }
       ]
@@ -5949,49 +5949,49 @@
         {
           "t": 0.0,
           "energia": 0.34,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "intro"
         },
         {
           "t": 47.0,
           "energia": 0.04,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 95.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 162.0,
           "energia": 0.81,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_4"
         },
         {
           "t": 195.0,
           "energia": 0.83,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_5"
         },
         {
           "t": 234.0,
           "energia": 0.81,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_6"
         },
         {
           "t": 266.0,
           "energia": 0.92,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_7"
         },
         {
           "t": 307.0,
           "energia": 0.74,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -6001,56 +6001,56 @@
       "file": "Adele - Skyfall.flac",
       "title": "Skyfall",
       "artist": "Adele",
-      "bpm": 152.0,
+      "bpm": 143.6,
       "duration": 286.5,
       "mood": "accion",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.19,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 36.0,
           "energia": 0.06,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 75.0,
           "energia": 0.18,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_3"
         },
         {
           "t": 109.0,
           "energia": 0.73,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "segmento_4"
         },
         {
           "t": 149.0,
           "energia": 0.93,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 180.0,
           "energia": 0.49,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_6"
         },
         {
           "t": 223.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_7"
         },
         {
           "t": 271.5,
           "energia": 0.61,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -6067,19 +6067,19 @@
         {
           "t": 0.0,
           "energia": 0.17,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 48.0,
           "energia": 0.24,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_2"
         },
         {
           "t": 112.5,
           "energia": 0.68,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -6089,50 +6089,50 @@
       "file": "Mr.Kitty - After Dark.flac",
       "title": "After Dark",
       "artist": "Mr.Kitty",
-      "bpm": 143.6,
+      "bpm": 136.0,
       "duration": 259.1,
       "mood": "accion",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.13,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 46.0,
           "energia": 0.67,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_2"
         },
         {
           "t": 78.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 114.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 145.0,
           "energia": 0.21,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_5"
         },
         {
           "t": 194.0,
           "energia": 0.5,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_6"
         },
         {
           "t": 244.1,
           "energia": 0.8,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -6149,37 +6149,37 @@
         {
           "t": 0.0,
           "energia": 0.23,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "intro"
         },
         {
           "t": 38.0,
           "energia": 0.78,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_2"
         },
         {
           "t": 73.0,
           "energia": 0.59,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_3"
         },
         {
           "t": 120.0,
           "energia": 0.2,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_4"
         },
         {
           "t": 156.0,
           "energia": 0.79,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "segmento_5"
         },
         {
           "t": 186.7,
           "energia": 0.78,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -6196,43 +6196,43 @@
         {
           "t": 0.0,
           "energia": 0.31,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "intro"
         },
         {
           "t": 48.0,
           "energia": 0.48,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_2"
         },
         {
           "t": 86.0,
           "energia": 0.93,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 131.0,
           "energia": 0.0,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_4"
         },
         {
           "t": 172.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 216.0,
           "energia": 0.83,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_6"
         },
         {
           "t": 252.8,
           "energia": 0.75,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -6249,31 +6249,31 @@
         {
           "t": 0.0,
           "energia": 0.11,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 38.0,
           "energia": 0.79,
-          "clase": "suave",
+          "clase": "nivel_7",
           "tipo": "segmento_2"
         },
         {
           "t": 75.0,
           "energia": 0.93,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 113.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 145.0,
           "energia": 0.85,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -6290,37 +6290,37 @@
         {
           "t": 0.0,
           "energia": 0.14,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 37.0,
           "energia": 0.69,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_2"
         },
         {
           "t": 71.0,
           "energia": 0.52,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_3"
         },
         {
           "t": 115.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 149.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 181.8,
           "energia": 0.82,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "outro"
         }
       ]
@@ -6337,37 +6337,37 @@
         {
           "t": 0.0,
           "energia": 0.06,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 68.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 102.0,
           "energia": 0.13,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_3"
         },
         {
           "t": 136.0,
           "energia": 0.48,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_4"
         },
         {
           "t": 171.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 222.9,
           "energia": 0.56,
-          "clase": "energico",
+          "clase": "nivel_5",
           "tipo": "outro"
         }
       ]
@@ -6384,37 +6384,37 @@
         {
           "t": 0.0,
           "energia": 0.64,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "intro"
         },
         {
           "t": 40.0,
           "energia": 0.37,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_2"
         },
         {
           "t": 78.0,
           "energia": 0.79,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "segmento_3"
         },
         {
           "t": 110.0,
           "energia": 0.49,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_4"
         },
         {
           "t": 143.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_5"
         },
         {
           "t": 198.2,
           "energia": 0.7,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -6431,31 +6431,31 @@
         {
           "t": 0.0,
           "energia": 0.09,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 41.0,
           "energia": 0.06,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 100.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 145.0,
           "energia": 0.93,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_4"
         },
         {
           "t": 207.8,
           "energia": 0.5,
-          "clase": "energico",
+          "clase": "nivel_4",
           "tipo": "outro"
         }
       ]
@@ -6472,25 +6472,25 @@
         {
           "t": 0.0,
           "energia": 0.0,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 34.0,
           "energia": 0.52,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_2"
         },
         {
           "t": 79.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 112.9,
           "energia": 0.66,
-          "clase": "energico",
+          "clase": "nivel_6",
           "tipo": "outro"
         }
       ]
@@ -6507,43 +6507,43 @@
         {
           "t": 0.0,
           "energia": 0.06,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 41.0,
           "energia": 0.17,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_2"
         },
         {
           "t": 79.0,
           "energia": 0.27,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_3"
         },
         {
           "t": 126.0,
           "energia": 0.55,
-          "clase": "energico",
+          "clase": "nivel_5",
           "tipo": "segmento_4"
         },
         {
           "t": 164.0,
           "energia": 0.8,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_5"
         },
         {
           "t": 195.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 260.6,
           "energia": 0.32,
-          "clase": "energico",
+          "clase": "nivel_3",
           "tipo": "outro"
         }
       ]
@@ -6553,50 +6553,50 @@
       "file": "Fleetwood Mac - The Chain (2004 Remaster).flac",
       "title": "The Chain (2004 Remaster)",
       "artist": "Fleetwood Mac",
-      "bpm": 76.0,
+      "bpm": 152.0,
       "duration": 269.8,
-      "mood": "relax",
+      "mood": "accion",
       "cue_points": [
         {
           "t": 0.0,
           "energia": 0.0,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 41.0,
           "energia": 0.23,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_2"
         },
         {
           "t": 82.0,
           "energia": 0.09,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_3"
         },
         {
           "t": 117.0,
           "energia": 0.25,
-          "clase": "suave",
+          "clase": "nivel_2",
           "tipo": "segmento_4"
         },
         {
           "t": 166.0,
           "energia": 0.88,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_5"
         },
         {
           "t": 218.0,
           "energia": 0.82,
-          "clase": "energico",
+          "clase": "nivel_8",
           "tipo": "segmento_6"
         },
         {
           "t": 254.8,
           "energia": 0.44,
-          "clase": "energico",
+          "clase": "nivel_4",
           "tipo": "outro"
         }
       ]
@@ -6613,25 +6613,25 @@
         {
           "t": 0.0,
           "energia": 0.19,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 63.0,
           "energia": 0.99,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_2"
         },
         {
           "t": 112.0,
           "energia": 1.0,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 161.6,
           "energia": 0.75,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -6648,37 +6648,37 @@
         {
           "t": 0.0,
           "energia": 0.54,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "intro"
         },
         {
           "t": 59.0,
           "energia": 0.49,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_2"
         },
         {
           "t": 104.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_3"
         },
         {
           "t": 139.0,
           "energia": 0.19,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "segmento_4"
         },
         {
           "t": 186.0,
           "energia": 0.63,
-          "clase": "suave",
+          "clase": "nivel_6",
           "tipo": "segmento_5"
         },
         {
           "t": 230.6,
           "energia": 0.74,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
@@ -6695,52 +6695,150 @@
         {
           "t": 0.0,
           "energia": 0.03,
-          "clase": "suave",
+          "clase": "nivel_1",
           "tipo": "intro"
         },
         {
           "t": 55.0,
           "energia": 0.35,
-          "clase": "suave",
+          "clase": "nivel_3",
           "tipo": "segmento_2"
         },
         {
           "t": 110.0,
           "energia": 0.42,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_3"
         },
         {
           "t": 159.0,
           "energia": 0.53,
-          "clase": "suave",
+          "clase": "nivel_5",
           "tipo": "segmento_4"
         },
         {
           "t": 292.0,
           "energia": 0.48,
-          "clase": "suave",
+          "clase": "nivel_4",
           "tipo": "segmento_5"
         },
         {
           "t": 366.0,
           "energia": 0.95,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_6"
         },
         {
           "t": 408.0,
           "energia": 0.94,
-          "clase": "energico",
+          "clase": "nivel_9",
           "tipo": "segmento_7"
         },
         {
           "t": 452.6,
           "energia": 0.8,
-          "clase": "energico",
+          "clase": "nivel_7",
           "tipo": "outro"
         }
       ]
+    },
+    {
+      "id": 147,
+      "file": "Pitbull feat. Jennifer Lopez & Claudia Leitte - We Are One (Ole Ola) [The Official 2014 FIFA World Cup Song].flac",
+      "title": "We Are One (Ole Ola) [The Official 2014 FIFA World Cup Song]",
+      "artist": "Pitbull feat. Jennifer Lopez & Claudia Leitte",
+      "bpm": 123.0,
+      "duration": 222.6,
+      "mood": "energia",
+      "cue_points": [
+        {
+          "t": 0.0,
+          "energia": 0.31,
+          "clase": "nivel_3",
+          "tipo": "intro"
+        },
+        {
+          "t": 38.0,
+          "energia": 0.99,
+          "clase": "nivel_9",
+          "tipo": "segmento_2"
+        },
+        {
+          "t": 98.0,
+          "energia": 1.0,
+          "clase": "nivel_9",
+          "tipo": "segmento_3"
+        },
+        {
+          "t": 130.0,
+          "energia": 0.43,
+          "clase": "nivel_4",
+          "tipo": "segmento_4"
+        },
+        {
+          "t": 167.0,
+          "energia": 0.95,
+          "clase": "nivel_9",
+          "tipo": "segmento_5"
+        },
+        {
+          "t": 207.6,
+          "energia": 0.82,
+          "clase": "nivel_8",
+          "tipo": "outro"
+        }
+      ]
+    }
+  ],
+  "playlists": [
+    {
+      "name": "suavecito",
+      "song_ids": [
+        22,
+        21,
+        20,
+        32,
+        41
+      ],
+      "target_bpm": null
+    },
+    {
+      "name": "mundial",
+      "song_ids": [
+        147,
+        3,
+        10
+      ],
+      "target_bpm": null
+    },
+    {
+      "name": "dotita",
+      "song_ids": [
+        39,
+        52,
+        67,
+        66,
+        115
+      ],
+      "target_bpm": null
+    },
+    {
+      "name": "viaje verde paz o leer",
+      "song_ids": [
+        38,
+        53,
+        58,
+        59,
+        73,
+        76,
+        102,
+        104,
+        113,
+        127,
+        141,
+        146
+      ],
+      "target_bpm": null
     }
   ]
 }

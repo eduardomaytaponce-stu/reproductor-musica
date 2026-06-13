@@ -39,7 +39,18 @@ def main():
             pts = detectar_puntos_energia(fp, r["duration"], n=8)
             conn.execute("UPDATE songs SET transition_points = ? WHERE id = ?",
                          (json.dumps(pts), r["id"]))
-            n_en = sum(1 for p in pts if p["clase"] == "energico")
+            
+            def es_energico(clase):
+                if clase == "energico":
+                    return True
+                if isinstance(clase, str) and clase.startswith("nivel_"):
+                    try:
+                        return int(clase.split("_")[1]) >= 6
+                    except ValueError:
+                        pass
+                return False
+                
+            n_en = sum(1 for p in pts if es_energico(p["clase"]))
             print(f"  [{i}/{total}] ✔ {os.path.basename(fp)[:42]:42} "
                   f"{len(pts)} puntos ({n_en} enérgicos)")
             ok += 1

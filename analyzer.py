@@ -10,6 +10,42 @@ import numpy as np
 
 DB_NAME = "music_library.db"
 
+# Rango perceptual de tempo. Fuera de él casi siempre es un error de octava
+# (½ o ×2) del rastreador. Se pliega multiplicando/dividiendo por 2.
+BPM_MIN = 70.0
+BPM_MAX = 160.0
+
+
+def _fold_octava(bpm):
+    """Pliega el BPM al rango perceptual [70,160] corrigiendo errores de octava."""
+    if not bpm or bpm <= 0:
+        return 0.0
+    while bpm > BPM_MAX:
+        bpm /= 2.0
+    while bpm < BPM_MIN:
+        bpm *= 2.0
+    return bpm
+
+
+def estimar_bpm(y, sr):
+    """
+    Estima el BPM de forma robusta. Usa `librosa.feature.tempo` (tempograma por
+    autocorrelación) en lugar de `beat.beat_track`, que se engancha al doble/mitad
+    del tempo según la densidad rítmica (p.ej. No One Noticed salía 199 en vez de
+    99; We Are One salía 99 en vez de ~128). Pliega octavas como red de seguridad.
+    """
+    try:
+        t = librosa.feature.tempo(y=y, sr=sr)
+        bpm = float(np.atleast_1d(t)[0]) if t is not None else 0.0
+    except Exception:
+        # Respaldo: beat_track si feature.tempo fallara
+        try:
+            t, _ = librosa.beat.beat_track(y=y, sr=sr)
+            bpm = float(np.atleast_1d(t)[0])
+        except Exception:
+            bpm = 0.0
+    return round(_fold_octava(bpm), 2)
+
 def init_db():
     """Initializes the SQLite database with the full schema."""
     conn = sqlite3.connect(DB_NAME)
@@ -276,11 +312,7 @@ def analyze_song(filepath):
     print(f"   ⚡ Estimating BPM from middle segment ({bpm_offset:.1f}s - {bpm_offset + bpm_duration:.1f}s)...")
     try:
         y_bpm, sr_bpm = librosa.load(filepath, sr=22050, offset=bpm_offset, duration=bpm_duration, mono=True)
-        tempo, _ = librosa.beat.beat_track(y=y_bpm, sr=sr_bpm)
-        if hasattr(tempo, "__len__"):
-            bpm = float(tempo[0]) if len(tempo) > 0 else 0.0
-        else:
-            bpm = float(tempo)
+        bpm = estimar_bpm(y_bpm, sr_bpm)   # feature.tempo + fold de octava (robusto)
         print(f"   🎯 BPM Estimated: {bpm:.2f}")
     except Exception as e:
         print(f"✘ Error estimating BPM: {e}", file=sys.stderr)
