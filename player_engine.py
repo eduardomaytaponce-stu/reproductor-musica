@@ -32,6 +32,16 @@ import soundfile as sf
 # tarjeta es más estable que el índice numérico entre reinicios.
 DEFAULT_ALSA_DEVICE = "alsa/hw:CARD=Mini,DEV=0"
 
+# Margen (~-1 dB) para los caminos RESAMPLEADOS y de MEZCLA. El resampleo de
+# masters muy fuertes (0 dBFS) genera picos inter-muestra que superan el máximo y
+# CLIPEAN -> distorsión áspera y dañina. Este headroom los mantiene bajo tope.
+# NO se aplica al camino bit-perfect (ahí las muestras ya están dentro de rango).
+RESAMPLE_HEADROOM = 0.89
+
+# Calidad del resampler (anti-aliasing). 'HQ' filtra mucho mejor que 'MQ' al bajar
+# de 96k/48k a 44.1k contenido rico en agudos (evita asperezas/aliasing).
+RESAMPLE_QUALITY = "HQ"
+
 
 class BitPerfectPlayer:
     """Reproductor de un solo flujo, bit-perfect, vía mpv + ALSA exclusivo."""
@@ -379,6 +389,13 @@ class AplayHiFiEngine:
         if self._aplay is None or rate != self._aplay_rate or ch != self._aplay_ch:
             self._open_aplay(rate, ch)
 
+    def _to_s32(self, f):
+        """float [-1,1] -> int32 con headroom (~-1 dB) y recorte de seguridad.
+        Evita el clipping áspero (y dañino) del overshoot al resamplear masters
+        fuertes a 0 dBFS. Solo se usa en los caminos resampleados/mezclados."""
+        return np.clip(f * (RESAMPLE_HEADROOM * 2147483647.0),
+                       -2147483648, 2147483647).astype('<i4')
+
     def _write(self, int32_arr):
         if self._aplay is None or self._aplay.stdin is None:
             return False
@@ -487,14 +504,14 @@ class AplayHiFiEngine:
                     import soxr
                     resampler = soxr.ResampleStream(
                         cur.samplerate, self._aplay_rate, cur.channels,
-                        dtype='float32', quality='MQ')
+                        dtype='float32', quality=RESAMPLE_QUALITY)
                     rs_key = (cur.samplerate, self._aplay_rate, cur.channels)
                 fdata = cur.read(block, dtype='float32', always_2d=True)
                 if len(fdata) == 0:                # fin -> vaciar el resampler
                     tail = resampler.resample_chunk(
                         np.zeros((0, cur.channels), dtype='float32'), last=True)
                     if len(tail):
-                        self._write(np.clip(tail * 2147483647.0, -2147483648, 2147483647).astype('<i4'))
+                        self._write(self._to_s32(tail))
                     cur.close(); cur = None
                     self._cur_path = None
                     resampler = None; rs_key = None
@@ -502,7 +519,8 @@ class AplayHiFiEngine:
                     continue
                 rs = resampler.resample_chunk(fdata)
                 if len(rs):
-                    if not self._write(np.clip(rs * 2147483647.0, -2147483648, 2147483647).astype('<i4')):
+                    # headroom -1 dB para que el overshoot del resampleo NO clipee.
+                    if not self._write(self._to_s32(rs)):
                         cur.close(); cur = None
                         continue
                 self._pos = cur.tell()
@@ -528,20 +546,18 @@ class AplayHiFiEngine:
         if (cur.samplerate != rate and len(tail) > 0) or (nxt.samplerate != rate and len(head) > 0):
             import librosa
             if cur.samplerate != rate and len(tail) > 0:
-                tail = librosa.resample(tail.T, orig_sr=cur.samplerate, target_sr=rate, res_type='soxr_mq').T
+                tail = librosa.resample(tail.T, orig_sr=cur.samplerate, target_sr=rate, res_type='soxr_hq').T
             if nxt.samplerate != rate and len(head) > 0:
-                head = librosa.resample(head.T, orig_sr=nxt.samplerate, target_sr=rate, res_type='soxr_mq').T
+                head = librosa.resample(head.T, orig_sr=nxt.samplerate, target_sr=rate, res_type='soxr_hq').T
         m = min(len(tail), len(head))
         if m > 0 and tail.shape[1] == head.shape[1]:
             t = np.linspace(0.0, 1.0, m)[:, None]
             mix = tail[:m] * np.cos(t * np.pi / 2) + head[:m] * np.sin(t * np.pi / 2)
-            # Limitador por fundido: si la suma equal-power supera el máximo
-            # (pico > 0 dBFS), escala todo el fundido para que NO clipee.
+            # Limitador del fundido (suma equal-power) + headroom de _to_s32 -> NO clipea.
             peak = float(np.max(np.abs(mix)))
             if peak > 0.99:
                 mix *= (0.99 / peak)
-            mix32 = np.clip(mix * 2147483647.0, -2147483648, 2147483647).astype('<i4')
-            self._write(mix32)              # al DAC YA abierto -> fundido sin hueco
+            self._write(self._to_s32(mix))   # al DAC YA abierto -> fundido sin hueco, con headroom
         cur.close()
         self._xfading = False
         # NO reabrimos el DAC: si la entrante tiene otra frecuencia, el worker la
