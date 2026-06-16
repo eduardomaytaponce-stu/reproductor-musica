@@ -48,7 +48,7 @@ if os.path.exists(VOICE_PROFILE_FILE):
     except Exception as e:
         print(f"⚠️ Error al leer {VOICE_PROFILE_FILE}: {e}")
 else:
-    print(f"ℹ️ Perfil de voz no calibrado. Se usará validación general de voz humana.")
+    print("ℹ️ Perfil de voz no calibrado. Se usará validación general de voz humana.")
 
 # --- UTILITIES ---
 
@@ -134,7 +134,7 @@ def calibrate_voice(duration=3.0, sr=SAMPLE_RATE):
         }
         with open(VOICE_PROFILE_FILE, "w") as f:
             json.dump(profile, f, indent=2)
-        print(f"\n✅ ¡Calibración exitosa!")
+        print("\n✅ ¡Calibración exitosa!")
         print(f"🎙️ Pitch F0 promedio: {profile['reference_pitch']:.1f} Hz")
         print(f"Configuración guardada en '{VOICE_PROFILE_FILE}'")
     else:
@@ -283,7 +283,7 @@ def main():
         import openwakeword
         paths = openwakeword.get_pretrained_model_paths()
         jarvis_path = [p for p in paths if "hey_jarvis" in p][0]
-        print(f"ℹ️ Usando modelo preentrenado 'hey_jarvis' de openwakeword como fallback.")
+        print("ℹ️ Usando modelo preentrenado 'hey_jarvis' de openwakeword como fallback.")
         wakeword_model_paths.append(jarvis_path)
         
     active_model_key = os.path.splitext(os.path.basename(wakeword_model_paths[0]))[0]

@@ -4,9 +4,8 @@ import sys
 import sqlite3
 import json
 import time
-import asyncio
 import threading
-from fastapi import FastAPI, HTTPException, Request, Header, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, HTTPException, Request, WebSocket, WebSocketDisconnect
 from fastapi.responses import StreamingResponse, FileResponse
 from pydantic import BaseModel
 
@@ -109,33 +108,8 @@ def verify_safe_path(filepath: str):
             raise PermissionError("Acceso a directorio del sistema no permitido.")
     return abs_path
 
-# Lazy-loaded NLP models
-model = None
-song_embeddings_cache = {}
-
-def get_model():
-    global model
-    if model is None:
-        print("🤖 Loading sentence-transformers model (all-MiniLM-L6-v2)...")
-        from sentence_transformers import SentenceTransformer
-        # Use local caching or download
-        model = SentenceTransformer("all-MiniLM-L6-v2")
-        print("✔ Model loaded successfully!")
-    return model
-
-def get_song_embedding(song_id, title, bpm):
-    if song_id not in song_embeddings_cache:
-        encoder = get_model()
-        desc = f"A song titled {title} with a speed of {bpm:.0f} beats per minute."
-        if bpm < 95:
-            desc += " Relajante, tranquila, suave, melancólica, calmada, ritmo lento, ideal para dormir o descansar."
-        elif bpm > 115:
-            desc += " Energética, rápida, bailable, alegre, motivadora, activa, ideal para entrenar, bailar o hacer ejercicio."
-        else:
-            desc += " Tempo moderado, enfocada, balanceada, constante, ideal para estudiar o trabajar."
-            
-        song_embeddings_cache[song_id] = encoder.encode(desc, convert_to_tensor=True)
-    return song_embeddings_cache[song_id]
+# (sentence-transformers/torch ELIMINADOS: el chat y el smart_next ahora usan
+# palabras clave + BPM/chroma del audio real, sin un modelo NLP de ~3 GB.)
 
 # Range request streaming support
 def get_range_response(file_path: str, range_header: str):
@@ -430,23 +404,15 @@ def get_smart_next_song(req: SmartNextRequest):
         perfil_chroma_a = None
         bpm_a = current["bpm"]
         
-    from sentence_transformers import util
-    encoder = get_model()
-    current_emb = get_song_embedding(current["id"], current["title"], current["bpm"])
-    
     best_candidate = None
     best_score = -999.0
-    
+
     for s in candidates:
-        # 1. Similitud semántica de embeddings (Género/Mood/Título) -> peso 0.5
-        s_emb = get_song_embedding(s["id"], s["title"], s["bpm"])
-        sem_sim = float(util.cos_sim(current_emb, s_emb)[0][0])
-        
-        # 2. Similitud de tempo (BPM) con normalización de octava -> peso 0.3
+        # 1. Similitud de tempo (BPM) con normalización de octava -> peso 0.6
         mejor_diff, _ = _diff_bpm_relativa_octava(bpm_a, s["bpm"])
         bpm_score = max(0.0, 1.0 - (mejor_diff / 0.5))
-        
-        # 3. Similitud Armónica (Chroma) -> peso 0.2
+
+        # 2. Similitud armónica (Chroma) -> peso 0.4
         arm_score = 0.5
         if perfil_chroma_a is not None:
             try:
@@ -456,14 +422,14 @@ def get_smart_next_song(req: SmartNextRequest):
                 arm_score = sim_chroma
             except Exception:
                 pass
-                
-        # Puntuación final combinada
-        score = (sem_sim * 0.5) + (bpm_score * 0.3) + (arm_score * 0.2)
-        
+
+        # Puntuación combinada (BPM + armonía, basada en el audio real).
+        score = (bpm_score * 0.6) + (arm_score * 0.4)
+
         if score > best_score:
             best_score = score
             best_candidate = s
-            
+
     return best_candidate
 
 @app.post("/api/search")
@@ -473,33 +439,8 @@ def search_song(req: SearchRequest):
         return {"matched_song_id": None, "reply": "No hay canciones cargadas en la biblioteca todavía. Por favor, pulsa en Escanear primero."}
         
     query_lower = req.query.lower()
-    
-    # 1. Try semantic search first
-    try:
-        from sentence_transformers import util
-        import torch
-        
-        encoder = get_model()
-        query_emb = encoder.encode(req.query, convert_to_tensor=True)
-        
-        best_song = None
-        best_score = -1.0
-        
-        for s in songs:
-            song_emb = get_song_embedding(s["id"], s["title"], s["bpm"])
-            score = float(util.cos_sim(query_emb, song_emb)[0][0])
-            if score > best_score:
-                best_score = score
-                best_song = s
-                
-        if best_song and best_score > 0.38:
-            bpm_desc = "rápido" if best_song["bpm"] > 115 else ("lento" if best_song["bpm"] < 95 else "moderado")
-            reply = f"🎧 He encontrado la pista perfecta: **{best_song['title']}** ({best_song['bpm']:.0f} BPM). Se adapta bien a tu descripción y tiene un ritmo {bpm_desc}. ¡Iniciando la mezcla!"
-            return {"matched_song_id": best_song["id"], "reply": reply}
-    except Exception as e:
-        print(f"⚠️ Semantic search fallback to keywords: {e}", file=sys.stderr)
 
-    # 2. Keywords fallback
+    # Búsqueda por palabras clave de mood (rápida, sin modelo NLP pesado).
     MOOD_KEYWORDS = {
         "relaj": ("low_bpm", "bajar revoluciones, ideal para calmar el ritmo."),
         "calm": ("low_bpm", "un ambiente tranquilo y relajado."),

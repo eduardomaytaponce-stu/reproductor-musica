@@ -1,27 +1,15 @@
 """
-Motor de reproducción bit-perfect para el reproductor FLAC Hi-Fi.
+Motor de reproducción bit-perfect para el reproductor FLAC Hi-Fi (AplayHiFiEngine).
 
-En lugar de reproducir el audio en el navegador (Web Audio API -> PipeWire en
-modo compartido, que remuestrea a 48 kHz y rompe la alta resolución), este motor
-delega la reproducción a **mpv** hablando directamente con el DAC vía ALSA en
-**modo exclusivo (bit-perfect)**: misma ruta que usa VLC, a la frecuencia y
-profundidad nativas del archivo.
-
-No requiere `libmpv` ni `python-mpv`: controla el binario `mpv` mediante su
-socket IPC JSON (`--input-ipc-server`).
-
-Uso como prueba (Etapa 1):
-    python player_engine.py "/ruta/a/cancion.flac"
-Imprime la frecuencia/formato decodificado del archivo y lo que realmente se
-envía al DAC. Si coinciden y no hay remuestreo, la reproducción es bit-perfect.
+Reproduce el audio en el backend (no en el navegador, que remuestrea a 48 kHz):
+decodifica con `soundfile`, mezcla/resamplea con numpy+soxr cuando hace falta, y
+envía PCM crudo S32_LE al DAC vía `aplay -D hw:` en ALSA exclusivo (bit-perfect a
+la frecuencia nativa del archivo). Controla las transiciones (crossfade, entrada
+enérgica) y coordina con PipeWire (`pactl suspend-sink`) para tomar el DAC.
+No requiere instalar nada: soundfile, numpy, soxr y aplay ya están presentes.
 """
 
-import json
-import os
-import socket
 import subprocess
-import sys
-import tempfile
 import time
 import threading
 
@@ -41,184 +29,6 @@ RESAMPLE_HEADROOM = 0.89
 # Calidad del resampler (anti-aliasing). 'HQ' filtra mucho mejor que 'MQ' al bajar
 # de 96k/48k a 44.1k contenido rico en agudos (evita asperezas/aliasing).
 RESAMPLE_QUALITY = "HQ"
-
-
-class BitPerfectPlayer:
-    """Reproductor de un solo flujo, bit-perfect, vía mpv + ALSA exclusivo."""
-
-    def __init__(self, alsa_device=DEFAULT_ALSA_DEVICE, exclusive=True):
-        self.alsa_device = alsa_device
-        self.exclusive = exclusive
-        self.proc = None
-        self._sock = None
-        self._sock_path = None
-        self._req_id = 0
-        self._lock = threading.Lock()
-
-    # ------------------------------------------------------------------ #
-    # Ciclo de vida del proceso mpv
-    # ------------------------------------------------------------------ #
-    def start(self):
-        """Lanza mpv en modo idle, listo para recibir comandos por IPC."""
-        if self.proc and self.proc.poll() is None:
-            return
-
-        self._sock_path = os.path.join(
-            tempfile.gettempdir(), f"mpv-hifi-{os.getpid()}-{id(self)}.sock"
-        )
-        if os.path.exists(self._sock_path):
-            os.remove(self._sock_path)
-
-        args = [
-            "mpv",
-            "--idle=yes",
-            "--no-video",
-            "--no-terminal",
-            "--really-quiet",
-            f"--input-ipc-server={self._sock_path}",
-            # ---- Ruta de audio BIT-PERFECT ----
-            "--ao=alsa",
-            f"--audio-device={self.alsa_device}",
-            f"--audio-exclusive={'yes' if self.exclusive else 'no'}",
-            # No tocar la señal: sin remuestreo forzado, sin filtros, sin
-            # normalización de volumen ni replaygain -> bits intactos.
-            "--audio-samplerate=0",      # 0 = seguir la frecuencia nativa del archivo
-            "--af=",                      # cadena de filtros vacía
-            "--replaygain=no",
-            "--volume=100",               # volumen software al 100% (transparente)
-            "--volume-max=100",
-            # 'weak': reabre el DAC a la frecuencia NATIVA cuando cambia de pista
-            # (bit-perfect por archivo) y mantiene gapless solo entre pistas de igual
-            # frecuencia. 'yes' rompería bit-perfect al resamplear todo al rate inicial.
-            "--gapless-audio=weak",
-            "--cache=yes",
-            "--demuxer-max-bytes=64MiB",  # búfer amplio: evita underruns/microcortes
-            "--demuxer-readahead-secs=20",
-        ]
-
-        self.proc = subprocess.Popen(
-            args, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
-        )
-        self._connect_socket()
-
-    def _connect_socket(self, timeout=5.0):
-        """Espera a que mpv cree el socket IPC y se conecta."""
-        deadline = time.time() + timeout
-        while time.time() < deadline:
-            if os.path.exists(self._sock_path):
-                try:
-                    s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-                    s.connect(self._sock_path)
-                    s.settimeout(2.0)
-                    self._sock = s
-                    return
-                except (ConnectionRefusedError, FileNotFoundError, OSError):
-                    pass
-            time.sleep(0.05)
-        raise RuntimeError("No se pudo conectar al socket IPC de mpv (¿mpv falló al abrir el DAC?)")
-
-    # ------------------------------------------------------------------ #
-    # Protocolo IPC JSON (una orden JSON por línea)
-    # ------------------------------------------------------------------ #
-    def _command(self, *args):
-        """Envía un comando a mpv y devuelve su respuesta (dict)."""
-        if not self._sock:
-            raise RuntimeError("Socket IPC no conectado")
-        with self._lock:
-            self._req_id += 1
-            rid = self._req_id
-            payload = json.dumps({"command": list(args), "request_id": rid}) + "\n"
-            self._sock.sendall(payload.encode("utf-8"))
-
-            # Leer respuestas hasta encontrar la de nuestro request_id
-            buf = b""
-            deadline = time.time() + 3.0
-            while time.time() < deadline:
-                try:
-                    chunk = self._sock.recv(65536)
-                except socket.timeout:
-                    break
-                if not chunk:
-                    break
-                buf += chunk
-                while b"\n" in buf:
-                    line, buf = buf.split(b"\n", 1)
-                    if not line.strip():
-                        continue
-                    try:
-                        msg = json.loads(line.decode("utf-8"))
-                    except json.JSONDecodeError:
-                        continue
-                    if msg.get("request_id") == rid:
-                        return msg
-                    # los mensajes 'event' se ignoran aquí
-            return {"error": "timeout"}
-
-    def get_property(self, name):
-        resp = self._command("get_property", name)
-        return resp.get("data") if resp.get("error") == "success" else None
-
-    def set_property(self, name, value):
-        return self._command("set_property", name, value)
-
-    # ------------------------------------------------------------------ #
-    # API de reproducción
-    # ------------------------------------------------------------------ #
-    def load(self, filepath):
-        """Carga y reproduce un archivo (reemplaza el actual)."""
-        self._command("loadfile", filepath, "replace")
-
-    def pause(self):
-        self.set_property("pause", True)
-
-    def resume(self):
-        self.set_property("pause", False)
-
-    def seek(self, seconds):
-        self._command("seek", seconds, "absolute")
-
-    def stop(self):
-        self._command("stop")
-
-    def status(self):
-        return {
-            "time_pos": self.get_property("time-pos"),
-            "duration": self.get_property("duration"),
-            "pause": self.get_property("pause"),
-            "path": self.get_property("path"),
-        }
-
-    def audio_chain(self):
-        """
-        Devuelve los parámetros de audio decodificados vs. los enviados al DAC.
-        Si coinciden (misma frecuencia/formato) la reproducción es bit-perfect.
-        """
-        return {
-            "decoded": self.get_property("audio-params"),       # del archivo
-            "output": self.get_property("audio-out-params"),    # hacia el DAC
-            "device": self.get_property("audio-device"),
-            "exclusive": self.exclusive,
-        }
-
-    def close(self):
-        try:
-            if self._sock:
-                self._command("quit")
-                self._sock.close()
-        except Exception:
-            pass
-        finally:
-            if self.proc and self.proc.poll() is None:
-                self.proc.terminate()
-                try:
-                    self.proc.wait(timeout=2)
-                except subprocess.TimeoutExpired:
-                    self.proc.kill()
-            if self._sock_path and os.path.exists(self._sock_path):
-                try:
-                    os.remove(self._sock_path)
-                except OSError:
-                    pass
 
 
 # ====================================================================== #
@@ -444,7 +254,7 @@ class AplayHiFiEngine:
                             self._ensure_aplay(cur.samplerate, cur.channels)
                             if entry > 0:
                                 cur.seek(int(entry * cur.samplerate))
-                    except Exception as e:
+                    except Exception:
                         # Si el fundido falla (p.ej. canales distintos), corte limpio
                         self._err = None
                         if cur and cur is not nxt:
@@ -583,63 +393,4 @@ class AplayHiFiEngine:
         return {"decoded": dec, "output": out, "exclusive": True}
 
 
-# ---------------------------------------------------------------------- #
-# Prueba de bit-perfect (Etapa 1)
-# ---------------------------------------------------------------------- #
-def _selftest(filepath):
-    if not os.path.exists(filepath):
-        print(f"✘ No existe el archivo: {filepath}", file=sys.stderr)
-        return 1
 
-    print(f"🎧 Abriendo DAC en modo EXCLUSIVO (bit-perfect): {DEFAULT_ALSA_DEVICE}")
-    print("   (Si el navegador está reproduciendo por el mismo DAC, ciérralo: el modo")
-    print("    exclusivo necesita el dispositivo libre.)\n")
-
-    player = BitPerfectPlayer()
-    try:
-        player.start()
-        player.load(filepath)
-
-        # Dar tiempo a mpv a abrir el dispositivo y negociar el formato
-        chain = {}
-        for _ in range(40):
-            time.sleep(0.15)
-            chain = player.audio_chain()
-            if chain.get("output"):
-                break
-
-        decoded = chain.get("decoded") or {}
-        output = chain.get("output") or {}
-
-        print(f"📄 Archivo  : {os.path.basename(filepath)}")
-        print(f"🔓 Decodificado (nativo): "
-              f"{decoded.get('samplerate', '?')} Hz · {decoded.get('format', '?')} · "
-              f"{decoded.get('channels', '?')} ch")
-        print(f"🔊 Enviado al DAC       : "
-              f"{output.get('samplerate', '?')} Hz · {output.get('format', '?')} · "
-              f"{output.get('channels', '?')} ch")
-        print(f"🎚  Dispositivo          : {chain.get('device')} | exclusivo={chain.get('exclusive')}")
-
-        same_rate = decoded.get("samplerate") == output.get("samplerate")
-        print()
-        if same_rate and output.get("samplerate"):
-            print("✅ BIT-PERFECT: la frecuencia enviada al DAC coincide con la nativa del archivo.")
-            print("   No hay remuestreo. Esta es la misma calidad que VLC en modo exclusivo (o mejor).")
-        else:
-            print("⚠️  Hay conversión de frecuencia (no bit-perfect). Revisar disponibilidad del DAC")
-            print("    o que PipeWire no esté reteniendo el dispositivo.")
-
-        # Reproducir 6 segundos como muestra audible
-        print("\n▶ Reproduciendo 6 s de muestra...")
-        time.sleep(6)
-        return 0
-    finally:
-        player.close()
-        print("⏹  Motor cerrado, DAC liberado.")
-
-
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Uso: python player_engine.py \"/ruta/a/cancion.flac\"", file=sys.stderr)
-        sys.exit(1)
-    sys.exit(_selftest(sys.argv[1]))
