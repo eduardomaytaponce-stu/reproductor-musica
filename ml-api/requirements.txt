@@ -1,0 +1,12 @@
+# Dependencias de la API (versiones probadas en esta máquina).
+# La API en sí sólo necesita las 8 primeras; `requests` es para el
+# script de prueba probar_api.py (cliente), no para el servidor.
+fastapi==0.136.3
+uvicorn[standard]==0.49.0
+scikit-learn==1.9.0
+joblib==1.5.3
+librosa==0.11.0
+soundfile==0.13.1
+numpy==2.4.6
+python-multipart==0.0.32
+requests==2.34.2

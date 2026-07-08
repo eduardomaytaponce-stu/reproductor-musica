@@ -12,9 +12,18 @@ wheels/
 # Database files
 *.db
 *.db-journal
+*.sqlite
 *.sqlite3
 *.bak
 
 # Backups y export de audio generado
 _backups/
 export/music/
+
+# Artefactos y volcados de depuración (no van al repo público)
+*.zip
+logcat_dump.txt
+androidCodebase.ts
+
+# Config local de herramientas
+.claude/

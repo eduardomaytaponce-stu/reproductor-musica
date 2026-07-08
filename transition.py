@@ -202,6 +202,45 @@ def _alinear_beats(beats_saliente, beats_entrante, bpm_saliente, bpm_entrante, f
 
 
 # --------------------------------------------------------------------------- #
+# Ordenamiento de cola por tempo (evita saltos fuerte→alegre)
+# --------------------------------------------------------------------------- #
+def ordenar_cola_por_tempo(items, bpm_key="bpm", arrancar_desde_primero=True):
+    """
+    Reordena una lista de canciones encadenando BPMs cercanos (octava-aware),
+    para que las transiciones sean consistentes y no salten de tempos fuertes
+    a alegres de golpe. Greedy de vecino más cercano.
+
+    `items`: lista de dicts; cada uno debe tener `bpm_key`.
+    `arrancar_desde_primero`: si True conserva la 1ª canción como apertura;
+    si False arranca desde la de menor BPM (rampa ascendente clásica de DJ).
+
+    Devuelve una nueva lista ordenada (no muta la original).
+    """
+    restantes = [x for x in items if (x.get(bpm_key) or 0) > 0]
+    sin_bpm = [x for x in items if (x.get(bpm_key) or 0) <= 0]
+    if len(restantes) <= 2:
+        return items
+
+    if arrancar_desde_primero:
+        orden = [restantes.pop(0)]
+    else:
+        restantes.sort(key=lambda x: x[bpm_key])
+        orden = [restantes.pop(0)]
+
+    while restantes:
+        ultimo_bpm = orden[-1][bpm_key]
+        mejor_i, mejor_diff = 0, float("inf")
+        for i, c in enumerate(restantes):
+            diff, _ = _diff_bpm_relativa_octava(ultimo_bpm, c[bpm_key])
+            if diff < mejor_diff:
+                mejor_diff, mejor_i = diff, i
+        orden.append(restantes.pop(mejor_i))
+
+    # Las que no tienen BPM van al final, sin romper la cadena.
+    return orden + sin_bpm
+
+
+# --------------------------------------------------------------------------- #
 # Función principal
 # --------------------------------------------------------------------------- #
 def calcular_transicion_optima(intro_A, outro_B, bpm_A, bpm_B):

@@ -972,7 +972,7 @@
                 <div class="scan-box">
                     <label for="music-path">Directorio Local</label>
                     <div class="input-group">
-                        <input type="text" id="music-path" value="/home/carloseduardo/Música/" placeholder="Ruta absoluta...">
+                        <input type="text" id="music-path" value="/home/usuario/Música/" placeholder="Ruta absoluta...">
                         <button class="btn btn-neon" id="scan-btn">Escanear</button>
                     </div>
                     <div class="scanning-loader" id="scan-loader">
@@ -1078,11 +1078,18 @@
                     </div>
                 </div>
 
+                <!-- Modo de transición (Nativo / Pro) -->
+                <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:6px;">
+                    <span style="font-size:0.8rem; color:#aaa; white-space:nowrap;">Modo transición:</span>
+                    <button class="mode-pill" id="transition-mode-toggle"
+                        title="Nativo: cada canción suena un mínimo (~20s). Pro: transiciones puente, cualquier duración."
+                        style="font-size:0.85rem; padding:4px 14px; cursor:pointer;">Nativo</button>
+                </div>
+
                 <!-- DJ Transition selection -->
                 <div class="dj-mix-panel">
                     <div class="dj-panel-header">
                         <span>Efecto Transición</span>
-                        <button class="mode-pill" id="transition-mode-toggle" title="Nativo: cada canción suena un mínimo (~20s). Pro: transiciones puente, cualquier duración.">Nativo</button>
                     </div>
                     <div class="effect-selectors">
                         <button class="effect-btn active" data-effect="crossfade">Crossfade Suave</button>
