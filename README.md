@@ -1,6 +1,6 @@
 # Cloud-Fi — Reproductor FLAC inteligente 🎧🤖
 
-Reproductor de música local-first de alta fidelidad con transiciones automáticas tipo DJ y modo actividad. Dos apps que comparten una biblioteca precomputada:
+Reproductor de música local-first de alta fidelidad (FLAC) con transiciones automáticas tipo DJ (basadas en vectorizacion) y modo actividad(segun los BPM). Dos apps que comparten una biblioteca precomputada:
 
 - **PC "el estudio"** (Python/FastAPI) — análisis, reproducción **Hi-Fi bit-perfect** (ALSA exclusivo → DAC), mezclador DJ en el navegador (Web Audio) y **export** de metadatos.
 - **Android "Cloud-Fi Go"** (Kotlin/Compose) — reproductor autónomo **100% offline**, activity-aware (acelerómetro + voz).
