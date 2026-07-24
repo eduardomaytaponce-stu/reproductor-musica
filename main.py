@@ -496,22 +496,27 @@ def get_online_recommendations(req: OnlineRecommendationRequest):
         for a in req.artists:
             if a and a.strip() and a.strip() not in terms_to_try:
                 terms_to_try.append(a.strip())
+                if len(terms_to_try) >= 2:
+                    break
+    if req.playlist_name and req.playlist_name.strip() and req.playlist_name.strip() not in terms_to_try:
+        terms_to_try.append(req.playlist_name.strip())
     if artist and artist not in terms_to_try:
         terms_to_try.append(artist)
-    if req.playlist_name and req.playlist_name.strip():
-        terms_to_try.append(req.playlist_name.strip())
     if title and title not in terms_to_try:
         terms_to_try.append(title)
     if not terms_to_try:
         terms_to_try.append("rock latino")
         
+    terms_to_try = terms_to_try[:3]
+
     for term in terms_to_try:
         if len(recommendations) >= 6:
             break
         try:
             url = f"https://itunes.apple.com/search?term={urllib.parse.quote(term)}&entity=song&limit=6"
             req_obj = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
-            with urllib.request.urlopen(req_obj, timeout=4.0) as resp:
+            with urllib.request.urlopen(req_obj, timeout=2.0) as resp:
+
                 data = json.loads(resp.read().decode('utf-8'))
                 results = data.get('results', [])
                 for item in results:

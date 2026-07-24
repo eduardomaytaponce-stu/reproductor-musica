@@ -956,16 +956,19 @@
             let playlistName = "Biblioteca General";
             let playlistArtists = [];
             if (activePlaylistId && activePlaylistId !== 'library') {
-                const pl = playlists.find(p => p.id === activePlaylistId);
+                const pl = playlists.find(p => p.id == activePlaylistId);
                 if (pl) {
                     playlistName = pl.name;
                     const plSongs = songs.filter(s => (pl.song_ids || []).includes(s.id));
-                    playlistArtists = [...new Set(plSongs.map(s => splitTitle(s.title).author).filter(Boolean))];
+                    playlistArtists = [...new Set(plSongs.map(s => splitTitle(s.title).author).filter(Boolean))].slice(0, 3);
+                } else if (activePlTitleEl && activePlTitleEl.textContent) {
+                    playlistName = activePlTitleEl.textContent.replace('📋 ', '').trim();
                 }
             }
             if (!playlistArtists.length && nm.author) {
                 playlistArtists = [nm.author];
             }
+
 
             let onlineRecs = [];
             try {
