@@ -952,23 +952,23 @@
                 }
             } catch(e) {}
 
-            // Contexto de Playlist activa para recomendaciones contextuales
+            // Contexto de Playlist activa para recomendaciones contextuales por TÍTULOS
             let playlistName = "Biblioteca General";
             let playlistArtists = [];
+            let playlistSongTitles = [];
             if (activePlaylistId && activePlaylistId !== 'library') {
                 const pl = playlists.find(p => p.id == activePlaylistId);
                 if (pl) {
                     playlistName = pl.name;
                     const plSongs = songs.filter(s => (pl.song_ids || []).includes(s.id));
                     playlistArtists = [...new Set(plSongs.map(s => splitTitle(s.title).author).filter(Boolean))].slice(0, 3);
+                    playlistSongTitles = plSongs.map(s => splitTitle(s.title).title).filter(Boolean).slice(0, 3);
                 } else if (activePlTitleEl && activePlTitleEl.textContent) {
                     playlistName = activePlTitleEl.textContent.replace('📋 ', '').trim();
                 }
             }
-            if (!playlistArtists.length && nm.author) {
-                playlistArtists = [nm.author];
-            }
-
+            if (!playlistArtists.length && nm.author) playlistArtists = [nm.author];
+            if (!playlistSongTitles.length && nm.title) playlistSongTitles = [nm.title];
 
             let onlineRecs = [];
             try {
@@ -979,6 +979,7 @@
                         artist: nm.author,
                         title: nm.title,
                         artists: playlistArtists,
+                        song_titles: playlistSongTitles,
                         playlist_name: playlistName,
                         bpm: currentSong.bpm || 120.0
                     })
@@ -988,6 +989,7 @@
                     onlineRecs = data.recommendations || [];
                 }
             } catch(e) {}
+
 
 
             const existing = document.getElementById('recommendations-modal');

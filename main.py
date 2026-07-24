@@ -177,8 +177,10 @@ class OnlineRecommendationRequest(BaseModel):
     artist: str = ""
     title: str = ""
     artists: list[str] = []
+    song_titles: list[str] = []
     bpm: float = 120.0
     playlist_name: str = ""
+
 
 
 class HiFiPlayRequest(BaseModel):
@@ -481,7 +483,7 @@ def get_smart_next_song(req: SmartNextRequest):
 @app.post("/api/recommendations/online")
 def get_online_recommendations(req: OnlineRecommendationRequest):
     """
-    Obtiene recomendaciones de CANCIONES REALES contextualizadas por PLAYLIST o por artista actual.
+    Obtiene recomendaciones de CANCIONES REALES contextualizadas principalmente por TITULOS DE CANCIÓN y playlist.
     """
     import urllib.request
     import urllib.parse
@@ -491,51 +493,55 @@ def get_online_recommendations(req: OnlineRecommendationRequest):
     artist = req.artist.strip()
     title = req.title.strip()
     
+    # 1. Priorizar títulos de canciones especificos
     terms_to_try = []
-    if req.artists:
-        for a in req.artists:
-            if a and a.strip() and a.strip() not in terms_to_try:
-                terms_to_try.append(a.strip())
-                if len(terms_to_try) >= 2:
+    if title:
+        terms_to_try.append(title)
+    if req.song_titles:
+        for t in req.song_titles:
+            if t and t.strip() and t.strip() not in terms_to_try:
+                terms_to_try.append(t.strip())
+                if len(terms_to_try) >= 3:
                     break
     if req.playlist_name and req.playlist_name.strip() and req.playlist_name.strip() not in terms_to_try:
         terms_to_try.append(req.playlist_name.strip())
-    if artist and artist not in terms_to_try:
+    if artist and artist not in terms_to_try and len(terms_to_try) < 3:
         terms_to_try.append(artist)
-    if title and title not in terms_to_try:
-        terms_to_try.append(title)
     if not terms_to_try:
         terms_to_try.append("rock latino")
         
-    terms_to_try = terms_to_try[:3]
+    terms_to_try = terms_to_try[:4]
+    artist_counts = {}
 
     for term in terms_to_try:
         if len(recommendations) >= 6:
             break
         try:
-            url = f"https://itunes.apple.com/search?term={urllib.parse.quote(term)}&entity=song&limit=6"
+            url = f"https://itunes.apple.com/search?term={urllib.parse.quote(term)}&entity=song&limit=8"
             req_obj = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
             with urllib.request.urlopen(req_obj, timeout=2.0) as resp:
-
                 data = json.loads(resp.read().decode('utf-8'))
                 results = data.get('results', [])
                 for item in results:
                     t_name = item.get('trackName')
-                    a_name = item.get('artistName')
+                    a_name = item.get('artistName', 'Artista Recomendado')
                     genre = item.get('primaryGenreName', 'Música')
                     view_url = item.get('trackViewUrl') or item.get('collectionViewUrl') or '#'
                     
                     if t_name and t_name.lower() != title.lower():
-                        if not any(r['title'].lower() == t_name.lower() for r in recommendations):
+                        # Evitar duplicados de canción y limitar a máximo 2 canciones del mismo artista
+                        curr_a_count = artist_counts.get(a_name.lower(), 0)
+                        if curr_a_count < 2 and not any(r['title'].lower() == t_name.lower() for r in recommendations):
                             rec_bpm = round(req.bpm + ((len(t_name) % 5) - 2) * 1.5, 1)
                             recommendations.append({
                                 "title": t_name,
                                 "artist": a_name,
                                 "bpm": rec_bpm,
                                 "genre": genre,
-                                "source": f"{a_name} ({genre})",
+                                "source": f"{t_name} ({genre})",
                                 "url": view_url
                             })
+                            artist_counts[a_name.lower()] = curr_a_count + 1
                             if len(recommendations) >= 6:
                                 break
         except Exception as e:
@@ -552,6 +558,7 @@ def get_online_recommendations(req: OnlineRecommendationRequest):
         ]
         
     return {"recommendations": recommendations}
+
 
 
 
