@@ -651,6 +651,9 @@
                 this.source = null;
                 this.gainNode = null;
                 this.filter = null;
+                this.audio.onended = () => {
+                    handleSongEnded();
+                };
             }
             initializeSource() {
                 if (this.source) return;
@@ -663,6 +666,21 @@
                 this.gainNode.gain.value = 0.0;
             }
         }
+
+        async function handleSongEnded() {
+            if (!isPlaying) return;
+            if (nextSong) {
+                const toPlay = nextSong;
+                nextSong = null;
+                selectAndPlayTrack(toPlay);
+            } else if (currentSong) {
+                let currentList = (activePlaylistId && activePlaylistSongs.length) ? activePlaylistSongs : songs;
+                let idx = currentList.findIndex(s => s.id === currentSong.id);
+                let nextIdx = (idx >= 0 && idx < currentList.length - 1) ? idx + 1 : 0;
+                if (currentList[nextIdx]) selectAndPlayTrack(currentList[nextIdx]);
+            }
+        }
+
 
         const deck1 = new Deck(1);
         const deck2 = new Deck(2);
@@ -936,23 +954,7 @@
             if (!currentSong && songs.length > 0) currentSong = songs[0];
             if (!currentSong) { toast("Escanea e inicia una canción primero."); return; }
 
-            toast("Consultando recomendaciones locales y web...");
             const nm = splitTitle(currentSong.title);
-            
-            let localRecs = [];
-            try {
-                const res = await fetch('/api/songs/smart_next', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ current_song_id: currentSong.id, played_history: playedHistoryStack, limit: 5 })
-                });
-                if (res.ok) {
-                    const data = await res.json();
-                    localRecs = Array.isArray(data) ? data : [data];
-                }
-            } catch(e) {}
-
-            // Contexto de Playlist activa para recomendaciones contextuales por TÍTULOS
             let playlistName = "Biblioteca General";
             let playlistArtists = [];
             let playlistSongTitles = [];
@@ -969,28 +971,6 @@
             }
             if (!playlistArtists.length && nm.author) playlistArtists = [nm.author];
             if (!playlistSongTitles.length && nm.title) playlistSongTitles = [nm.title];
-
-            let onlineRecs = [];
-            try {
-                const res = await fetch('/api/recommendations/online', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        artist: nm.author,
-                        title: nm.title,
-                        artists: playlistArtists,
-                        song_titles: playlistSongTitles,
-                        playlist_name: playlistName,
-                        bpm: currentSong.bpm || 120.0
-                    })
-                });
-                if (res.ok) {
-                    const data = await res.json();
-                    onlineRecs = data.recommendations || [];
-                }
-            } catch(e) {}
-
-
 
             const existing = document.getElementById('recommendations-modal');
             if (existing) existing.remove();
@@ -1016,42 +996,15 @@
                     <div style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 20px; padding-right: 4px;">
                         <div>
                             <h4 style="font-family:'JetBrains Mono',monospace; font-size: 0.78rem; text-transform: uppercase; color: var(--lavanda); margin-bottom: 10px;">🎵 En tu Biblioteca Local (DSP / Chroma)</h4>
-                            <div style="display: flex; flex-direction: column; gap: 6px;">
-                                ${localRecs.map(s => {
-                                    const snm = splitTitle(s.title);
-                                    return `
-                                        <div class="rec-local-item" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: rgba(248,250,252,0.03); border-radius: 12px; transition: background 0.2s ease;">
-                                            <div>
-                                                <div style="font-family:'Playfair Display',serif; font-size: 0.9rem; color: var(--texto-titulo);">${snm.title}</div>
-                                                <div style="font-size: 0.72rem; color: var(--texto-tenue);">${snm.author || 'Biblioteca Local'}</div>
-                                            </div>
-                                            <div style="display: flex; align-items: center; gap: 8px;">
-                                                <span style="font-family:'JetBrains Mono',monospace; font-size: 0.75rem; color: var(--crema);">${s.bpm ? Math.round(s.bpm) + ' BPM' : ''}</span>
-                                                <button class="btn btn-add-rec-item" data-id="${s.id}" style="font-size:0.75rem; padding: 4px 10px; background: rgba(248,250,252,0.1); border: 1px solid var(--glass-border); border-radius: 8px; color: var(--crema); cursor: pointer;" title="Añadir a playlist">➕</button>
-                                                <button class="btn btn-neon btn-play-rec-item" data-id="${s.id}" style="font-size:0.7rem; padding: 4px 10px; cursor: pointer;">▶ Sonar</button>
-                                            </div>
-                                        </div>
-                                    `;
-                                }).join('')}
+                            <div id="local-recs-container" style="display: flex; flex-direction: column; gap: 6px;">
+                                <div style="font-size:0.8rem; color:var(--texto-tenue); padding:10px; text-align:center;">Buscando coincidencias armónicas locales...</div>
                             </div>
                         </div>
 
                         <div>
                             <h4 style="font-family:'JetBrains Mono',monospace; font-size: 0.78rem; text-transform: uppercase; color: var(--crema); margin-bottom: 10px;">🌐 Descubrimiento en la Web (ListenBrainz / MusicBrainz)</h4>
-                            <div style="display: flex; flex-direction: column; gap: 6px;">
-                                ${onlineRecs.map(r => `
-                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: rgba(248,250,252,0.02); border-radius: 12px; border: 1px solid var(--glass-border);">
-                                        <div>
-                                            <div style="font-family:'Playfair Display',serif; font-size: 0.9rem; color: var(--texto-titulo);">${r.title}</div>
-                                            <div style="font-size: 0.72rem; color: var(--texto-tenue);">${r.artist} · <em style="color:var(--lavanda)">${r.source}</em></div>
-                                        </div>
-                                        <div style="display: flex; align-items: center; gap: 8px;">
-                                            <span style="font-family:'JetBrains Mono',monospace; font-size: 0.75rem; color: var(--texto-tenue);">${r.bpm} BPM</span>
-                                            <button class="btn btn-add-web-item" data-title="${r.title}" data-artist="${r.artist}" style="font-size:0.75rem; padding: 4px 10px; background: rgba(248,250,252,0.1); border: 1px solid var(--glass-border); border-radius: 8px; color: var(--crema); cursor: pointer;" title="Guardar recomendación">➕</button>
-                                            <a href="${r.url}" target="_blank" style="text-decoration:none;" class="mode-pill">🔗 Ver en Web</a>
-                                        </div>
-                                    </div>
-                                `).join('')}
+                            <div id="online-recs-container" style="display: flex; flex-direction: column; gap: 6px;">
+                                <div style="font-size:0.8rem; color:var(--texto-tenue); padding:10px; text-align:center;">Conectando con el catálogo global...</div>
                             </div>
                         </div>
                     </div>
@@ -1062,41 +1015,84 @@
             modal.querySelector('#close-modal-btn').onclick = () => modal.remove();
             modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
 
-            // Eventos para botones de recomendaciones locales
-            modal.querySelectorAll('.btn-add-rec-item').forEach(btn => {
-                btn.onclick = (e) => {
-                    e.stopPropagation();
-                    const sid = parseInt(btn.dataset.id);
-                    const song = songs.find(s => s.id === sid);
-                    if (song) openAddToPlaylist(song, btn);
-                };
-            });
+            // Cargar de forma asíncrona recomendaciones locales
+            fetch('/api/songs/smart_next', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ current_song_id: currentSong.id, played_history: playedHistoryStack, limit: 5 })
+            }).then(res => res.ok ? res.json() : []).then(data => {
+                const localRecs = Array.isArray(data) ? data : (data ? [data] : []);
+                const container = modal.querySelector('#local-recs-container');
+                if (!container) return;
+                if (!localRecs.length) {
+                    container.innerHTML = '<div style="font-size:0.8rem; color:var(--texto-tenue); padding:10px;">No se encontraron otras canciones locales similares.</div>';
+                    return;
+                }
+                container.innerHTML = localRecs.map(s => {
+                    const snm = splitTitle(s.title);
+                    return `
+                        <div class="rec-local-item" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: rgba(248,250,252,0.03); border-radius: 12px;">
+                            <div>
+                                <div style="font-family:'Playfair Display',serif; font-size: 0.9rem; color: var(--texto-titulo);">${snm.title}</div>
+                                <div style="font-size: 0.72rem; color: var(--texto-tenue);">${snm.author || 'Biblioteca Local'}</div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="font-family:'JetBrains Mono',monospace; font-size: 0.75rem; color: var(--crema);">${s.bpm ? Math.round(s.bpm) + ' BPM' : ''}</span>
+                                <button class="btn btn-add-rec-item" data-id="${s.id}" style="font-size:0.75rem; padding: 4px 10px; background: rgba(248,250,252,0.1); border: 1px solid var(--glass-border); border-radius: 8px; color: var(--crema); cursor: pointer;" title="Añadir a playlist">➕</button>
+                                <button class="btn btn-neon btn-play-rec-item" data-id="${s.id}" style="font-size:0.7rem; padding: 4px 10px; cursor: pointer;">▶ Sonar</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
 
-            modal.querySelectorAll('.btn-play-rec-item').forEach(btn => {
-                btn.onclick = (e) => {
-                    e.stopPropagation();
-                    const sid = parseInt(btn.dataset.id);
-                    const song = songs.find(s => s.id === sid);
-                    if (song) {
-                        selectAndPlayTrack(song);
-                        modal.remove();
-                    }
-                };
-            });
+                container.querySelectorAll('.btn-add-rec-item').forEach(btn => {
+                    btn.onclick = (e) => { e.stopPropagation(); const s = songs.find(x => x.id === parseInt(btn.dataset.id)); if (s) openAddToPlaylist(s, btn); };
+                });
+                container.querySelectorAll('.btn-play-rec-item').forEach(btn => {
+                    btn.onclick = (e) => { e.stopPropagation(); const s = songs.find(x => x.id === parseInt(btn.dataset.id)); if (s) { selectAndPlayTrack(s); modal.remove(); } };
+                });
+            }).catch(() => {});
 
-            // Evento para guardar recomendación web externa
-            modal.querySelectorAll('.btn-add-web-item').forEach(btn => {
-                btn.onclick = async (e) => {
-                    e.stopPropagation();
-                    const title = btn.dataset.title;
-                    const artist = btn.dataset.artist;
-                    const plName = prompt(`Guardar "${title} - ${artist}" en una nueva playlist o añadir nota:`, `Favoritos Web: ${title}`);
-                    if (plName) {
-                        toast(`Sugerencia web guardada en referencia: ${plName}`);
-                    }
-                };
-            });
+            // Cargar de forma asíncrona recomendaciones web
+            fetch('/api/recommendations/online', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    artist: nm.author,
+                    title: nm.title,
+                    artists: playlistArtists,
+                    song_titles: playlistSongTitles,
+                    playlist_name: playlistName,
+                    bpm: currentSong.bpm || 120.0
+                })
+            }).then(res => res.ok ? res.json() : { recommendations: [] }).then(data => {
+                const onlineRecs = data.recommendations || [];
+                const container = modal.querySelector('#online-recs-container');
+                if (!container) return;
+                if (!onlineRecs.length) {
+                    container.innerHTML = '<div style="font-size:0.8rem; color:var(--texto-tenue); padding:10px;">Sin resultados de recomendaciones web por el momento.</div>';
+                    return;
+                }
+                container.innerHTML = onlineRecs.map(r => `
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: rgba(248,250,252,0.02); border-radius: 12px; border: 1px solid var(--glass-border);">
+                        <div>
+                            <div style="font-family:'Playfair Display',serif; font-size: 0.9rem; color: var(--texto-titulo);">${r.title}</div>
+                            <div style="font-size: 0.72rem; color: var(--texto-tenue);">${r.artist} · <em style="color:var(--lavanda)">${r.source}</em></div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="font-family:'JetBrains Mono',monospace; font-size: 0.75rem; color: var(--texto-tenue);">${r.bpm} BPM</span>
+                            <button class="btn btn-add-web-item" data-title="${r.title}" data-artist="${r.artist}" style="font-size:0.75rem; padding: 4px 10px; background: rgba(248,250,252,0.1); border: 1px solid var(--glass-border); border-radius: 8px; color: var(--crema); cursor: pointer;" title="Guardar recomendación">➕</button>
+                            <a href="${r.url}" target="_blank" style="text-decoration:none;" class="mode-pill">🔗 Ver en Web</a>
+                        </div>
+                    </div>
+                `).join('');
+
+                container.querySelectorAll('.btn-add-web-item').forEach(btn => {
+                    btn.onclick = (e) => { e.stopPropagation(); openAddToPlaylist({ id: -1, title: `${btn.dataset.artist} - ${btn.dataset.title}` }, btn); };
+                });
+            }).catch(() => {});
         }
+
 
         // Conectar botón ➕ de la barra de reproducción inferior
         const barAddBtn = document.getElementById('bar-add-playlist-btn');
@@ -1242,19 +1238,35 @@
             modeLabel.textContent = (playbackMode === 'dj') ? 'DJ · mezcla' : 'Hi-Fi · bit-perfect';
         });
 
-        // Smart Next Backend Fallback
+        // Smart Next Backend Fallback / Playlist Sequence
         async function selectSmartNextSong(current) {
+            if (!current) return null;
+            // 1. Si hay una playlist activa, reproducir la siguiente canción de esa lista
+            if (activePlaylistSongs && activePlaylistSongs.length > 1) {
+                const idx = activePlaylistSongs.findIndex(s => s.id === current.id);
+                if (idx > -1 && idx < activePlaylistSongs.length - 1) {
+                    return activePlaylistSongs[idx + 1];
+                } else if (idx === activePlaylistSongs.length - 1) {
+                    return activePlaylistSongs[0]; // Bucle al inicio de la playlist
+                }
+            }
+            // 2. Si no hay playlist activa, usar la recomendación inteligente de biblioteca
             if (songs.length <= 1) return null;
             try {
                 const res = await fetch('/api/songs/smart_next', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ current_song_id: current.id, played_history: playedHistoryStack })
+                    body: JSON.stringify({ current_song_id: current.id, played_history: playedHistoryStack, limit: 1 })
                 });
-                if (res.ok) return await res.json();
+                if (res.ok) {
+                    const data = await res.json();
+                    const cand = Array.isArray(data) ? data[0] : data;
+                    if (cand) return cand;
+                }
             } catch (e) {}
             return songs.find(s => s.id !== current.id) || null;
         }
+
 
         function initAudioGraph() {
             if (audioGraphInitialized) return;
