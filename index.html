@@ -1238,25 +1238,23 @@
             modeLabel.textContent = (playbackMode === 'dj') ? 'DJ · mezcla' : 'Hi-Fi · bit-perfect';
         });
 
-        // Smart Next Backend Fallback / Playlist Sequence
+        // Smart Next Backend con BPM y Penalización de Historial sin repetición
         async function selectSmartNextSong(current) {
             if (!current) return null;
-            // 1. Si hay una playlist activa, reproducir la siguiente canción de esa lista
-            if (activePlaylistSongs && activePlaylistSongs.length > 1) {
-                const idx = activePlaylistSongs.findIndex(s => s.id === current.id);
-                if (idx > -1 && idx < activePlaylistSongs.length - 1) {
-                    return activePlaylistSongs[idx + 1];
-                } else if (idx === activePlaylistSongs.length - 1) {
-                    return activePlaylistSongs[0]; // Bucle al inicio de la playlist
-                }
-            }
-            // 2. Si no hay playlist activa, usar la recomendación inteligente de biblioteca
-            if (songs.length <= 1) return null;
+            let playlistSongIds = (activePlaylistSongs && activePlaylistSongs.length > 0) 
+                ? activePlaylistSongs.map(s => s.id) 
+                : [];
+            
             try {
                 const res = await fetch('/api/songs/smart_next', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ current_song_id: current.id, played_history: playedHistoryStack, limit: 1 })
+                    body: JSON.stringify({ 
+                        current_song_id: current.id, 
+                        played_history: playedHistoryStack,
+                        song_ids: playlistSongIds,
+                        limit: 1 
+                    })
                 });
                 if (res.ok) {
                     const data = await res.json();
@@ -1264,8 +1262,11 @@
                     if (cand) return cand;
                 }
             } catch (e) {}
-            return songs.find(s => s.id !== current.id) || null;
+
+            let currentList = (activePlaylistSongs && activePlaylistSongs.length > 0) ? activePlaylistSongs : songs;
+            return currentList.find(s => s.id !== current.id) || null;
         }
+
 
 
         function initAudioGraph() {

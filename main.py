@@ -171,7 +171,9 @@ class TransitionRequest(BaseModel):
 class SmartNextRequest(BaseModel):
     current_song_id: int
     played_history: list[int] = []
+    song_ids: list[int] = []
     limit: int = 1
+
 
 class OnlineRecommendationRequest(BaseModel):
     artist: str = ""
@@ -430,19 +432,28 @@ def get_smart_next_song(req: SmartNextRequest):
     songs = list_songs()
     if not songs:
         raise HTTPException(status_code=404, detail="No songs found")
-        
-    current = next((s for s in songs if s["id"] == req.current_song_id), None)
+
+    # Si se especificó un subconjunto de canciones (Playlist activa)
+    if req.song_ids:
+        pool = [s for s in songs if s["id"] in req.song_ids]
+        if not pool:
+            pool = songs
+    else:
+        pool = songs
+
+    current = next((s for s in pool if s["id"] == req.current_song_id), None)
     if not current:
-        candidates = [s for s in songs if s["id"] not in req.played_history]
-        if not candidates:
-            return [songs[0]] if req.limit > 1 else songs[0]
-        return candidates[:req.limit] if req.limit > 1 else candidates[0]
-        
-    candidates = [s for s in songs if s["id"] != current["id"] and s["id"] not in req.played_history]
+        current = next((s for s in songs if s["id"] == req.current_song_id), pool[0])
+
+    # Candidatos no reproducidos recientemente (penalización de repetición)
+    candidates = [s for s in pool if s["id"] != current["id"] and s["id"] not in req.played_history]
+    
+    # Si ya se reprodujeron todas las canciones de la playlist/pool, reiniciar historial para la playlist
     if not candidates:
-        candidates = [s for s in songs if s["id"] != current["id"]]
+        candidates = [s for s in pool if s["id"] != current["id"]]
     if not candidates:
         return [current] if req.limit > 1 else current
+
         
     from transition import cargar_segmento_db, _diff_bpm_relativa_octava, _compatibilidad_tonal_chroma, _perfil_chroma
     
