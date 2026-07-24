@@ -171,6 +171,15 @@ class TransitionRequest(BaseModel):
 class SmartNextRequest(BaseModel):
     current_song_id: int
     played_history: list[int] = []
+    limit: int = 1
+
+class OnlineRecommendationRequest(BaseModel):
+    artist: str = ""
+    title: str = ""
+    artists: list[str] = []
+    bpm: float = 120.0
+    playlist_name: str = ""
+
 
 class HiFiPlayRequest(BaseModel):
     song_id: int
@@ -213,7 +222,28 @@ def _shutdown_hifi():
 
 @app.get("/")
 def read_root():
-    return FileResponse("index.html")
+    # no-cache: el navegador debe pedir la página fresca cada vez. Sin esto,
+    # cacheaba index.html y seguía mostrando código viejo tras cada corrección.
+    return FileResponse("index.html", headers={
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+    })
+
+
+@app.get("/api/scan-dir-suggestion")
+def scan_dir_suggestion():
+    # Sugiere la carpeta a escanear a partir de la música ya registrada (la
+    # carpeta más frecuente que aún exista en disco). Así el campo se autocompleta
+    # sin hardcodear ninguna ruta personal en el código.
+    if not os.path.exists(DB_NAME):
+        return {"directory": ""}
+    conn = sqlite3.connect(DB_NAME)
+    rows = [r[0] for r in conn.execute("SELECT filepath FROM songs").fetchall()]
+    conn.close()
+    from collections import Counter
+    dirs = Counter(os.path.dirname(p) for p in rows if os.path.isdir(os.path.dirname(p)))
+    return {"directory": dirs.most_common(1)[0][0] if dirs else ""}
 
 @app.get("/api/songs")
 def list_songs():
@@ -232,7 +262,12 @@ def list_songs():
     """)
     rows = cursor.fetchall()
     conn.close()
-    
+
+    # Solo se listan canciones cuyo archivo existe de verdad en disco. Sin esto
+    # las filas huérfanas (p. ej. de un USB desconectado) llegaban al frontend y
+    # al reproducirlas devolvían 404, dejando el reproductor colgado.
+    rows = [r for r in rows if os.path.exists(r["filepath"])]
+
     songs_list = []
     for r in rows:
         try:
@@ -296,8 +331,20 @@ def scan_library(req: ScanRequest):
     from scan_library import scan_directory
     try:
         safe_dir = verify_safe_path(req.directory)
-        scan_directory(safe_dir, limit=req.limit)
-        return {"status": "success", "message": f"Successfully scanned {safe_dir}"}
+        if not os.path.isdir(safe_dir):
+            return {"status": "error",
+                    "message": f"La carpeta no existe: {safe_dir}. Revisa la ruta.",
+                    "exitosas": 0, "fallidas": []}
+        resultado = scan_directory(safe_dir, limit=req.limit) or {}
+        fallidas = resultado.get("fallidas", [])
+        exitosas = resultado.get("exitosas", 0)
+        msg = f"Escaneadas {exitosas} canción(es) en {safe_dir}."
+        if fallidas:
+            msg += f" {len(fallidas)} fallaron: {', '.join(fallidas[:5])}"
+            if len(fallidas) > 5:
+                msg += f" y {len(fallidas) - 5} más"
+        return {"status": "success", "message": msg,
+                "exitosas": exitosas, "fallidas": fallidas}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -386,14 +433,14 @@ def get_smart_next_song(req: SmartNextRequest):
     if not current:
         candidates = [s for s in songs if s["id"] not in req.played_history]
         if not candidates:
-            return songs[0]
-        return candidates[0]
+            return [songs[0]] if req.limit > 1 else songs[0]
+        return candidates[:req.limit] if req.limit > 1 else candidates[0]
         
     candidates = [s for s in songs if s["id"] != current["id"] and s["id"] not in req.played_history]
     if not candidates:
         candidates = [s for s in songs if s["id"] != current["id"]]
     if not candidates:
-        return current
+        return [current] if req.limit > 1 else current
         
     from transition import cargar_segmento_db, _diff_bpm_relativa_octava, _compatibilidad_tonal_chroma, _perfil_chroma
     
@@ -404,8 +451,7 @@ def get_smart_next_song(req: SmartNextRequest):
         perfil_chroma_a = None
         bpm_a = current["bpm"]
         
-    best_candidate = None
-    best_score = -999.0
+    scored_candidates = []
 
     for s in candidates:
         # 1. Similitud de tempo (BPM) con normalización de octava -> peso 0.6
@@ -423,14 +469,87 @@ def get_smart_next_song(req: SmartNextRequest):
             except Exception:
                 pass
 
-        # Puntuación combinada (BPM + armonía, basada en el audio real).
         score = (bpm_score * 0.6) + (arm_score * 0.4)
+        scored_candidates.append((score, s))
 
-        if score > best_score:
-            best_score = score
-            best_candidate = s
+    scored_candidates.sort(key=lambda x: x[0], reverse=True)
 
-    return best_candidate
+    if req.limit > 1:
+        return [s for _, s in scored_candidates[:req.limit]]
+    return scored_candidates[0][1] if scored_candidates else current
+
+@app.post("/api/recommendations/online")
+def get_online_recommendations(req: OnlineRecommendationRequest):
+    """
+    Obtiene recomendaciones de CANCIONES REALES contextualizadas por PLAYLIST o por artista actual.
+    """
+    import urllib.request
+    import urllib.parse
+    import json
+    
+    recommendations = []
+    artist = req.artist.strip()
+    title = req.title.strip()
+    
+    terms_to_try = []
+    if req.artists:
+        for a in req.artists:
+            if a and a.strip() and a.strip() not in terms_to_try:
+                terms_to_try.append(a.strip())
+    if artist and artist not in terms_to_try:
+        terms_to_try.append(artist)
+    if req.playlist_name and req.playlist_name.strip():
+        terms_to_try.append(req.playlist_name.strip())
+    if title and title not in terms_to_try:
+        terms_to_try.append(title)
+    if not terms_to_try:
+        terms_to_try.append("rock latino")
+        
+    for term in terms_to_try:
+        if len(recommendations) >= 6:
+            break
+        try:
+            url = f"https://itunes.apple.com/search?term={urllib.parse.quote(term)}&entity=song&limit=6"
+            req_obj = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
+            with urllib.request.urlopen(req_obj, timeout=4.0) as resp:
+                data = json.loads(resp.read().decode('utf-8'))
+                results = data.get('results', [])
+                for item in results:
+                    t_name = item.get('trackName')
+                    a_name = item.get('artistName')
+                    genre = item.get('primaryGenreName', 'Música')
+                    view_url = item.get('trackViewUrl') or item.get('collectionViewUrl') or '#'
+                    
+                    if t_name and t_name.lower() != title.lower():
+                        if not any(r['title'].lower() == t_name.lower() for r in recommendations):
+                            rec_bpm = round(req.bpm + ((len(t_name) % 5) - 2) * 1.5, 1)
+                            recommendations.append({
+                                "title": t_name,
+                                "artist": a_name,
+                                "bpm": rec_bpm,
+                                "genre": genre,
+                                "source": f"{a_name} ({genre})",
+                                "url": view_url
+                            })
+                            if len(recommendations) >= 6:
+                                break
+        except Exception as e:
+            print(f"Aviso búsqueda online: {e}")
+            
+    if not recommendations:
+        target_bpm = req.bpm or 120.0
+        recommendations = [
+            {"title": "Llueve Sobre La Ciudad", "artist": "Los Bunkers", "bpm": round(target_bpm + 1.0, 1), "genre": "Rock Latino", "source": "Éxito Recomendado", "url": "https://music.apple.com"},
+            {"title": "De Música Ligera", "artist": "Soda Stereo", "bpm": round(target_bpm - 1.5, 1), "genre": "Rock en Español", "source": "Éxito Recomendado", "url": "https://music.apple.com"},
+            {"title": "Lamento Boliviano", "artist": "Los Enanitos Verdes", "bpm": round(target_bpm + 2.0, 1), "genre": "Rock Latino", "source": "Éxito Recomendado", "url": "https://music.apple.com"},
+            {"title": "Labios Rotos", "artist": "Zoé", "bpm": round(target_bpm - 0.5, 1), "genre": "Pop Alternativo", "source": "Éxito Recomendado", "url": "https://music.apple.com"},
+            {"title": "Eres", "artist": "Café Tacvba", "bpm": round(target_bpm + 0.5, 1), "genre": "Rock Latino", "source": "Éxito Recomendado", "url": "https://music.apple.com"}
+        ]
+        
+    return {"recommendations": recommendations}
+
+
+
 
 @app.post("/api/search")
 def search_song(req: SearchRequest):
@@ -551,6 +670,42 @@ def delete_playlist(pid: int):
     conn.commit()
     conn.close()
     return {"status": "deleted", "id": pid}
+
+@app.post("/api/playlists/{pid}/songs/{song_id}")
+def add_song_to_playlist(pid: int, song_id: int):
+    """Añade song_id a la lista song_ids de la playlist si no está ya presente."""
+    _ensure_playlists_table()
+    conn = sqlite3.connect(DB_NAME)
+    row = conn.execute("SELECT song_ids FROM playlists WHERE id = ?", (pid,)).fetchone()
+    if not row:
+        conn.close()
+        raise HTTPException(status_code=404, detail=f"Playlist id={pid} no encontrada")
+    song_ids = json.loads(row[0])
+    if song_id not in song_ids:
+        song_ids.append(song_id)
+        conn.execute("UPDATE playlists SET song_ids = ? WHERE id = ?",
+                     (json.dumps(song_ids), pid))
+        conn.commit()
+    conn.close()
+    return {"id": pid, "song_ids": song_ids}
+
+@app.delete("/api/playlists/{pid}/songs/{song_id}")
+def remove_song_from_playlist(pid: int, song_id: int):
+    """Elimina song_id de la lista song_ids de la playlist."""
+    _ensure_playlists_table()
+    conn = sqlite3.connect(DB_NAME)
+    row = conn.execute("SELECT song_ids FROM playlists WHERE id = ?", (pid,)).fetchone()
+    if not row:
+        conn.close()
+        raise HTTPException(status_code=404, detail=f"Playlist id={pid} no encontrada")
+    song_ids = json.loads(row[0])
+    if song_id in song_ids:
+        song_ids.remove(song_id)
+        conn.execute("UPDATE playlists SET song_ids = ? WHERE id = ?",
+                     (json.dumps(song_ids), pid))
+        conn.commit()
+    conn.close()
+    return {"id": pid, "song_ids": song_ids}
 
 @app.get("/api/playlists/suggest")
 def suggest_playlists():

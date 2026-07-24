@@ -6,6 +6,39 @@ from analyzer import analyze_song, save_to_db, init_db
 
 SUPPORTED_EXTENSIONS = ('.flac', '.mp3', '.wav', '.ogg', '.m4a')
 
+# Carpetas que nunca deben indexarse: papeleras y directorios ocultos. Sin este
+# filtro se registraban canciones ya borradas (p. ej. .Trash-1000) que luego
+# aparecían en la biblioteca y fallaban al reproducirse.
+DIRS_EXCLUIDOS = ('.trash', '.trash-1000', '.recycle.bin', '$recycle.bin')
+
+
+def _dir_indexable(nombre):
+    n = nombre.lower()
+    return not (n.startswith('.') or n in DIRS_EXCLUIDOS)
+
+
+def purgar_fantasmas(cursor):
+    """
+    Borra de la BD las canciones cuyo archivo ya no existe, PERO sólo cuando su
+    carpeta contenedora sí existe. Así se limpian los archivos realmente
+    borrados sin destruir el registro de un disco externo desconectado (en ese
+    caso la carpeta tampoco existe y la fila se conserva).
+
+    Devuelve la lista de rutas eliminadas.
+    """
+    cursor.execute("SELECT filepath FROM songs")
+    fantasmas = []
+    for (ruta,) in cursor.fetchall():
+        if os.path.exists(ruta):
+            continue
+        if os.path.isdir(os.path.dirname(ruta)):
+            fantasmas.append(ruta)
+
+    if fantasmas:
+        cursor.executemany("DELETE FROM songs WHERE filepath = ?",
+                           [(p,) for p in fantasmas])
+    return fantasmas
+
 
 def scan_directory(directory_path, limit=1000, reanalyze_all=False):
     if not os.path.isdir(directory_path):
@@ -16,7 +49,8 @@ def scan_directory(directory_path, limit=1000, reanalyze_all=False):
     init_db()
 
     audio_files = []
-    for root, _, files in os.walk(directory_path):
+    for root, dirs, files in os.walk(directory_path):
+        dirs[:] = [d for d in dirs if _dir_indexable(d)]
         for file in files:
             if file.lower().endswith(SUPPORTED_EXTENSIONS):
                 audio_files.append(os.path.join(root, file))
@@ -44,6 +78,20 @@ def scan_directory(directory_path, limit=1000, reanalyze_all=False):
         cursor.executemany("DELETE FROM songs WHERE filepath = ?", [(p,) for p in stale])
         conn.commit()
 
+    # Purga global: limpia también canciones muertas de OTRAS carpetas ya
+    # registradas. El filtro `stale` de arriba sólo mira el directorio escaneado,
+    # así que sin esto las filas de otras rutas quedaban huérfanas para siempre y
+    # colgaban el reproductor al intentar reproducirlas.
+    otros_fantasmas = [p for p in purgar_fantasmas(cursor) if p not in set(stale)]
+    if otros_fantasmas:
+        print(f"🗑 Purga global: {len(otros_fantasmas)} canción(es) muerta(s) de otras carpetas:")
+        for p in otros_fantasmas[:10]:
+            print(f"   - {p}")
+        if len(otros_fantasmas) > 10:
+            print(f"   ... y {len(otros_fantasmas) - 10} más")
+        conn.commit()
+        already_analyzed -= set(otros_fantasmas)
+
     conn.close()
 
     print(f"📊 {len(already_analyzed)} songs already in the database.")
@@ -52,6 +100,7 @@ def scan_directory(directory_path, limit=1000, reanalyze_all=False):
 
     processed_count = 0
     success_count = 0
+    fallidas = []
 
     for filepath in audio_files:
         if processed_count >= limit:
@@ -74,10 +123,19 @@ def scan_directory(directory_path, limit=1000, reanalyze_all=False):
                 success_count += 1
             else:
                 print(f"✘ Falló el análisis: {os.path.basename(filepath)}")
+                fallidas.append(os.path.basename(filepath))
         except Exception as e:
             print(f"✘ Error procesando {filepath}: {e}", file=sys.stderr)
+            fallidas.append(os.path.basename(filepath))
 
-    print(f"\n✨ Listo. Procesadas: {processed_count}, exitosas: {success_count}.")
+    print(f"\n✨ Listo. Procesadas: {processed_count}, exitosas: {success_count}, "
+          f"fallidas: {len(fallidas)}.")
+    if fallidas:
+        print("⚠ Canciones que fallaron y NO están en la biblioteca:")
+        for nombre in fallidas:
+            print(f"   - {nombre}")
+
+    return {"procesadas": processed_count, "exitosas": success_count, "fallidas": fallidas}
 
 
 def reanalyze_all_in_db(limit=1000):
